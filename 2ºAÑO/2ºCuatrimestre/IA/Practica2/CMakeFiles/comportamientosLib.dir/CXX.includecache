@@ -1,0 +1,62 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/Comportamientos_Jugador/aldeano.cpp
+../Comportamientos_Jugador/aldeano.hpp
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/Comportamientos_Jugador/aldeano.hpp
+motorlib/util.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/Comportamientos_Jugador/motorlib/util.h
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/Comportamientos_Jugador/aldeano.hpp
+chrono
+-
+time.h
+-
+thread
+-
+comportamientos/comportamiento.hpp
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/Comportamientos_Jugador/comportamientos/comportamiento.hpp
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/Comportamientos_Jugador/jugador.cpp
+../Comportamientos_Jugador/jugador.hpp
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/Comportamientos_Jugador/jugador.hpp
+motorlib/util.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/Comportamientos_Jugador/motorlib/util.h
+iostream
+-
+cmath
+-
+set
+-
+stack
+-
+queue
+-
+vector
+-
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/Comportamientos_Jugador/jugador.hpp
+comportamientos/comportamiento.hpp
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/Comportamientos_Jugador/comportamientos/comportamiento.hpp
+list
+-
+vector
+-
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/comportamientos/comportamiento.cpp
+comportamientos/comportamiento.hpp
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/comportamientos/comportamientos/comportamiento.hpp
+
+include/comportamientos/comportamiento.hpp
+vector
+-
+
+include/motorlib/util.h
+cstdlib
+-
+

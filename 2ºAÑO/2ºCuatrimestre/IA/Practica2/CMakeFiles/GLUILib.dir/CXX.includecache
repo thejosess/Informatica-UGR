@@ -1,0 +1,266 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/algebra3.cpp
+glui/algebra3.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/algebra3.h
+glui/glui_internal.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui_internal.h
+cmath
+-
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/arcball.cpp
+glui/arcball.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/arcball.h
+cstdio
+-
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui.cpp
+glui/glui_internal_control.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui_internal_control.h
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui_add_controls.cpp
+glui/glui.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui.h
+glui/glui_internal.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui_internal.h
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui_bitmap_img_data.cpp
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui_bitmaps.cpp
+glui/glui.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui.h
+glui/glui_internal.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui_internal.h
+cassert
+-
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui_button.cpp
+glui/glui_internal_control.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui_internal_control.h
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui_checkbox.cpp
+glui/glui_internal_control.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui_internal_control.h
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui_column.cpp
+glui/glui_internal_control.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui_internal_control.h
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui_commandline.cpp
+glui/glui.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui.h
+glui/glui_internal.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui_internal.h
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui_control.cpp
+glui/glui_internal_control.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui_internal_control.h
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui_edittext.cpp
+glui/glui_internal_control.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui_internal_control.h
+cassert
+-
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui_filebrowser.cpp
+glui/glui.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui.h
+glui/glui_internal.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui_internal.h
+sys/types.h
+-
+windows.h
+-
+dirent.h
+-
+unistd.h
+-
+sys/stat.h
+-
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui_list.cpp
+glui/glui_internal_control.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui_internal_control.h
+cmath
+-
+sys/timeb.h
+-
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui_listbox.cpp
+glui/glui_internal_control.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui_internal_control.h
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui_mouse_iaction.cpp
+glui/glui_internal_control.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui_internal_control.h
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui_node.cpp
+glui/glui.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui.h
+glui/glui_internal.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui_internal.h
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui_panel.cpp
+glui/glui_internal_control.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui_internal_control.h
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui_radio.cpp
+glui/glui_internal_control.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui_internal_control.h
+cassert
+-
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui_rollout.cpp
+glui/glui_internal_control.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui_internal_control.h
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui_rotation.cpp
+glui/glui.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui.h
+glui/arcball.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/arcball.h
+glui/algebra3.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/algebra3.h
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui_scrollbar.cpp
+glui/glui_internal_control.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui_internal_control.h
+cmath
+-
+cassert
+-
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui_separator.cpp
+glui/glui_internal_control.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui_internal_control.h
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui_spinner.cpp
+glui/glui_internal_control.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui_internal_control.h
+cmath
+-
+cassert
+-
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui_statictext.cpp
+glui/glui_internal_control.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui_internal_control.h
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui_string.cpp
+glui/glui.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui.h
+stdarg.h
+-
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui_textbox.cpp
+glui/glui_internal_control.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui_internal_control.h
+cmath
+-
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui_translation.cpp
+glui/glui.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui.h
+glui/glui_internal.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui_internal.h
+glui/algebra3.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/algebra3.h
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui_tree.cpp
+glui/glui_internal_control.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui_internal_control.h
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui_treepanel.cpp
+glui/glui.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui.h
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui_window.cpp
+glui/glui.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui.h
+glui/glui_internal.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui_internal.h
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/quaternion.cpp
+glui/quaternion.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/quaternion.h
+cmath
+-
+glui/glui_internal.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui_internal.h
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/viewmodel.cpp
+glui/viewmodel.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/viewmodel.h
+glui/glui.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/glui/glui/glui.h
+cstdio
+-
+cstdlib
+-
+
+include/glui/algebra3.h
+cmath
+-
+cstdio
+-
+cstdlib
+-
+
+include/glui/arcball.h
+glui_internal.h
+include/glui/glui_internal.h
+algebra3.h
+include/glui/algebra3.h
+quaternion.h
+include/glui/quaternion.h
+
+include/glui/glui.h
+cstdlib
+-
+GL/freeglut.h
+-
+GL/openglut.h
+-
+openglut.h
+include/glui/openglut.h
+GLUT/glut.h
+-
+GL/glut.h
+-
+cstdio
+-
+cstring
+-
+string
+-
+vector
+-
+
+include/glui/glui_internal.h
+cstdio
+-
+cmath
+-
+
+include/glui/glui_internal_control.h
+glui/glui.h
+include/glui/glui/glui.h
+glui/glui_internal.h
+include/glui/glui/glui_internal.h
+
+include/glui/quaternion.h
+algebra3.h
+include/glui/algebra3.h
+cstdio
+-
+
+include/glui/viewmodel.h
+algebra3.h
+include/glui/algebra3.h
+

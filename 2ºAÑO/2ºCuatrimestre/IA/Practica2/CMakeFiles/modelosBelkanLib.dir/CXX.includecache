@@ -1,0 +1,246 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/modelos/aldeano/aldeano.cpp
+modelos/aldeano/aldeano.hpp
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/modelos/aldeano/modelos/aldeano/aldeano.hpp
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/modelos/aldeano/brazo.cpp
+modelos/aldeano/brazo.hpp
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/modelos/aldeano/modelos/aldeano/brazo.hpp
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/modelos/aldeano/cabeza.cpp
+modelos/aldeano/cabeza.hpp
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/modelos/aldeano/modelos/aldeano/cabeza.hpp
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/modelos/aldeano/cintura.cpp
+modelos/aldeano/cintura.hpp
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/modelos/aldeano/modelos/aldeano/cintura.hpp
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/modelos/aldeano/pierna.cpp
+modelos/aldeano/pierna.hpp
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/modelos/aldeano/modelos/aldeano/pierna.hpp
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/modelos/aldeano/torso.cpp
+modelos/aldeano/torso.hpp
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/modelos/aldeano/modelos/aldeano/torso.hpp
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/modelos/arbol/arbol.cpp
+modelos/arbol/arbol.hpp
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/modelos/arbol/modelos/arbol/arbol.hpp
+GL/glut.h
+-
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/modelos/item/item.cpp
+modelos/item/item.hpp
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/modelos/item/modelos/item/item.hpp
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/modelos/jugador/jugador3d.cpp
+modelos/jugador/jugador3d.hpp
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/modelos/jugador/modelos/jugador/jugador3d.hpp
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/modelos/jugador/quesito.cpp
+modelos/jugador/quesito.hpp
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/modelos/jugador/modelos/jugador/quesito.hpp
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/modelos/retrato.cpp
+modelos/retrato.hpp
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/modelos/modelos/retrato.hpp
+
+include/modelos/aldeano/aldeano.hpp
+modelos/aldeano/torso.hpp
+include/modelos/aldeano/modelos/aldeano/torso.hpp
+obj3dlib.hpp
+include/modelos/aldeano/obj3dlib.hpp
+string.h
+-
+
+include/modelos/aldeano/brazo.hpp
+obj3dlib.hpp
+include/modelos/aldeano/obj3dlib.hpp
+string.h
+-
+
+include/modelos/aldeano/cabeza.hpp
+obj3dlib.hpp
+include/modelos/aldeano/obj3dlib.hpp
+modelos/retrato.hpp
+include/modelos/aldeano/modelos/retrato.hpp
+string.h
+-
+
+include/modelos/aldeano/cintura.hpp
+obj3dlib.hpp
+include/modelos/aldeano/obj3dlib.hpp
+modelos/aldeano/pierna.hpp
+include/modelos/aldeano/modelos/aldeano/pierna.hpp
+string.h
+-
+
+include/modelos/aldeano/pierna.hpp
+obj3dlib.hpp
+include/modelos/aldeano/obj3dlib.hpp
+string.h
+-
+
+include/modelos/aldeano/torso.hpp
+obj3dlib.hpp
+include/modelos/aldeano/obj3dlib.hpp
+modelos/aldeano/cabeza.hpp
+include/modelos/aldeano/modelos/aldeano/cabeza.hpp
+modelos/aldeano/brazo.hpp
+include/modelos/aldeano/modelos/aldeano/brazo.hpp
+modelos/aldeano/cintura.hpp
+include/modelos/aldeano/modelos/aldeano/cintura.hpp
+string.h
+-
+
+include/modelos/arbol/arbol.hpp
+obj3dlib.hpp
+include/modelos/arbol/obj3dlib.hpp
+
+include/modelos/item/item.hpp
+obj3dlib.hpp
+include/modelos/item/obj3dlib.hpp
+
+include/modelos/jugador/jugador3d.hpp
+modelos/jugador/quesito.hpp
+include/modelos/jugador/modelos/jugador/quesito.hpp
+modelos/retrato.hpp
+include/modelos/jugador/modelos/retrato.hpp
+obj3dlib.hpp
+include/modelos/jugador/obj3dlib.hpp
+string.h
+-
+
+include/modelos/jugador/quesito.hpp
+obj3dlib.hpp
+include/modelos/jugador/obj3dlib.hpp
+string.h
+-
+
+include/modelos/retrato.hpp
+obj3dlib.hpp
+include/modelos/obj3dlib.hpp
+string.h
+-
+
+include/obj3dlib.hpp
+obj3dlib/file_ply_stl.h
+include/obj3dlib/file_ply_stl.h
+obj3dlib/jpeg_reader/jpg_imagen.hpp
+include/obj3dlib/jpeg_reader/jpg_imagen.hpp
+obj3dlib/objeto3d.h
+include/obj3dlib/objeto3d.h
+obj3dlib/objrevolucion3d.h
+include/obj3dlib/objrevolucion3d.h
+obj3dlib/cubo3d.h
+include/obj3dlib/cubo3d.h
+obj3dlib/cono3d.h
+include/obj3dlib/cono3d.h
+obj3dlib/cono3dwire.h
+include/obj3dlib/cono3dwire.h
+obj3dlib/esfera3d.h
+include/obj3dlib/esfera3d.h
+obj3dlib/toro3d.h
+include/obj3dlib/toro3d.h
+obj3dlib/tetraedro3d.h
+include/obj3dlib/tetraedro3d.h
+obj3dlib/octaedro3d.h
+include/obj3dlib/octaedro3d.h
+obj3dlib/dodecaedro3d.h
+include/obj3dlib/dodecaedro3d.h
+obj3dlib/icosaedro3d.h
+include/obj3dlib/icosaedro3d.h
+obj3dlib/luz.hpp
+include/obj3dlib/luz.hpp
+
+include/obj3dlib/cono3d.h
+obj3dlib/objeto3d.h
+include/obj3dlib/obj3dlib/objeto3d.h
+
+include/obj3dlib/cono3dwire.h
+obj3dlib/objeto3d.h
+include/obj3dlib/obj3dlib/objeto3d.h
+
+include/obj3dlib/cubo3d.h
+obj3dlib/objeto3d.h
+include/obj3dlib/obj3dlib/objeto3d.h
+
+include/obj3dlib/dodecaedro3d.h
+obj3dlib/objeto3d.h
+include/obj3dlib/obj3dlib/objeto3d.h
+
+include/obj3dlib/esfera3d.h
+obj3dlib/objeto3d.h
+include/obj3dlib/obj3dlib/objeto3d.h
+
+include/obj3dlib/file_ply_stl.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+string
+-
+vector
+-
+assert.h
+-
+
+include/obj3dlib/icosaedro3d.h
+obj3dlib/objeto3d.h
+include/obj3dlib/obj3dlib/objeto3d.h
+
+include/obj3dlib/jpeg_reader/jpg_imagen.hpp
+string
+-
+
+include/obj3dlib/luz.hpp
+obj3dlib/objeto3d.h
+include/obj3dlib/obj3dlib/objeto3d.h
+GL/gl.h
+-
+
+include/obj3dlib/objeto3d.h
+obj3dlib/vertex.h
+include/obj3dlib/obj3dlib/vertex.h
+vector
+-
+GL/gl.h
+-
+string.h
+-
+
+include/obj3dlib/objrevolucion3d.h
+obj3dlib/objeto3d.h
+include/obj3dlib/obj3dlib/objeto3d.h
+
+include/obj3dlib/octaedro3d.h
+obj3dlib/objeto3d.h
+include/obj3dlib/obj3dlib/objeto3d.h
+
+include/obj3dlib/tetraedro3d.h
+obj3dlib/objeto3d.h
+include/obj3dlib/obj3dlib/objeto3d.h
+
+include/obj3dlib/toro3d.h
+obj3dlib/objeto3d.h
+include/obj3dlib/obj3dlib/objeto3d.h
+
+include/obj3dlib/vertex.h
+stdio.h
+-
+assert.h
+-
+math.h
+-
+iostream
+-
+

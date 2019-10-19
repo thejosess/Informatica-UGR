@@ -1,0 +1,9 @@
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/CMakeFiles/rebuild_cache.dir
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/CMakeFiles/edit_cache.dir
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/CMakeFiles/BelkanSG.dir
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/CMakeFiles/GLUILib.dir
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/CMakeFiles/Belkan.dir
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/CMakeFiles/obj3DLib.dir
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/CMakeFiles/motorLib.dir
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/CMakeFiles/modelosBelkanLib.dir
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/CMakeFiles/comportamientosLib.dir

@@ -1,0 +1,1 @@
+/usr/bin/c++   -fopenmp -pthread -std=c++11  -rdynamic CMakeFiles/Belkan.dir/bin_src/juego.cc.o  -o Belkan lib/libobj3DLib.a lib/libmotorLib.a lib/libmodelosBelkanLib.a -lpthread lib/libGLUILib.a lib/libcomportamientosLib.a lib/libobj3DLib.a -ljpeg -lpthread -lGL -lGLU -lglut -lXmu -lXi 

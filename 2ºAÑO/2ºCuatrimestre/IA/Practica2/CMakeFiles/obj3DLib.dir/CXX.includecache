@@ -1,0 +1,234 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/cono3d.cc
+obj3dlib/cono3d.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/obj3dlib/cono3d.h
+GL/glut.h
+-
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/cono3dwire.cc
+obj3dlib/cono3dwire.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/obj3dlib/cono3dwire.h
+GL/glut.h
+-
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/cubo3d.cc
+obj3dlib/cubo3d.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/obj3dlib/cubo3d.h
+GL/glut.h
+-
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/dodecaedro3d.cc
+obj3dlib/dodecaedro3d.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/obj3dlib/dodecaedro3d.h
+GL/glut.h
+-
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/esfera3d.cc
+obj3dlib/esfera3d.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/obj3dlib/esfera3d.h
+GL/glut.h
+-
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/file_ply_stl.cc
+obj3dlib/file_ply_stl.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/obj3dlib/file_ply_stl.h
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/icosaedro3d.cc
+obj3dlib/icosaedro3d.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/obj3dlib/icosaedro3d.h
+GL/glut.h
+-
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/jpeg_reader/jpg_imagen.cpp
+stdlib.h
+-
+string
+-
+iostream
+-
+obj3dlib/jpeg_reader/jpg_imagen.hpp
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/jpeg_reader/obj3dlib/jpeg_reader/jpg_imagen.hpp
+obj3dlib/jpeg_reader/jpg_readwrite.hpp
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/jpeg_reader/obj3dlib/jpeg_reader/jpg_readwrite.hpp
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/jpeg_reader/jpg_memsrc.cpp
+obj3dlib/jpeg_reader/jpg_jinclude.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/jpeg_reader/obj3dlib/jpeg_reader/jpg_jinclude.h
+jpeglib.h
+-
+jerror.h
+-
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/jpeg_reader/jpg_readwrite.cpp
+obj3dlib/jpeg_reader/jpg_readwrite.hpp
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/jpeg_reader/obj3dlib/jpeg_reader/jpg_readwrite.hpp
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+jpeglib.h
+-
+iostream
+-
+fstream
+-
+obj3dlib/jpeg_reader/jpg_memsrc.hpp
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/jpeg_reader/obj3dlib/jpeg_reader/jpg_memsrc.hpp
+setjmp.h
+-
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/luz.cpp
+obj3dlib/luz.hpp
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/obj3dlib/luz.hpp
+cmath
+-
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/objeto3d.cc
+obj3dlib/objeto3d.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/obj3dlib/objeto3d.h
+obj3dlib/file_ply_stl.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/obj3dlib/file_ply_stl.h
+iostream
+-
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/objrevolucion3d.cc
+obj3dlib/objrevolucion3d.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/obj3dlib/objrevolucion3d.h
+obj3dlib/file_ply_stl.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/obj3dlib/file_ply_stl.h
+cmath
+-
+GL/glut.h
+-
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/octaedro3d.cc
+obj3dlib/octaedro3d.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/obj3dlib/octaedro3d.h
+GL/glut.h
+-
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/tetraedro3d.cc
+obj3dlib/tetraedro3d.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/obj3dlib/tetraedro3d.h
+GL/glut.h
+-
+
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/toro3d.cc
+obj3dlib/toro3d.h
+/home/juse/Escritorio/Universidad/2º Cuatri/IA/practicas/practica2/practica2/src/obj3dlib/obj3dlib/toro3d.h
+GL/glut.h
+-
+
+include/obj3dlib/cono3d.h
+obj3dlib/objeto3d.h
+include/obj3dlib/obj3dlib/objeto3d.h
+
+include/obj3dlib/cono3dwire.h
+obj3dlib/objeto3d.h
+include/obj3dlib/obj3dlib/objeto3d.h
+
+include/obj3dlib/cubo3d.h
+obj3dlib/objeto3d.h
+include/obj3dlib/obj3dlib/objeto3d.h
+
+include/obj3dlib/dodecaedro3d.h
+obj3dlib/objeto3d.h
+include/obj3dlib/obj3dlib/objeto3d.h
+
+include/obj3dlib/esfera3d.h
+obj3dlib/objeto3d.h
+include/obj3dlib/obj3dlib/objeto3d.h
+
+include/obj3dlib/file_ply_stl.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+string
+-
+vector
+-
+assert.h
+-
+
+include/obj3dlib/icosaedro3d.h
+obj3dlib/objeto3d.h
+include/obj3dlib/obj3dlib/objeto3d.h
+
+include/obj3dlib/jpeg_reader/jpg_imagen.hpp
+string
+-
+
+include/obj3dlib/jpeg_reader/jpg_jinclude.h
+jconfig.h
+include/obj3dlib/jpeg_reader/jconfig.h
+stddef.h
+-
+stdlib.h
+-
+sys/types.h
+-
+stdio.h
+-
+strings.h
+-
+string.h
+-
+
+include/obj3dlib/jpeg_reader/jpg_memsrc.hpp
+
+include/obj3dlib/jpeg_reader/jpg_readwrite.hpp
+
+include/obj3dlib/luz.hpp
+obj3dlib/objeto3d.h
+include/obj3dlib/obj3dlib/objeto3d.h
+GL/gl.h
+-
+
+include/obj3dlib/objeto3d.h
+obj3dlib/vertex.h
+include/obj3dlib/obj3dlib/vertex.h
+vector
+-
+GL/gl.h
+-
+string.h
+-
+
+include/obj3dlib/objrevolucion3d.h
+obj3dlib/objeto3d.h
+include/obj3dlib/obj3dlib/objeto3d.h
+
+include/obj3dlib/octaedro3d.h
+obj3dlib/objeto3d.h
+include/obj3dlib/obj3dlib/objeto3d.h
+
+include/obj3dlib/tetraedro3d.h
+obj3dlib/objeto3d.h
+include/obj3dlib/obj3dlib/objeto3d.h
+
+include/obj3dlib/toro3d.h
+obj3dlib/objeto3d.h
+include/obj3dlib/obj3dlib/objeto3d.h
+
+include/obj3dlib/vertex.h
+stdio.h
+-
+assert.h
+-
+math.h
+-
+iostream
+-
+
