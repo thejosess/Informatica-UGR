@@ -1,3 +1,0 @@
-class Agente
-  
-end
