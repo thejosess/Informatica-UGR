@@ -1,0 +1,115 @@
+###############################################################################
+#
+# SCD - Sistemas Concurrentes y Distribuidos
+# Grado en Ingeniería Informática
+#
+# 2014 - Ernesto Serrano <erseco@correo.ugr.es>
+# ---------------------------------------------
+#
+# Ejercicio 01 - Problema del Productor/Consumidor con Open-MPI
+#
+#
+# NOTA: El código fuente está documentado
+#
+###############################################################################
+
+
+1. Describe que cambios has realizado sobre el programa de partida y el proposi-
+to de dichos cambios.
+--------------------------------------------------------------------------------
+Primero he cambiado las iteraciones, para que concuerden los producidos con los
+consumidos, en productor he hecho un bucle de 4 (que por 5 productores serán 20)
+y en consumidor un bucle de 5 (que por 4 consumidores también será 20)
+
+Luego en buffer tengo que recorrer ese numero 2 veces (2*20)
+
+Ademas, ahora se recibirán los datos en MPI_ANY_SOURCE ya que los productores
+tendrán un ID < 5 el buffer un ID == 5 y los consumidores un ID > 5
+
+Para diferenciar de si es productor y consumidor le pasaremos un 1 o un 2 en el
+campo TAG siendo un 1 el productor y un 2 el consumidor
+
+
+3. Incluye un listado parcial de la salida del programa.
+--------------------------------------------------------------------------------
+mpirun -np 10 bin/p3_ejercicio_01_productor_consumidor
+Productor 0 produce valor 0
+Productor 3 produce valor 0
+Productor 4 produce valor 0
+Buffer recibe 0 de Prod. 0
+Buffer recibe 0 de Prod. 4
+Buffer envia 0 a Cons. 7
+Buffer recibe 0 de Prod. 3
+Buffer envia 0 a Cons. 6
+Buffer envia 0 a Cons. 7
+Consumidor 7 recibe valor 0 de Buffer
+Consumidor 7 recibe valor 0 de Buffer
+Consumidor 6 recibe valor 0 de Buffer
+Productor 1 produce valor 0
+Productor 1 produce valor 1
+Productor 1 produce valor 2
+Productor 1 produce valor 3
+Buffer recibe 0 de Prod. 1
+Buffer envia 0 a Cons. 7
+Buffer recibe 1 de Prod. 1
+Buffer envia 1 a Cons. 6
+Buffer recibe 2 de Prod. 1
+Buffer envia 2 a Cons. 7
+Buffer recibe 3 de Prod. 1
+Buffer envia 3 a Cons. 6
+Consumidor 6 recibe valor 1 de Buffer
+Consumidor 6 recibe valor 3 de Buffer
+Consumidor 7 recibe valor 0 de Buffer
+Consumidor 7 recibe valor 2 de Buffer
+Productor 4 produce valor 1
+Productor 4 produce valor 2
+Productor 4 produce valor 3
+Buffer recibe 1 de Prod. 4
+Buffer envia 1 a Cons. 6
+Buffer recibe 2 de Prod. 4
+Buffer envia 2 a Cons. 7
+Buffer recibe 3 de Prod. 4
+Buffer envia 3 a Cons. 6
+Consumidor 6 recibe valor 1 de Buffer
+Consumidor 6 recibe valor 3 de Buffer
+Consumidor 7 recibe valor 2 de Buffer
+Productor 0 produce valor 1
+Productor 0 produce valor 2
+Productor 3 produce valor 1
+Productor 3 produce valor 2
+Productor 3 produce valor 3
+Buffer recibe 1 de Prod. 3
+Buffer recibe 2 de Prod. 3
+Buffer recibe 1 de Prod. 0
+Buffer recibe 3 de Prod. 3
+Buffer recibe 2 de Prod. 0
+Productor 0 produce valor 3
+Buffer envia 2 a Cons. 8
+Buffer recibe 3 de Prod. 0
+Buffer envia 3 a Cons. 8
+Consumidor 8 recibe valor 2 de Buffer
+Consumidor 8 recibe valor 3 de Buffer
+Consumidor 8 recibe valor 3 de Buffer
+Buffer envia 3 a Cons. 8
+Buffer envia 1 a Cons. 8
+Buffer envia 2 a Cons. 8
+Consumidor 8 recibe valor 1 de Buffer
+Consumidor 8 recibe valor 2 de Buffer
+Productor 2 produce valor 0
+Productor 2 produce valor 1
+Productor 2 produce valor 2
+Productor 2 produce valor 3
+Buffer recibe 0 de Prod. 2
+Buffer recibe 1 de Prod. 2
+Buffer recibe 2 de Prod. 2
+Buffer recibe 3 de Prod. 2
+Buffer envia 3 a Cons. 9
+Buffer envia 2 a Cons. 9
+Buffer envia 1 a Cons. 9
+Consumidor 9 recibe valor 3 de Buffer
+Consumidor 9 recibe valor 2 de Buffer
+Consumidor 9 recibe valor 1 de Buffer
+Buffer envia 0 a Cons. 9
+Consumidor 9 recibe valor 0 de Buffer
+Buffer envia 1 a Cons. 9
+Consumidor 9 recibe valor 1 de Buffer

@@ -1,0 +1,18 @@
+José Santos Salvador 77644538B
+
+// RESPUESTAS A LAS PREGUNTAS:
+
+1. ¿ cual es el mínimo tiempo de espera que queda al final de las
+   iteraciones del ciclo secundario con tu solución ?
+
+   Es el del ciclo ABD ya que utiliza 490 ms, y 10 ms de espera.
+   A + B + D = 100 + 150 + 240	-> 10ms.
+
+
+2. ¿ sería planificable si la tarea D tuviese un tiempo cómputo de
+   250 ms ?
+
+   De forma teórica si, pero en la práctica no ocurre porque empieza con un pequeño retraso.
+   U(tiempo de ocupación) = 0.825
+   por tanto Uo = 0.779 < U < 1.0, por tanto es planificable.
+

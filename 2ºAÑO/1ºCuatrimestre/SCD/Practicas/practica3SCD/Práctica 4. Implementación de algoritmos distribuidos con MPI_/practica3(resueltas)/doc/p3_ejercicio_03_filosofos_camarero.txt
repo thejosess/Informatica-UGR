@@ -1,0 +1,104 @@
+###############################################################################
+#
+# SCD - Sistemas Concurrentes y Distribuidos
+# Grado en Ingeniería Informática
+#
+# 2014 - Ernesto Serrano <erseco@correo.ugr.es>
+# ---------------------------------------------
+#
+# Ejercicio 02 - El problema de los filosofos con camarero mediante paso de men-
+# sajes Open-MPI
+#
+# NOTA: El código fuente está documentado
+#
+###############################################################################
+
+
+1. Describe tu solucion al problema de los filosofos con camarero central.
+--------------------------------------------------------------------------------
+
+Para solucionar el interbloqueo se ha agregado un proceso adicional (id 10) que
+hace la función de camarero, e irá notificando a los filosofos que esperan a que
+haya un sitio libre que pueden sentarse a comer, estos últimos, cuando terminen
+le enviarán un mensaje al camarero para indicarle que han terminado.
+
+El filosofo:
+- pide sentarse (al camarero)
+- espera a que le digan que puede sentarse
+- se sienta
+- solicita tenedor izquierdo
+- solicita tenedor derecho
+- come
+- suelta el tenedor izquierdo
+- suelta el tenedor derecho
+- se levanta (avisa al camarero)
+
+El tenedor:
+- Espera un peticion desde cualquier filosofo vecino
+- Recibe la peticion del filosofo (el otro tenedor)
+- Espera a que el filosofo suelte el tenedor
+
+El camarero:
+- Si hay sitios libres los filósofos pueden sentarse o levantarse
+- Si no hay sitios libres los filósofos solo puede levantarse
+
+El tenedor espera una primera petición de cualquier filósofo, pero debe esperar
+a ese mismo filosofo para que suelte el tenedor
+
+Los filosofos calculan su posicion inmediata derecha e izquierda (donde estarían
+los tenedores) para solicitar/enviar a esos procesos teniendo en cuenta que hay
+un proceso adicional (camarero)
+
+Como en este caso no se va a hacer uso de los datos que se pasan le hemos pasado
+NULL y 0 como values, por optimizar
+
+
+3. Incluye un listado parcial de la salida del programa.
+--------------------------------------------------------------------------------
+mpirun -np 11 bin/p3_ejercicio_03_filosofos_camarero
+Filosofo 0 solicita sentarse
+Filosofo 8 solicita sentarse
+Filosofo 6 solicita sentarse
+Filosofo 0 se sienta
+Filosofo 0 solicita tenedor izq. 1
+Filosofo 8 se sienta
+Filosofo 8 solicita tenedor izq. 9
+Filosofo 0 se sienta. Hay 1 filosofos sentados.
+Filosofo 6 se sienta. Hay 2 filosofos sentados.
+Filosofo 8 se sienta. Hay 3 filosofos sentados.
+Filosofo 6 se sienta
+Filosofo 6 solicita tenedor izq. 7
+Filosofo 8 coge tenedor der. 7
+Ten. 9 recibe petic. de 8
+Filosofo 4 solicita sentarse
+Filosofo 4 se sienta
+Filosofo 4 solicita tenedor izq. 5
+Filosofo 4 se sienta. Hay 4 filosofos sentados.
+Ten. 1 recibe petic. de 0
+Filosofo 6 coge tenedor der. 5
+Ten. 7 recibe petic. de 6
+Filosofo 2 solicita sentarse
+Filosofo 0 coge tenedor der. 9
+Ten. 5 recibe petic. de 4
+Filosofo 4 coge tenedor der. 3
+Ten. 3 recibe petic. de 4
+Filosofo 4 COMIENDO
+Filosofo 4 suelta tenedor izq. 5
+Filosofo 4 suelta tenedor der. 3
+Ten. 5 recibe liberac. de 4
+Ten. 5 recibe petic. de 6
+Filosofo 6 COMIENDO
+Ten. 3 recibe liberac. de 4
+Filosofo 4 se levanta
+Filosofo 4 PENSANDO
+Filosofo 4 se levanta. Hay 3 filosofos sentados.
+Filosofo 2 se sienta. Hay 4 filosofos sentados.
+Filosofo 2 se sienta
+Filosofo 2 solicita tenedor izq. 3
+Ten. 3 recibe petic. de 2
+Filosofo 2 coge tenedor der. 1
+Filosofo 6 suelta tenedor izq. 7
+Filosofo 6 suelta tenedor der. 5
+Ten. 7 recibe liberac. de 6
+Ten. 7 recibe petic. de 8
+Filosofo 8 COMIENDO

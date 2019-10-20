@@ -1,0 +1,15 @@
+ACTIVIDAD 1
+
+	El programa queda bloqueado porque al acceder a la funcion incrementa la primera hebra, 	bloquea con lock peroo no la desbloquea para que las demás hebras puedan acceder más tarde.
+
+ACTIVIDAD 2
+
+	1./
+		La última en entrar al método cita es la primera en salir ya que usa LIFO y usa la 			semantica de señalar y continuar cuando el nº de hebras es igual al contador, esto 			pasa cuando entra la última hebra, despierta a las hebras restantes y esta última 			continúa ejecutandose y sale la primera.
+	2./
+		Porque al hacer notify_one() se despierta una hebra de la cola de preparados pero no 			se determina cuál.
+	3./
+		El constructor solo se ejecuta en el momento en el que se crea el monitor, no una vez 			por cada hebra con lo que no es sección crítica
+
+	Al cambiar el notify_one() por notify_all() no se observa ningún cambio en la ejecución del 		programa ya que despertaría todas las hebras pero hay exclusión mutua ya que tenemos una 		guardada con el unique_lock.
+

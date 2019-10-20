@@ -1,0 +1,88 @@
+###############################################################################
+#
+# SCD - Sistemas Concurrentes y Distribuidos
+# Grado en Ingeniería Informática
+#
+# 2014 - Ernesto Serrano <erseco@correo.ugr.es>
+# ---------------------------------------------
+#
+# Ejercicio 02 - El problema de los filosofos con paso de mensajes Open-MPI
+#
+#
+# NOTA: El código fuente está documentado
+#
+###############################################################################
+
+
+1. Describe los aspectos mas destacados de tu solucion al problema de los filo-
+sofos, la situacion que conduce al interbloqueo y tu solucion al problema del
+interbloqueo.
+--------------------------------------------------------------------------------
+En este caso lo mas importante es que si todos cogen su tenedor en el mismo orden
+puede ocurrir un interbloqueo, por lo que para evitarlo haremos que uno de los
+filósofos coja los tenedores en orden inverso, por simplificar hemos dedicido que
+sea el primero filósofo (ID 0) el que haga esto.
+
+El tenedor espera una primera petición de cualquier filósofo, pero debe esperar
+a ese mismo filosofo para que suelte el tenedor
+
+Los filosofos calculan su posicion inmediata derecha e izquierda (donde estarían
+los tenedores) para solicitar/enviar a esos procesos
+
+Como en este caso no se va a hacer uso de los datos que se pasan le hemos pasado
+NULL y 0 como values, por optimizar
+
+
+3. Incluye un listado parcial de la salida del programa.
+--------------------------------------------------------------------------------
+mpirun -np 10 bin/p3_ejercicio_02_filosofos
+Filosofo 0 coge tenedor der. 9
+Filosofo 2 solicita tenedor izq. 3
+Filosofo 2 coge tenedor der. 1
+Filosofo 2 COMIENDO
+Ten. 3 recibe petic. de 2
+Ten. 1 recibe petic. de 2
+Filosofo 6 solicita tenedor izq. 7
+Filosofo 8 solicita tenedor izq. 9
+Filosofo 4 solicita tenedor izq. 5
+Filosofo 4 coge tenedor der. 3
+Ten. 5 recibe petic. de 4
+Ten. 7 recibe petic. de 6
+Filosofo 0 solicita tenedor izq. 1
+Ten. 9 recibe petic. de 0
+Filosofo 6 coge tenedor der. 5
+Filosofo 2 suelta tenedor izq. 3
+Filosofo 2 suelta tenedor der. 1
+Ten. 3 recibe liberac. de 2
+Ten. 3 recibe petic. de 4
+Filosofo 4 COMIENDO
+Ten. 1 recibe liberac. de 2
+Filosofo 2 PENSANDO
+Ten. 1 recibe petic. de 0
+Filosofo 0 COMIENDO
+Filosofo 4 suelta tenedor izq. 5
+Filosofo 4 suelta tenedor der. 3
+Ten. 5 recibe liberac. de 4
+Ten. 5 recibe petic. de 6
+Ten. 3 recibe liberac. de 4
+Filosofo 4 PENSANDO
+Filosofo 6 COMIENDO
+Filosofo 0 suelta tenedor izq. 1
+Filosofo 0 suelta tenedor der. 9
+Ten. 1 recibe liberac. de 0
+Ten. 9 recibe liberac. de 0
+Ten. 9 recibe petic. de 8
+Filosofo 0 PENSANDO
+Filosofo 8 coge tenedor der. 7
+Filosofo 6 suelta tenedor izq. 7
+Filosofo 2 solicita tenedor izq. 3
+Filosofo 6 suelta tenedor der. 5
+Ten. 7 recibe liberac. de 6
+Ten. 7 recibe petic. de 8
+Filosofo 6 PENSANDO
+Ten. 5 recibe liberac. de 6
+Filosofo 2 coge tenedor der. 1
+Ten. 3 recibe petic. de 2
+Ten. 1 recibe petic. de 2
+Filosofo 2 COMIENDO
+Filosofo 8 COMIENDO
