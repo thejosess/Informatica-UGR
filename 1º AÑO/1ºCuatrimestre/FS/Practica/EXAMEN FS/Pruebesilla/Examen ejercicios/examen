@@ -1,0 +1,69 @@
+﻿#!/bin/bash
+
+
+
+if [ $# != 2 ]									#Comprobar que hay dos argumentos
+	
+then echo "Introduzca dos argumentos"; exit
+else
+	
+
+if [ -f $1 ]								#Comprobar que el primer argumento es un archivo
+		
+then echo "El primer argumento es un archivo" 
+	
+else
+		
+echo "El primer argumento NO es un archivo"; exit
+	
+fi
+	
+	
+
+if [ -d $2 ]								#Comprobar que el segundo argumento es un directorio
+		
+then echo "El segundo argumento es un directorio" 
+	
+else
+		
+echo "El segundo argumento NO es un directorio"; exit
+	
+fi	
+
+
+fi
+										
+
+#Menú con las dos opciones
+	
+printf "\t1: Introduzca un 1 si quiere copiar archivo\n"
+	
+printf "\t2: Introduzca un 2 si quiere contar archivos\n"
+
+
+
+read -n1 -p "Opción: " OPCION							#Lectura para introducir el 1 o el 2
+
+
+case $OPCION in
+	
+1) 	head -5 $1 > /$2/salida						#Copiar las primeras 5 líneas del primer argumento en salida
+		
+	printf "\nSe han copiado las cinco primeras líneas del archivo $1 en $2/salida %s \n"		#Mensaje
+	
+	cat /$2/salida;;						#Mostrar el contenido de salida
+							
+	
+2) 	Ejecutables=`find $2 -executable | wc -l`			#Variable con el número de archivos ejecutables
+		
+	Todos=`find $2 | wc -l`						#Variable con el número total de archivos
+		
+	find $2 -executable				
+		
+	printf "\tDe un total de $Todos archivos hay $Ejecutables archivos con permiso de ejecución %s \n";;	#Mensaje
+
+	
+*)	printf "\nNo ha introducido un número válido, por favor pulse 1 o 2 %s \n";;	#Mensaje de error en la lectura
+
+esac
+

@@ -1,0 +1,30 @@
+#!/bin/bash
+#Nombre del script: cpback.sh
+destino="CopiasSeguridad"
+if [[ `test -d $destino && echo 0 || echo 1` == 1 ]]
+then
+mkdir $destino
+fi
+if [ $# -ge 1 ]
+then
+#Declaro una variable suma para saber si ha habido algun error, si uno
+#de los parametros no existe..suma ya no valdra 0.
+suma=0
+for i in $@
+do
+if [ `test -e $i && echo 0 || echo 1` == 1 ]
+then
+suma=$[$suma + 1]
+fi
+done
+#Solo entro al bucle si suma vale 0, es decir, si no hay errores
+if [ $suma -eq 0 ]
+then
+tar -cvf "./$destino/copia`date +"%Y%m%d"`.tar" $@
+gzip "./$destino/copia`date +"%Y%m%d"`.tar"
+else
+echo "Alguno de los parametros dados no existe"
+fi
+else
+echo "Numero de paramentros incorrecto"
+fi

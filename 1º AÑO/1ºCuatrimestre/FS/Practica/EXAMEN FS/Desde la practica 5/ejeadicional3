@@ -1,0 +1,29 @@
+#!/bin/bash
+if [ $# -ge 1 ]
+then
+	for i in $@
+	do
+		es_archivo=`test -f $i && echo true || echo false`;
+		if [ $es_archivo == "true" ]
+		then
+			printf "********************\n"
+			printf "Archivo $i\n"
+			printf "********************\n"
+
+			while read linea
+			do
+				echo $linea
+			done < $i
+	else
+		printf"\n\n********************\n"
+		printf"Archivo $i\n"
+		printf"********************\n"
+		printf"\nERROR: Este archivo NO es un archivo regular\n\n\n"
+	fi
+	done
+else
+	while read linea
+	do
+		echo $linea
+	done
+fi

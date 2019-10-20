@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ps -A h -o size,cmd,pid| sort -nr|head -1

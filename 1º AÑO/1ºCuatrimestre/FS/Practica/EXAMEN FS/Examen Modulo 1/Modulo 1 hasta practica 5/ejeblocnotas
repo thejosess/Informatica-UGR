@@ -1,0 +1,156 @@
+#!/bin/bash
+
+
+#   @@@@@@@@@@@@@@@@@@@@@@@@@@
+# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#   @@@@@@@@@@@@@@@@@@@@@@@@@@
+#
+#          T-Formación
+#       Centro de Estudios
+#
+#         @@@@@@@@@@@@@
+#         @@@@@@@@@@@@@
+#         @@@@@@@@@@@@@
+#         @@@@@@@@@@@@@
+#         @@@@@@@@@@@@@
+#           @@@@@@@@@
+        
+
+###                                   ###
+##                                     ##
+## Examen de prácticas Módulo I        ##
+## Fundamenos del Software             ##
+## 3 de Diciembre de 2012              ##
+##                                     ##
+## T-Formación, Centro de Estudios     ##
+## http://www.t-formacion.es           ##
+## Vicente Ruiz <vruiz@t-formacion.es> ##
+##                                     ##
+###                                   ###
+
+##
+# Ejemplos de uso:
+#  $ ./stockStore fichero1 list
+#  $ ./stockStore fichero1 stock 5
+##
+
+##
+# Códigos de error:
+#  1 - Número de parámetros incorrecto
+#  2 - La opción list sólo acepta 2 parámetros
+#  3 - La opción stock sólo acepta 3 parámetros
+#  4 - El tercer parámetro debe de ser un entero entre 1 y 10
+#  5 - Uso de parámetros incorrecto
+#  6 - El fichero <FicheroAlmacen> no existe
+##
+
+
+# Función auxiliar que muestra el uso del script
+# Recibe un error a mostar
+function uso
+{
+	local error="$1";
+	
+	# Mostramos el error pasado por parámetro
+	echo "ERROR: $error";
+	# Mostramos un ejemplo de uso
+	echo -e "\nEjemplo de uso:\n\t$0 <FicheroAlmacen> OPTIONS\n";
+	echo -e "donde OPTIONS puede ser:\n\t* list\n\t* stock <num>";
+}
+
+
+##
+# Comprobación de errores
+##
+
+# El número de argumentos tiene que ser 2 ó 3, según la opción
+if [[ $# < 2 || $# > 3 ]]; then
+	uso "Número de parámetros incorrecto";
+	exit 1;
+# El segundo argumento puede ser "list" ...
+elif [ $2 == "list" ]; then
+	# ... en cuyo caso sólo se aceptan 2 parámetros
+	if [ $# -ne 2 ]; then
+		uso "La opción list sólo acepta 2 parámetros";
+		exit 2;
+	fi
+# ... o el segundo argumento puede ser "stock" ...
+elif [ $2 == "stock" ]; then
+	# ... en cuyo caso sólo se aceptan 3 parámetros ...
+	if [ $# -ne 3 ]; then
+		uso "La opción stock sólo acepta 3 parámetros";
+		exit 3;
+	# ... y el tercer argumento debe de ser un entero entre 1 y 10
+	elif [[ $3 != +([0-9]) || $3 -lt 1 || $3 -gt 10 ]]; then
+		uso "El tercer parámetro debe de ser un entero entre 1 y 10";
+		exit 4;
+	fi
+# En otro caso, hay un error con los parámetros
+else
+	echo "Uso de parámetros incorrecto";
+	exit 5;
+fi
+
+# Última comprobación: el primer argumento es un fichero que existe
+if [ ! -f $1 ]; then
+	echo "El fichero $1 no existe";
+	exit 6;
+fi
+
+##
+# Realización del ejercicio
+##
+
+# Función que filtra el stock
+# Recibe dos parámetros, el fichero de stock y el número para filtrar
+function stock
+{
+	local f=$1;
+	local num=$2;
+	
+	# Leemos el fichero pasado como parámetro, f
+	while read linea
+	do
+		# Obtenemos las unidades y el nombre del producto
+		unidades=$(echo "$linea" | cut -c5-7);
+		producto=$(echo "$linea" | cut -c8-48);
+		# Si quedan menos unidades de las indicadas en el segundo argumento ...
+		if (( $unidades <= $num )); then
+			# ... mostramos el producto en cuestión
+			echo "-> " $producto ":" $unidades "unidade(s)";
+		fi
+	done < "$f"
+}
+
+# Función que lista todos los productos ordenados por código de producto
+# Recibe el fichero de stock que se desea mostrar
+function list
+{
+	local f=$1;
+	
+	# Mostramos la cabecera
+	echo "=========================================================";
+	echo "COD.|UNI.|NOMBRE DEL PRODUCTO                     |PRECIO";
+	echo "=========================================================";
+	# Ordenamos el fichero, y para cada línea ...
+	sort "$f" | while read linea
+	do
+		# ... extraemos todos los campos
+		codigo=$(echo "$linea" | cut -c1-4);
+		unidades=$(echo "$linea" | cut -c5-7);
+		producto=$(echo "$linea" | cut -c8-48);
+		precio=$(echo "$linea" | cut -c49-55);
+		# y mostramos los campos en forma de tabla
+		echo "$codigo|$unidades|$producto|$precio";
+	done
+	echo "=========================================================";
+}
+
+# Nos encargamos de llamar a la función que se haya solicitado, con los
+# argumentos que necesite cada una
+if [ $2 == "stock" ]; then
+	stock $1 $3
+elif [ $2 == "list" ]; then
+	list $1
+fi

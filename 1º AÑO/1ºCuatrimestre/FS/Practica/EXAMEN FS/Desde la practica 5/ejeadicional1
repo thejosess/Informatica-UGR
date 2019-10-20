@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ $# -eq 1 ]
+then
+
+	es_archivo=`test -f $1 && echo true|| echo false`;
+	if [ $es_archivo == "true" ]
+	then
+		cat $1 | grep -v "^[ ]*$" > temporal
+		rm $1
+		mv temporal $1
+	else
+		echo "No es un archivo regular"
+	fi
+else
+	echo "Numero incorrecto de paramentros"
+fi

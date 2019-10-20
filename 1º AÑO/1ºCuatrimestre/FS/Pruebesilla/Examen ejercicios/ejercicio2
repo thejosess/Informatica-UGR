@@ -1,0 +1,57 @@
+﻿g++ -g main.cpp suma.cpp resta.cpp -o ejercicio2.gdb		#Crear un archivo para usar el gdb
+
+gdb ejercicio2.gdb						#Entramos en el gdb
+
+break 20							#Hacemos breakpoints en distintas partes del código para ver el valor de las variables ya que es ahí donde está el error
+
+break 22
+
+break 26							#Seguramente esté al realizar la función resta ya que el orden inverso lo hace mal, pero por si acaso lo vemos en otros puntos
+
+break 30
+break 34
+
+info locals
+
+display serie
+
+display serie2
+
+display num1
+
+display num2
+
+run
+
+continue 							#Hacemos continue para ir viendo como cambian los valores a lo largo del programa y vemos que al llegar al quinto breakpoint (el de la resta)
+		
+								#El valor de la serie está incrementado en 1, por lo que en la línea donde empieza la función resta (antes del while) ponemos un -1
+
+
+
+El error estaba en la línea 28 y para corregirlo añadí un -1 a la "serie" -->    serie=resta(serie,num2)-1;
+
+
+El código ensamblador de la función resta es lo obtenemos poniendo disassemble resta:
+
+   0x080485c8 <+0>:	push   %ebp
+
+   0x080485c9 <+1>:	mov    %esp,%ebp
+
+   0x080485cb <+3>:	sub    $0x10,%esp
+
+=> 0x080485ce <+6>:	mov    0xc(%ebp),%eax
+
+   0x080485d1 <+9>:	mov    0x8(%ebp),%edx
+
+   0x080485d4 <+12>:	sub    %eax,%edx
+
+   0x080485d6 <+14>:	mov    %edx,%eax
+
+   0x080485d8 <+16>:	mov    %eax,-0x4(%ebp)
+
+   0x080485db <+19>:	mov    -0x4(%ebp),%eax
+
+   0x080485de <+22>:	leave
+
+   0x080485df <+23>:	ret  

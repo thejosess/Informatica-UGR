@@ -1,0 +1,18 @@
+#!/bin/bash
+while :
+do 
+	printf "\n\nMenu de configuracion: \n"
+	printf "\tInstalar ... [Y, y]\n"
+	printf "\tNo instalar [N, n]\n"
+	printf "\tPara finalizar pulse 'q'\n"
+
+	read -n1 -p "Opccion: " OPCION
+	case $OPCION in
+		Y | y ) printf "\nHAs seleccionado %s \ n" $OPCCION;;
+		N | n ) printf "\nHAs seleccionado %s \ n" $OPCCION;;
+		q ) printf "\n"
+			break;;
+		*) printf "\n Seleccion invalida: %s \n";;
+	esac
+	sleep 2 # duerme durante 2 segundos
+done

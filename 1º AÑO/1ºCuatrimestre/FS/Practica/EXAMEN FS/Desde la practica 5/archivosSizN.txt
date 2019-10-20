@@ -1,0 +1,14 @@
+find ./ -size -2c
+./ejercicio1/Ejer2/readme2.pdf
+./ejercicio1/Ejer2/ejer2arch.txt
+./ejercicio1/Ejer2/ejer2filletags.txt
+./ejercicio1/Ejer1/filetags.txt
+./ejercicio1/Ejer1/robet201.me
+./ejercicio1/Ejer1/practFS.ext
+./ejercicio1/Ejer1/Ejer21/ejer11sol.txt
+./ejercicio1/Ejer1/Ejer21/robet202.me
+./ejercicio1/Ejer1/Ejer21/blue.me
+./ejercicio1/Ejer1/arch100.txt
+./ejercicio1/Ejer3/ejer3filetags.txt
+./ejercicio1/Ejer3/ejer3arch.txt
+./ejercicio1/Ejer3/readme3.pdf

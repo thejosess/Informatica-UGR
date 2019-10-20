@@ -1,0 +1,36 @@
+#!/bin/bash
+#Nombre del fichero: newdirfiles
+if [ $# -eq 3 ]
+then
+#Comprueba que el numero,parametro 2, sea del 1 al 99
+num_files=$2
+if [ `echo $num_files|grep "^[1-9][0-9]\?$"` ]
+then
+#Creo el directorio si no existe
+dirname=$1
+if [[ `test -d $dirname && echo 0 || echo 1` == 1 ]]
+then
+mkdir $dirname
+fi
+# y le doy permisos necesarios
+chmod u+rw $dirname
+basefilename=$3
+cd $dirname
+#Recorro del 1 hasta num_files
+for i in `seq 1 1 $num_files`
+do
+#Esto solo sirve para poner el 0 en los menores de 9. Ej: 01
+if [ $i -lt 10 ]
+then
+touch $basefilename"0"$i
+else
+touch $basefilename$i
+fi
+done
+echo "Archivo/s creado/s correctamente"
+else
+echo "El numero ha de ser del 1 al 99"
+fi
+else
+echo "Numero incorrecto de parametros"
+fi

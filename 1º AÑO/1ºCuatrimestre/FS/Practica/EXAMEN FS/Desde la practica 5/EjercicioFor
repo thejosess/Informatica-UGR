@@ -1,0 +1,7 @@
+#!/bin/bash
+
+for NUM in `seq 0 1 4 `;
+do
+	let " NUM=$NUM * 2 + 1 "
+	printf "Numero impar %d\n" $NUM
+done

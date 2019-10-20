@@ -1,0 +1,25 @@
+#!/bin/bash
+if [[ $# -ne 2 ]]
+	then echo "Error numero de argumentos"
+elif [[ ! -d $1 ]]
+	then mkdir /home/$1
+elif [[ ! -f $2 ]]
+	then touch test
+else
+	if [[ -f $2 ]]
+		then (man find | head)>>$2
+	if [[ -d $1 ]]
+		then (man test | head)>>test
+		if [ -f $2 ]; then
+			if [ -d $1 ]; then
+
+			head test > SALIDA
+			tail -2 $2 >> SALIDA	
+			(test -r | wc -l) >> SALIDA
+				echo "Texto guardado en SALIDA"
+			fi
+		fi
+	fi
+	fi
+fi
+#Si todo se cumple --> SALIDA (10 primeras lineas del primer archivo, 2 ultimas del segundo y cuantos archivos hay en esa carpeta con permisos de lectura)

@@ -1,0 +1,87 @@
+(gdb) break 43 //Creo un breakpoint en linea 30
+Punto de interrupción 1 at 0x8048613: file main.cpp, line 43.
+(gdb) run
+Starting program: /home/superjes/ejemploprueba
+Breakpoint 1, main () at main.cpp:44
+44 final1 = multiplica(3, 2);
+(gdb) print final1
+$1 = 134514411
+(gdb) print final2
+$2 = 1174096
+(gdb) disassemble
+Dump of assembler code for function main():
+ 0x0804860a <+0>: push %ebp
+ 0x0804860b <+1>: mov %esp,%ebp
+ 0x0804860d <+3>: and $0xfffffff0,%esp
+ 0x08048610 <+6>: sub $0x20,%esp
+=> 0x08048613 <+9>: movl $0x2,0x4(%esp)
+ 0x0804861b <+17>: movl $0x3,(%esp)
+ 0x08048622 <+24>: call 0x80485d8 <multiplica(int, int)>
+ 0x08048627 <+29>: mov %eax,0x18(%esp)
+ 0x0804862b <+33>: movl $0x0,0x1c(%esp)
+ 0x08048633 <+41>: jmp 0x804864a <main()+64>
+ 0x08048635 <+43>: mov 0x1c(%esp),%eax
+ 0x08048639 <+47>: mov %eax,(%esp)
+ 0x0804863c <+50>: call 0x80485c4 <cuenta(int)>
+ 0x08048641 <+55>: mov %eax,0x14(%esp)
+ 0x08048645 <+59>: addl $0x1,0x1c(%esp)
+ 0x0804864a <+64>: cmpl $0x63,0x1c(%esp)
+ 0x0804864f <+69>: setle %al
+ 0x08048652 <+72>: test %al,%al
+ 0x08048654 <+74>: jne 0x8048635 <main()+43>
+ 0x08048656 <+76>: mov 0x18(%esp),%eax
+ 0x0804865a <+80>: mov %eax,0x4(%esp)
+ 0x0804865e <+84>: movl $0x804a040,(%esp)
+---Type <return> to continue, or q <return> to quit---
+ 0x08048665 <+91>: call 0x8048498 <_ZNSolsEi@plt>
+ 0x0804866a <+96>: movl $0x80487a0,0x4(%esp)
+ 0x08048672 <+104>: mov %eax,(%esp)
+Portafolios Prácticas Jesús García Godoy –Fundamentos del Software
+ 0x08048675 <+107>: call 0x80484f8
+<_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
+ 0x0804867a <+112>: mov $0x0,%eax
+ 0x0804867f <+117>: leave
+ 0x08048680 <+118>: ret
+End of assembler dump.
+(gdb) continue
+Continuando.
+Breakpoint 2, main () at main.cpp:47
+47 for (i = 0; i < 100; i ++)
+(gdb) print final1
+$3 = 6
+(gdb) print final2
+$4 = 1174096
+(gdb) disassemble
+Dump of assembler code for function main():
+ 0x0804860a <+0>: push %ebp
+ 0x0804860b <+1>: mov %esp,%ebp
+ 0x0804860d <+3>: and $0xfffffff0,%esp
+ 0x08048610 <+6>: sub $0x20,%esp
+ 0x08048613 <+9>: movl $0x2,0x4(%esp)
+ 0x0804861b <+17>: movl $0x3,(%esp)
+ 0x08048622 <+24>: call 0x80485d8 <multiplica(int, int)>
+ 0x08048627 <+29>: mov %eax,0x18(%esp)
+=> 0x0804862b <+33>: movl $0x0,0x1c(%esp)
+ 0x08048633 <+41>: jmp 0x804864a <main()+64>
+ 0x08048635 <+43>: mov 0x1c(%esp),%eax
+ 0x08048639 <+47>: mov %eax,(%esp)
+ 0x0804863c <+50>: call 0x80485c4 <cuenta(int)>
+ 0x08048641 <+55>: mov %eax,0x14(%esp)
+ 0x08048645 <+59>: addl $0x1,0x1c(%esp)
+ 0x0804864a <+64>: cmpl $0x63,0x1c(%esp)
+ 0x0804864f <+69>: setle %al
+ 0x08048652 <+72>: test %al,%al
+ 0x08048654 <+74>: jne 0x8048635 <main()+43>
+ 0x08048656 <+76>: mov 0x18(%esp),%eax
+ 0x0804865a <+80>: mov %eax,0x4(%esp)
+ 0x0804865e <+84>: movl $0x804a040,(%esp)
+---Type <return> to continue, or q <return> to quit---
+ 0x08048665 <+91>: call 0x8048498 <_ZNSolsEi@plt>
+ 0x0804866a <+96>: movl $0x80487a0,0x4(%esp)
+ 0x08048672 <+104>: mov %eax,(%esp)
+ 0x08048675 <+107>: call 0x80484f8
+<_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
+ 0x0804867a <+112>: mov $0x0,%eax
+ 0x0804867f <+117>: leave
+ 0x08048680 <+118>: ret
+End of assembler dump.

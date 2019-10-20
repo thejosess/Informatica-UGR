@@ -1,0 +1,9 @@
+Polinomio2G p1;
+Polinomio2G p2;
+Polinomio2G p3;
+
+p3.suma(p1, p2);
+
+cout<<"La suma es: "<<p3.a<<"x^2+"<<p3.b<<"x+"<<p3.c;
+
+Bueno para eso tienes que poner las variables publicas en la clase si las quieres dejar privadas haz una funcion que muetre cada variable

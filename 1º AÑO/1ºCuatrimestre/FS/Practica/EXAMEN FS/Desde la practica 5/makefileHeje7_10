@@ -1,0 +1,17 @@
+
+CC=g++
+CPPFLAGS= -C -Wall -I./includes
+SOURCE_MODULES=main.cpp stack.cpp getop.cpp getch.cpp
+OBJECT_MODULES=$(SOURCE_MODULES: .cpp=.o)
+EXECUTABLE=calculadorapolaca
+
+all: $(OBJECT_MODULES) $(EXECUTABLE)
+
+$(EXECUTABLE): $(OBJECT_MODULES)
+	$(CC) $^ -o $@
+
+.o: .cpp ./cabeceras/calc.h
+	$(CC) -I./cabeceras $(CPPFLAGS) $< -o $@
+
+borrar:
+	rm  *.o calculadorapolaca

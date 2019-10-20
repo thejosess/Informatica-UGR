@@ -1,0 +1,3 @@
+-Para que el giro sea más rápido solo hay que cambiar el valor de la variable INTERVAL, que vale 1, y
+poner un valor más pequeño.
+-La orden -e de los echo es para poder interpretar las barras invertidas como caracteres.

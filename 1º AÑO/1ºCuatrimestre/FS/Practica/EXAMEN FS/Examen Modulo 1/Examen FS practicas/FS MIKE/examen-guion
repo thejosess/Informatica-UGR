@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if (( $# == 3)); 
+then 
+	nficheros=`find $1 -name "*" | wc -l`;
+	nficherosx=`find $1 -executable | wc -l`;
+	nficherosxno=$[$nficheros - $nficherosx];
+	echo "De un total de $nficheros ficheros, hay $nficherosxno ficheros no ejecutables";
+	
+	man $2 > ayuda;
+	head -10 ayuda;
+
+	grep -n $3 ayuda > resultado;
+
+else 
+	printf "Es necesario introducir tres argumentos con la siguiente estructura:\nexamen-guion <nombre_directorio><comando><palabra>\n";
+
+fi;

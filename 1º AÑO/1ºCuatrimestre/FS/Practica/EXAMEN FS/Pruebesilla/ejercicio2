@@ -1,0 +1,70 @@
+Al ejecutar el programa observamos que la secuencia inversa se imprime con un valor de más siempre.
+El valor que va imprimiendo es el de la variable "serie" por lo que vamos a ver su estado en la ln 31, antes de empezar a imprimir la secuencia.
+
+gdb a.out
+
+(gdb) break 31							//Añado un breakpoint en la ln 31 para parar el programa ahí
+
+Punto de interrupción 1 at 0x4006fb: file main.cpp, line 31.
+(gdb) run							//Ejecuto el programaa
+Starting program: /fenix/alum/d4/javierb/examen-archivos/a.out 
+Primer elemento: 2
+Ultimo elemento: 6
+2,5,9,14,20,
+Fin de la serie
+
+Breakpoint 1, main () at main.cpp:31
+31	 printf("%d,",serie);
+(gdb) info locals						//Estando en la ln 31 veo el valor de las variables, serie vale uno más de lo correcto.
+serie = 21
+serie2 = 2
+num1 = 7
+num2 = 6
+(gdb) set variable serie=20					//Compruebo que cambiando serie a su valor correcto el programa funciona correctamente
+(gdb) continue
+Continuando.
+
+Breakpoint 1, main () at main.cpp:31
+31	 printf("%d,",serie);
+(gdb) info locls
+info orden indefinida: «locls». Intente con «help info»
+(gdb) info locals
+serie = 14
+serie2 = 2
+num1 = 7
+num2 = 5
+(gdb) break 27
+Punto de interrupción 1 at 0x4006d7: file main.cpp, line 27.
+(gdb) run
+Starting program: /fenix/alum/d4/javierb/examen-archivos/a.out 
+Primer elemento: 2
+Ultimo elemento: 6
+(gdb) info locals						
+serie = 27
+
+
+b) El error detectado es que en la ln 28 a serie se le asigna un valor un número por encima al debido. Si le restamos uno a serie con serie=resta(serie,1) se arregla.
+
+
+ln 28: serie=resta(serie,num2);
+ln 29: serie=resta(serie,1);  //Para arreglar el error
+
+c) 
+
+Breakpoint 1, resta (x=27, y=6) at resta.cpp:15
+15	   tmp = x - y; 
+
+(gdb) disassemble
+Dump of assembler code for function resta(int, int):
+   0x0000000000400774 <+0>:	push   %rbp
+   0x0000000000400775 <+1>:	mov    %rsp,%rbp
+   0x0000000000400778 <+4>:	mov    %edi,-0x14(%rbp)
+   0x000000000040077b <+7>:	mov    %esi,-0x18(%rbp)
+=> 0x000000000040077e <+10>:	mov    -0x14(%rbp),%eax
+   0x0000000000400781 <+13>:	sub    -0x18(%rbp),%eax
+   0x0000000000400784 <+16>:	mov    %eax,-0x4(%rbp)
+   0x0000000000400787 <+19>:	mov    -0x4(%rbp),%eax
+   0x000000000040078a <+22>:	pop    %rbp
+   0x000000000040078b <+23>:	retq   
+End of assembler dump.
+

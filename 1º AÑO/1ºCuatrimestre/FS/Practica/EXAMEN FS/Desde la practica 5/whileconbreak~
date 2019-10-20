@@ -1,0 +1,11 @@
+#!/bin/bash
+printf "%s\n" "Introduzca los nombres de archivos o teclea FIN"
+while true ;
+do
+	read -p "Archivo ?" ARCHIVO
+	if [ "$ARCHIVO" = "FIN" ] ; then
+		break
+	elif test -f "$ARCHIVO" ; then
+		printf "%s\n" "El archivo existe"
+	else
+		printf "%s\n" "El archivo NO existe"

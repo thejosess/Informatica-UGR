@@ -1,0 +1,13 @@
+#!/bin/bash
+
+comprobacion1=`test -f $1 -a -x $1 && echo " $1 Es un fichero regular y ejecutable" || echo "$1 no es ni un fichero regular ni ejecutable"`
+comprobacion2=`test -h $1 && "$1 Es un enlace simbolico" || echo "$1 No es un enlace simbolico"`
+#EL uso de las comillas invertidas en un poco de postureo , es para que quede mas bonito 
+echo $comprobacion1
+echo $comprobacion2
+# Esto es un añadido 
+if [ $1 -nt $2 ]
+	then echo " El argumento $1 es mas reciente "
+else
+	"El argumento $2 es mas reciente"
+fi

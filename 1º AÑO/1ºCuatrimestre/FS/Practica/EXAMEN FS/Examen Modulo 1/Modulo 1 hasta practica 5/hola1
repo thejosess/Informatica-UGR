@@ -1,0 +1,3 @@
+#! /bin/bash
+
+printf "Me llamo $1\n"

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "Argumento1: $1"
+echo "Argumento2: $2"
+
+printf "¿Es argumento 1 == argumento2 ? : %1d\n" $(($1==$2))
+printf "¿Es argumento 1 > argumento2 ? : %1d\n" $(($1>$2))
+printf "¿Es argumento 1 < argumento2 ? : %1d\n" $(($1<$2))
