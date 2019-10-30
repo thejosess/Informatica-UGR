@@ -1,0 +1,307 @@
+
+
+*******************************************************************************
+Mon Oct 15 20:16:04 2018
+
+
+FIT:    data read from "ordenacion_peor.dat"
+        format = z
+        #datapoints = 60
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a *x^2 + b
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Mon Oct 15 20:16:24 2018
+
+
+FIT:    data read from "ordenacion_peor.dat"
+        format = z
+        #datapoints = 60
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a *x^2
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Mon Oct 15 20:21:59 2018
+
+
+FIT:    data read from "ordenacion_peor.dat"
+        format = z
+        #datapoints = 60
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a *x^2
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Mon Oct 15 20:22:23 2018
+
+
+FIT:    data read from "ordenacion_peor.dat"
+        format = z
+        #datapoints = 60
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a *x^2 + b
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Mon Oct 15 20:23:31 2018
+
+
+FIT:    data read from "ordenacion_peor.dat"
+        format = z
+        #datapoints = 60
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a *x**2
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a            
+   0 9.4772015448e+18   0.00e+00  3.97e+08    1.000000e+00
+   5 4.2661185798e-02  -1.63e-11  3.97e+06    1.383296e-09
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.0426612
+rel. change during last iteration : -1.62651e-16
+
+degrees of freedom    (FIT_NDF)                        : 59
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.02689
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000723071
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 1.3833e-09       +/- 8.735e-12    (0.6314%)
+
+
+*******************************************************************************
+Mon Oct 15 20:31:15 2018
+
+
+FIT:    data read from "ordenacion.dat"
+        format = z
+        #datapoints = 60
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a *x**2
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a            
+   0 9.4772015466e+18   0.00e+00  3.97e+08    1.000000e+00
+   5 1.3415553542e-03  -1.78e-10  3.97e+03    1.289283e-09
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.00134156
+rel. change during last iteration : -1.77797e-15
+
+degrees of freedom    (FIT_NDF)                        : 59
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.00476846
+variance of residuals (reduced chisquare) = WSSR/ndf   : 2.27382e-05
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 1.28928e-09      +/- 1.549e-12    (0.1201%)
+
+
+*******************************************************************************
+Mon Oct 15 20:35:01 2018
+
+
+FIT:    data read from "ordenacion.dat"
+        format = z
+        #datapoints = 60
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a *x**2+b*x+c
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Mon Oct 15 20:35:28 2018
+
+
+FIT:    data read from "ordenacion.dat"
+        format = z
+        #datapoints = 60
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a *x**2+b*x+c
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Mon Oct 15 20:36:02 2018
+
+
+FIT:    data read from "ordenacion.dat"
+        format = z
+        #datapoints = 60
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a *x**2 + b*x + c
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Mon Oct 15 20:36:56 2018
+
+
+FIT:    data read from "ordenacion.dat"
+        format = z
+        #datapoints = 60
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a *x**2 + b*x
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Mon Oct 15 20:36:59 2018
+
+
+FIT:    data read from "ordenacion.dat"
+        format = z
+        #datapoints = 60
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a *x**2 + b*x
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Mon Oct 15 20:37:03 2018
+
+
+FIT:    data read from "ordenacion.dat"
+        format = z
+        #datapoints = 60
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a *x**2 + b*x
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 1.7730098201e+10   0.00e+00  1.22e+04    1.289280e-09   1.000000e+00
+   8 6.1343555381e-04  -1.94e-07  1.22e-04    1.255329e-09   8.107421e-07
+
+After 8 iterations the fit converged.
+final sum of squares of residuals : 0.000613436
+rel. change during last iteration : -1.93904e-12
+
+degrees of freedom    (FIT_NDF)                        : 58
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.00325215
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.05765e-05
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 1.25533e-09      +/- 4.226e-12    (0.3367%)
+b               = 8.10742e-07      +/- 9.771e-08    (12.05%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -0.968  1.000 
+
+
+*******************************************************************************
+Mon Oct 15 20:37:22 2018
+
+
+FIT:    data read from "ordenacion.dat"
+        format = z
+        #datapoints = 60
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a *x**2 + b*x + c
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 5.9985470544e+01   0.00e+00  6.45e-01    1.255329e-09   8.107421e-07   1.000000e+00
+   5 6.0516619718e-04  -1.41e-04  6.45e-06    1.259416e-09   6.643638e-07   1.092177e-03
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.000605166
+rel. change during last iteration : -1.41351e-09
+
+degrees of freedom    (FIT_NDF)                        : 57
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.00325837
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.0617e-05
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 1.25942e-09      +/- 6.275e-12    (0.4983%)
+b               = 6.64364e-07      +/- 1.926e-07    (28.99%)
+c               = 0.00109218       +/- 0.001238     (113.3%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b              -0.968  1.000 
+c               0.738 -0.861  1.000 
+
+
+*******************************************************************************
+Mon Oct 15 20:39:02 2018
+
+
+FIT:    data read from "ordenacion.dat"
+        format = z
+        #datapoints = 60
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a *x**2 + b*x + c
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 6.0516632278e-04   0.00e+00  2.89e-01    1.259420e-09   6.643640e-07   1.092180e-03
+   1 6.0516619719e-04  -2.08e-02  2.89e-02    1.259416e-09   6.643640e-07   1.092180e-03
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.000605166
+rel. change during last iteration : -2.07531e-07
+
+degrees of freedom    (FIT_NDF)                        : 57
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.00325837
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.0617e-05
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 1.25942e-09      +/- 6.275e-12    (0.4983%)
+b               = 6.64364e-07      +/- 1.926e-07    (28.99%)
+c               = 0.00109218       +/- 0.001238     (113.3%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b              -0.968  1.000 
+c               0.738 -0.861  1.000 

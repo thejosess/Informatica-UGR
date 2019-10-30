@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Diccionario: Fichero Fuente include/Termino.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Diccionario
+   &#160;<span id="projectnumber">1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Termino.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef TERMINO</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define TERMINO</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;Vector_Dinamico.h&quot;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classTermino.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTermino.html">Termino</a></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">string</span> palabra;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    Vector_Dinamico&lt;string&gt; definiciones;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classTermino.html#ac3b1425fec4d38d78c5d36cb5fe8e728">   22</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classTermino.html#ac3b1425fec4d38d78c5d36cb5fe8e728">Termino</a>(){ definiciones.resize(0); };</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classTermino.html#a73baeaf5d990acd1772d325582fd95f4">   29</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classTermino.html#a73baeaf5d990acd1772d325582fd95f4">Termino</a>(<span class="keywordtype">string</span> palabra, Vector_Dinamico&lt;string&gt; definiciones){ this-&gt;palabra = palabra; this-&gt;definiciones = definiciones; };</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        </div><div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classTermino.html#a28543208f4f4a85683e0a373713a3243">   35</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classTermino.html#a28543208f4f4a85683e0a373713a3243">Termino</a>(<span class="keyword">const</span> <a class="code" href="classTermino.html">Termino</a> &amp; term){ this-&gt;palabra = term.palabra; this-&gt;definiciones = term.definiciones; };</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        </div><div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classTermino.html#aca7e4f7a65e39d79ce59be80c6b88690">   41</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">string</span> <a class="code" href="classTermino.html#aca7e4f7a65e39d79ce59be80c6b88690">getPalabra</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> palabra; };</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        </div><div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classTermino.html#a5fd3e7725f762ea79b7f153fff8448e9">   47</a></span>&#160;    <span class="keyword">inline</span> Vector_Dinamico&lt;string&gt; <a class="code" href="classTermino.html#a5fd3e7725f762ea79b7f153fff8448e9">getDefiniciones</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;definiciones; };</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        </div><div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classTermino.html#a8282191c52b4c28ff5beda0d78cb9a7b">   53</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classTermino.html#a8282191c52b4c28ff5beda0d78cb9a7b">getNumDefiniciones</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> definiciones.size(); };</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        </div><div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classTermino.html#a62ab7aa09c2e230ad52eff14554d9fc7">   59</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classTermino.html#a62ab7aa09c2e230ad52eff14554d9fc7">setPalabra</a>(<span class="keywordtype">string</span> palabra){ this-&gt;palabra = palabra; };</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        </div><div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classTermino.html#a463e17034df9a1bf12ac2df32113ebf6">   65</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classTermino.html#a463e17034df9a1bf12ac2df32113ebf6">setDefiniciones</a>(Vector_Dinamico&lt;string&gt; definiciones){ this-&gt;definiciones = definiciones; };</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        </div><div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classTermino.html#a4412fc8c5a55129f9ce3ae5ded5005a4">   71</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classTermino.html#a4412fc8c5a55129f9ce3ae5ded5005a4">setDefinicion</a>(<span class="keywordtype">string</span> definicion){ this-&gt;definiciones.addElemento(definicion); };</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        </div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="classTermino.html">Termino</a>&amp; termino);</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        </div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">friend</span> istream&amp; operator&gt;&gt;(istream&amp; is, <a class="code" href="classTermino.html">Termino</a>&amp; term);</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        </div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">friend</span> ostream&amp; operator&lt;&lt;(ostream&amp; os, <span class="keyword">const</span> <a class="code" href="classTermino.html">Termino</a>&amp; term);</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div></div>
+<div class="ttc" id="classTermino_html_a4412fc8c5a55129f9ce3ae5ded5005a4"><div class="ttname"><a href="classTermino.html#a4412fc8c5a55129f9ce3ae5ded5005a4">Termino::setDefinicion</a></div><div class="ttdeci">void setDefinicion(string definicion)</div><div class="ttdoc">Asignacion de una definicion pasada por parametro a la definicion. </div><div class="ttdef"><b>Definition:</b> Termino.h:71</div></div>
+<div class="ttc" id="classTermino_html_a5fd3e7725f762ea79b7f153fff8448e9"><div class="ttname"><a href="classTermino.html#a5fd3e7725f762ea79b7f153fff8448e9">Termino::getDefiniciones</a></div><div class="ttdeci">Vector_Dinamico&lt; string &gt; getDefiniciones() const</div><div class="ttdoc">Devuelve las definiciones. </div><div class="ttdef"><b>Definition:</b> Termino.h:47</div></div>
+<div class="ttc" id="classTermino_html_aca7e4f7a65e39d79ce59be80c6b88690"><div class="ttname"><a href="classTermino.html#aca7e4f7a65e39d79ce59be80c6b88690">Termino::getPalabra</a></div><div class="ttdeci">string getPalabra() const</div><div class="ttdoc">Devuelve una palabra. </div><div class="ttdef"><b>Definition:</b> Termino.h:41</div></div>
+<div class="ttc" id="classTermino_html_a8282191c52b4c28ff5beda0d78cb9a7b"><div class="ttname"><a href="classTermino.html#a8282191c52b4c28ff5beda0d78cb9a7b">Termino::getNumDefiniciones</a></div><div class="ttdeci">int getNumDefiniciones() const</div><div class="ttdoc">Devuelve el numero de definiciones. </div><div class="ttdef"><b>Definition:</b> Termino.h:53</div></div>
+<div class="ttc" id="classTermino_html"><div class="ttname"><a href="classTermino.html">Termino</a></div><div class="ttdef"><b>Definition:</b> Termino.h:10</div></div>
+<div class="ttc" id="classTermino_html_a62ab7aa09c2e230ad52eff14554d9fc7"><div class="ttname"><a href="classTermino.html#a62ab7aa09c2e230ad52eff14554d9fc7">Termino::setPalabra</a></div><div class="ttdeci">void setPalabra(string palabra)</div><div class="ttdoc">Asigna una palabra pasada por parametro a palabra. </div><div class="ttdef"><b>Definition:</b> Termino.h:59</div></div>
+<div class="ttc" id="classTermino_html_ac3b1425fec4d38d78c5d36cb5fe8e728"><div class="ttname"><a href="classTermino.html#ac3b1425fec4d38d78c5d36cb5fe8e728">Termino::Termino</a></div><div class="ttdeci">Termino()</div><div class="ttdoc">Constructor por defecto. </div><div class="ttdef"><b>Definition:</b> Termino.h:22</div></div>
+<div class="ttc" id="classTermino_html_a73baeaf5d990acd1772d325582fd95f4"><div class="ttname"><a href="classTermino.html#a73baeaf5d990acd1772d325582fd95f4">Termino::Termino</a></div><div class="ttdeci">Termino(string palabra, Vector_Dinamico&lt; string &gt; definiciones)</div><div class="ttdoc">Constructor con parametros. </div><div class="ttdef"><b>Definition:</b> Termino.h:29</div></div>
+<div class="ttc" id="classTermino_html_a463e17034df9a1bf12ac2df32113ebf6"><div class="ttname"><a href="classTermino.html#a463e17034df9a1bf12ac2df32113ebf6">Termino::setDefiniciones</a></div><div class="ttdeci">void setDefiniciones(Vector_Dinamico&lt; string &gt; definiciones)</div><div class="ttdoc">Aisgna definiciones pasadas por parametro a las definiciones. </div><div class="ttdef"><b>Definition:</b> Termino.h:65</div></div>
+<div class="ttc" id="classTermino_html_a28543208f4f4a85683e0a373713a3243"><div class="ttname"><a href="classTermino.html#a28543208f4f4a85683e0a373713a3243">Termino::Termino</a></div><div class="ttdeci">Termino(const Termino &amp;term)</div><div class="ttdoc">Constructor con un parametro termino. </div><div class="ttdef"><b>Definition:</b> Termino.h:35</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

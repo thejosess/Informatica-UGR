@@ -1,0 +1,12 @@
+digraph "include/letra.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node3 [label="include/letra.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="include/conjunto_letras.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$conjunto__letras_8h.html",tooltip="fichero de cabecera del TDA conjunto_letras "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="include/lista_palabras.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$lista__palabras_8h.html",tooltip="fichero de cabecera del TDA lista_palabras "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="include/bolsa_letras.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bolsa__letras_8h.html",tooltip="fichero de cabecera del TDA bolsa_letras "];
+}

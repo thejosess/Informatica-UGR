@@ -1,0 +1,12 @@
+notas para doxygen
+
+PROJECT_NAME
+PROJECT_NUMBER
+OUTPUT_DIRECTORY
+input --> poner aqui los archivos q se documentan, normalmente los .h pero puede ser los .cpp
+generate_html --> genera html doxygen, poner a yes
+html_output= html
+generate_latex=no
+extracprivate=yes 
+
+generar el doxyfile sin comentarios con la opcion -s

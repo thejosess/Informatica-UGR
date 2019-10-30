@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Practica Final: Fichero Fuente include/bolsa_letras.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Practica Final
+   &#160;<span id="projectnumber">1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">bolsa_letras.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="bolsa__letras_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef BOLSA</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define BOLSA</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;set&gt;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;random&gt;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="lista__palabras_8h.html">lista_palabras.h</a>&quot;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classbolsa__letras.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="classbolsa__letras.html">bolsa_letras</a></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classbolsa__letras.html#afcccd747e4cf1991dc66afd72f3f61ac">   49</a></span>&#160;multiset&lt;char&gt; <a class="code" href="classbolsa__letras.html#afcccd747e4cf1991dc66afd72f3f61ac">bolsa</a>; </div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div><div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classbolsa__letras.html#a2e3543129b69e255741099fb137cceae">   56</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classbolsa__letras.html#a2e3543129b69e255741099fb137cceae">bolsa_letras</a>() {};</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div><div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classbolsa__letras.html#afcc5d9085b894fbb0a3acb31b63228cd">   62</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classbolsa__letras.html#afcc5d9085b894fbb0a3acb31b63228cd">bolsa_letras</a>(<a class="code" href="classconjunto__letras.html">conjunto_letras</a> &amp; letras) { letras &gt;&gt; *<span class="keyword">this</span>; };</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div><div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classbolsa__letras.html#a70aa25a4429bd539d0966c2b2f02d8c3">   68</a></span>&#160;  <span class="keyword">inline</span> <a class="code" href="classbolsa__letras.html#a70aa25a4429bd539d0966c2b2f02d8c3">bolsa_letras</a>(<span class="keyword">const</span> <a class="code" href="classbolsa__letras.html">bolsa_letras</a> &amp; letras) { *<span class="keyword">this</span> = letras; };</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div><div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classbolsa__letras.html#a321eeff981b52782100bada7fe61ab1c">   73</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classbolsa__letras.html#a321eeff981b52782100bada7fe61ab1c">size</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> bolsa.size(); };</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">friend</span> <span class="keywordtype">void</span> operator&gt;&gt;(<span class="keyword">const</span> <a class="code" href="classconjunto__letras.html">conjunto_letras</a> &amp; conjunto, <a class="code" href="classbolsa__letras.html">bolsa_letras</a> &amp; bolsa);</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <a class="code" href="classbolsa__letras.html">bolsa_letras</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classbolsa__letras.html">bolsa_letras</a> &amp; original);</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">char</span> coger_letra();</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div><div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classbolsa__letras.html#a8884da45ac58b64b7b52e2f6dd0d481f">  100</a></span>&#160;    <span class="keyword">typedef</span> multiset&lt;char&gt;::iterator <a class="code" href="classbolsa__letras.html#a8884da45ac58b64b7b52e2f6dd0d481f">iterator</a>;</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div><div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="classbolsa__letras.html#a15428a29862a141c5ef1cf6e3f1250a2">  107</a></span>&#160;    <span class="keyword">typedef</span> multiset&lt;char&gt;::const_iterator <a class="code" href="classbolsa__letras.html#a15428a29862a141c5ef1cf6e3f1250a2">const_iterator</a>;</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div><div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="classbolsa__letras.html#a22a0c4478d907639a21c73425abf1cc9">  113</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classbolsa__letras.html#a8884da45ac58b64b7b52e2f6dd0d481f">bolsa_letras::iterator</a> <a class="code" href="classbolsa__letras.html#a22a0c4478d907639a21c73425abf1cc9">begin</a>() { <span class="keywordflow">return</span> bolsa.<a class="code" href="classbolsa__letras.html#a22a0c4478d907639a21c73425abf1cc9">begin</a>(); };</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div><div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="classbolsa__letras.html#a4f6907146eff47bf1bef45b28160bd79">  119</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classbolsa__letras.html#a15428a29862a141c5ef1cf6e3f1250a2">bolsa_letras::const_iterator</a> <a class="code" href="classbolsa__letras.html#a4f6907146eff47bf1bef45b28160bd79">begin</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> bolsa.cbegin(); } ;</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div><div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="classbolsa__letras.html#a01fe9b01d2a70572f4eef5608b183a59">  125</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classbolsa__letras.html#a8884da45ac58b64b7b52e2f6dd0d481f">bolsa_letras::iterator</a> <a class="code" href="classbolsa__letras.html#a01fe9b01d2a70572f4eef5608b183a59">end</a>() { <span class="keywordflow">return</span> bolsa.<a class="code" href="classbolsa__letras.html#a01fe9b01d2a70572f4eef5608b183a59">end</a>(); };</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div><div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="classbolsa__letras.html#ae68d6202dca0b6b887fadddb79274a8b">  131</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classbolsa__letras.html#a15428a29862a141c5ef1cf6e3f1250a2">bolsa_letras::const_iterator</a> <a class="code" href="classbolsa__letras.html#ae68d6202dca0b6b887fadddb79274a8b">end</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> bolsa.cend(); };</div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;};</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="classbolsa__letras_html_afcccd747e4cf1991dc66afd72f3f61ac"><div class="ttname"><a href="classbolsa__letras.html#afcccd747e4cf1991dc66afd72f3f61ac">bolsa_letras::bolsa</a></div><div class="ttdeci">multiset&lt; char &gt; bolsa</div><div class="ttdef"><b>Definition:</b> bolsa_letras.h:49</div></div>
+<div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div></div>
+<div class="ttc" id="classbolsa__letras_html_a321eeff981b52782100bada7fe61ab1c"><div class="ttname"><a href="classbolsa__letras.html#a321eeff981b52782100bada7fe61ab1c">bolsa_letras::size</a></div><div class="ttdeci">int size() const</div><div class="ttdoc">Devuelve el numero de char en el multiset. </div><div class="ttdef"><b>Definition:</b> bolsa_letras.h:73</div></div>
+<div class="ttc" id="classbolsa__letras_html_ae68d6202dca0b6b887fadddb79274a8b"><div class="ttname"><a href="classbolsa__letras.html#ae68d6202dca0b6b887fadddb79274a8b">bolsa_letras::end</a></div><div class="ttdeci">bolsa_letras::const_iterator end() const</div><div class="ttdoc">Devuelve el const_iterator cend del multiset&lt;char&gt; de la STL. </div><div class="ttdef"><b>Definition:</b> bolsa_letras.h:131</div></div>
+<div class="ttc" id="classbolsa__letras_html_a15428a29862a141c5ef1cf6e3f1250a2"><div class="ttname"><a href="classbolsa__letras.html#a15428a29862a141c5ef1cf6e3f1250a2">bolsa_letras::const_iterator</a></div><div class="ttdeci">multiset&lt; char &gt;::const_iterator const_iterator</div><div class="ttdoc">Definicion del tipo const_iteraror para relacionar el TDA diccionario con el tipo const_iterator de l...</div><div class="ttdef"><b>Definition:</b> bolsa_letras.h:107</div></div>
+<div class="ttc" id="classbolsa__letras_html"><div class="ttname"><a href="classbolsa__letras.html">bolsa_letras</a></div><div class="ttdoc">T.D.A. bolsa_letras. </div><div class="ttdef"><b>Definition:</b> bolsa_letras.h:27</div></div>
+<div class="ttc" id="classconjunto__letras_html"><div class="ttname"><a href="classconjunto__letras.html">conjunto_letras</a></div><div class="ttdoc">T.D.A. conjunto_letras. </div><div class="ttdef"><b>Definition:</b> conjunto_letras.h:24</div></div>
+<div class="ttc" id="classbolsa__letras_html_a01fe9b01d2a70572f4eef5608b183a59"><div class="ttname"><a href="classbolsa__letras.html#a01fe9b01d2a70572f4eef5608b183a59">bolsa_letras::end</a></div><div class="ttdeci">bolsa_letras::iterator end()</div><div class="ttdoc">Devuelve el iterator end del multiset&lt;char&gt; de la STL. </div><div class="ttdef"><b>Definition:</b> bolsa_letras.h:125</div></div>
+<div class="ttc" id="classbolsa__letras_html_a22a0c4478d907639a21c73425abf1cc9"><div class="ttname"><a href="classbolsa__letras.html#a22a0c4478d907639a21c73425abf1cc9">bolsa_letras::begin</a></div><div class="ttdeci">bolsa_letras::iterator begin()</div><div class="ttdoc">Devuelve el iterator begin del multiset&lt;char&gt; de la STL. </div><div class="ttdef"><b>Definition:</b> bolsa_letras.h:113</div></div>
+<div class="ttc" id="lista__palabras_8h_html"><div class="ttname"><a href="lista__palabras_8h.html">lista_palabras.h</a></div><div class="ttdoc">fichero de cabecera del TDA lista_palabras </div></div>
+<div class="ttc" id="classbolsa__letras_html_a70aa25a4429bd539d0966c2b2f02d8c3"><div class="ttname"><a href="classbolsa__letras.html#a70aa25a4429bd539d0966c2b2f02d8c3">bolsa_letras::bolsa_letras</a></div><div class="ttdeci">bolsa_letras(const bolsa_letras &amp;letras)</div><div class="ttdoc">Constructor con parametros. </div><div class="ttdef"><b>Definition:</b> bolsa_letras.h:68</div></div>
+<div class="ttc" id="classbolsa__letras_html_a2e3543129b69e255741099fb137cceae"><div class="ttname"><a href="classbolsa__letras.html#a2e3543129b69e255741099fb137cceae">bolsa_letras::bolsa_letras</a></div><div class="ttdeci">bolsa_letras()</div><div class="ttdoc">Construye una bolsa_letras vacía. </div><div class="ttdef"><b>Definition:</b> bolsa_letras.h:56</div></div>
+<div class="ttc" id="classbolsa__letras_html_afcc5d9085b894fbb0a3acb31b63228cd"><div class="ttname"><a href="classbolsa__letras.html#afcc5d9085b894fbb0a3acb31b63228cd">bolsa_letras::bolsa_letras</a></div><div class="ttdeci">bolsa_letras(conjunto_letras &amp;letras)</div><div class="ttdoc">Constructor con parametros. </div><div class="ttdef"><b>Definition:</b> bolsa_letras.h:62</div></div>
+<div class="ttc" id="classbolsa__letras_html_a4f6907146eff47bf1bef45b28160bd79"><div class="ttname"><a href="classbolsa__letras.html#a4f6907146eff47bf1bef45b28160bd79">bolsa_letras::begin</a></div><div class="ttdeci">bolsa_letras::const_iterator begin() const</div><div class="ttdoc">Devuelve el const_iterator cbegin del multiset&lt;char&gt; de la STL. </div><div class="ttdef"><b>Definition:</b> bolsa_letras.h:119</div></div>
+<div class="ttc" id="classbolsa__letras_html_a8884da45ac58b64b7b52e2f6dd0d481f"><div class="ttname"><a href="classbolsa__letras.html#a8884da45ac58b64b7b52e2f6dd0d481f">bolsa_letras::iterator</a></div><div class="ttdeci">multiset&lt; char &gt;::iterator iterator</div><div class="ttdoc">Definicion del tipo iteraror para relacionar el TDA diccionario con el tipo iterator de los tipos rep...</div><div class="ttdef"><b>Definition:</b> bolsa_letras.h:100</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

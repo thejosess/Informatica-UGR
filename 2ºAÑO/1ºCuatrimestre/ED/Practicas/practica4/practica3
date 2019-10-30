@@ -1,0 +1,32 @@
+#include <queue>
+#include <iostream>
+#include "vector_dinamico.h"
+
+
+
+template <typename T>
+struct dosValores
+{
+	T valor ;
+	T maximo ;
+}
+
+template <typename T>
+Class Cola_max
+{
+
+	private:
+		queue <dosValores> cola_max ;
+	
+	public:
+		Cola_max();
+		Cola_max();
+		
+
+
+
+
+
+
+
+};

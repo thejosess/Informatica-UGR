@@ -1,0 +1,1 @@
+g++ -o /bin/cola_max_vd.exe /src/Cola_max_vd.h -I ./include
