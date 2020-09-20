@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if test -O $1 && test -r $1
+	then printf "El archivo o directorio $1 tiene permiso de lectura y somos propietarios\n"
+elif test -O $1 && ! test -r $1	
+	then printf "El archivo o directorio $1 no tiene permiso de lectura y somos propietarios\n"
+elif ! test -O $1 &&  test -r $1	
+	then printf "El archivo o directorio $1  tiene permiso de lectura y no somos propietarios\n"
+else
+	printf "No tiene permiso de lectura y no somos propiertarios\n"
+fi

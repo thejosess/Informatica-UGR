@@ -1,0 +1,334 @@
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 oct19 ?        00:00:43 /sbin/init splash
+root         2     0  0 oct19 ?        00:00:00 [kthreadd]
+root         4     2  0 oct19 ?        00:00:00 [kworker/0:0H]
+root         6     2  0 oct19 ?        00:00:00 [mm_percpu_wq]
+root         7     2  0 oct19 ?        00:00:00 [ksoftirqd/0]
+root         8     2  0 oct19 ?        00:00:19 [rcu_sched]
+root         9     2  0 oct19 ?        00:00:00 [rcu_bh]
+root        10     2  0 oct19 ?        00:00:00 [migration/0]
+root        11     2  0 oct19 ?        00:00:00 [watchdog/0]
+root        12     2  0 oct19 ?        00:00:00 [cpuhp/0]
+root        13     2  0 oct19 ?        00:00:00 [cpuhp/1]
+root        14     2  0 oct19 ?        00:00:00 [watchdog/1]
+root        15     2  0 oct19 ?        00:00:00 [migration/1]
+root        16     2  0 oct19 ?        00:00:00 [ksoftirqd/1]
+root        18     2  0 oct19 ?        00:00:00 [kworker/1:0H]
+root        19     2  0 oct19 ?        00:00:00 [cpuhp/2]
+root        20     2  0 oct19 ?        00:00:00 [watchdog/2]
+root        21     2  0 oct19 ?        00:00:00 [migration/2]
+root        22     2  0 oct19 ?        00:00:00 [ksoftirqd/2]
+root        24     2  0 oct19 ?        00:00:00 [kworker/2:0H]
+root        25     2  0 oct19 ?        00:00:00 [cpuhp/3]
+root        26     2  0 oct19 ?        00:00:00 [watchdog/3]
+root        27     2  0 oct19 ?        00:00:00 [migration/3]
+root        28     2  0 oct19 ?        00:00:00 [ksoftirqd/3]
+root        30     2  0 oct19 ?        00:00:00 [kworker/3:0H]
+root        31     2  0 oct19 ?        00:00:00 [kdevtmpfs]
+root        32     2  0 oct19 ?        00:00:00 [netns]
+root        33     2  0 oct19 ?        00:00:00 [rcu_tasks_kthre]
+root        34     2  0 oct19 ?        00:00:00 [kauditd]
+root        38     2  0 oct19 ?        00:00:00 [khungtaskd]
+root        39     2  0 oct19 ?        00:00:00 [oom_reaper]
+root        40     2  0 oct19 ?        00:00:00 [writeback]
+root        41     2  0 oct19 ?        00:00:00 [kcompactd0]
+root        42     2  0 oct19 ?        00:00:00 [ksmd]
+root        43     2  0 oct19 ?        00:00:00 [khugepaged]
+root        44     2  0 oct19 ?        00:00:00 [crypto]
+root        45     2  0 oct19 ?        00:00:00 [kintegrityd]
+root        46     2  0 oct19 ?        00:00:00 [kblockd]
+root        48     2  0 oct19 ?        00:00:00 [ata_sff]
+root        49     2  0 oct19 ?        00:00:00 [md]
+root        50     2  0 oct19 ?        00:00:00 [edac-poller]
+root        51     2  0 oct19 ?        00:00:00 [devfreq_wq]
+root        52     2  0 oct19 ?        00:00:00 [watchdogd]
+root        55     2  0 oct19 ?        00:00:01 [kswapd0]
+root        56     2  0 oct19 ?        00:00:00 [ecryptfs-kthrea]
+root        98     2  0 oct19 ?        00:00:00 [kthrotld]
+root        99     2  0 oct19 ?        00:00:00 [acpi_thermal_pm]
+root       104     2  0 oct19 ?        00:00:00 [ipv6_addrconf]
+root       113     2  0 oct19 ?        00:00:00 [kstrp]
+root       134     2  0 oct19 ?        00:00:00 [charger_manager]
+root       183     2  0 oct19 ?        00:00:00 [scsi_eh_0]
+root       184     2  0 oct19 ?        00:00:00 [scsi_tmf_0]
+root       185     2  0 oct19 ?        00:00:00 [scsi_eh_1]
+root       186     2  0 oct19 ?        00:00:00 [scsi_tmf_1]
+root       187     2  0 oct19 ?        00:00:00 [scsi_eh_2]
+root       188     2  0 oct19 ?        00:00:00 [scsi_tmf_2]
+root       189     2  0 oct19 ?        00:00:00 [scsi_eh_3]
+root       190     2  0 oct19 ?        00:00:00 [scsi_tmf_3]
+root       192     2  0 oct19 ?        00:00:00 [nvkm-disp]
+root       194     2  0 oct19 ?        00:00:15 [i915/signal:0]
+root       195     2  0 oct19 ?        00:00:00 [i915/signal:1]
+root       196     2  0 oct19 ?        00:00:00 [i915/signal:2]
+root       197     2  0 oct19 ?        00:00:00 [i915/signal:4]
+root       205     2  0 oct19 ?        00:00:00 [kworker/1:1H]
+root       206     2  0 oct19 ?        00:00:00 [kworker/0:1H]
+root       207     2  0 oct19 ?        00:00:00 [ttm_swap]
+root       251     2  0 oct19 ?        00:00:06 [jbd2/sda6-8]
+root       252     2  0 oct19 ?        00:00:00 [ext4-rsv-conver]
+root       278     2  0 oct19 ?        00:00:00 [kworker/2:1H]
+root       287     1  0 oct19 ?        00:00:02 /lib/systemd/systemd-journald
+root       292     2  0 oct19 ?        00:00:01 [kworker/3:1H]
+root       314     1  0 oct19 ?        00:00:01 /lib/systemd/systemd-udevd
+root       317     2  0 oct19 ?        00:00:00 [loop0]
+root       319     2  0 oct19 ?        00:00:00 [loop1]
+root       323     2  0 oct19 ?        00:00:00 [loop2]
+root       329     2  0 oct19 ?        00:00:00 [loop3]
+root       330     2  0 oct19 ?        00:00:00 [loop4]
+root       336     2  0 oct19 ?        00:00:00 [loop5]
+root       342     2  0 oct19 ?        00:00:00 [loop6]
+root       343     2  0 oct19 ?        00:00:00 [loop7]
+root       344     2  0 oct19 ?        00:00:00 [loop8]
+root       355     2  0 oct19 ?        00:00:00 [loop9]
+root       356     2  0 oct19 ?        00:00:00 [loop10]
+root       357     2  0 oct19 ?        00:00:00 [loop11]
+root       358     2  0 oct19 ?        00:00:00 [loop12]
+root       359     2  0 oct19 ?        00:00:00 [loop13]
+root       360     2  0 oct19 ?        00:00:00 [loop14]
+root       361     2  0 oct19 ?        00:00:00 [loop15]
+root       362     2  0 oct19 ?        00:00:00 [loop16]
+root       363     2  0 oct19 ?        00:00:00 [loop17]
+root       364     2  0 oct19 ?        00:00:00 [loop18]
+root       365     2  0 oct19 ?        00:00:00 [loop19]
+root       366     2  0 oct19 ?        00:00:00 [loop20]
+root       367     2  0 oct19 ?        00:00:00 [loop21]
+root       368     2  0 oct19 ?        00:00:00 [loop22]
+root       369     2  0 oct19 ?        00:00:00 [loop23]
+root       370     2  0 oct19 ?        00:00:00 [loop24]
+root       371     2  0 oct19 ?        00:00:00 [loop25]
+root       372     2  0 oct19 ?        00:00:00 [loop26]
+root       373     2  0 oct19 ?        00:00:00 [loop27]
+root       374     2  0 oct19 ?        00:00:00 [loop28]
+root       375     2  0 oct19 ?        00:00:00 [loop29]
+juse       459 32400  0 09:33 pts/5    00:01:07 ./kernel32-3.0.4 ubda=./Fedora14-x86-root_fs mem=1024m
+juse       466   459  0 09:33 pts/5    00:00:00 ./kernel32-3.0.4 ubda=./Fedora14-x86-root_fs mem=1024m
+juse       467   459  0 09:33 pts/5    00:00:00 ./kernel32-3.0.4 ubda=./Fedora14-x86-root_fs mem=1024m
+juse       468   459  0 09:33 pts/5    00:00:00 ./kernel32-3.0.4 ubda=./Fedora14-x86-root_fs mem=1024m
+juse       469   459  0 09:33 pts/5    00:00:00 [kernel32-3.0.4]
+root       500     2  0 oct19 ?        00:00:00 [cfg80211]
+root       501     2  0 oct19 ?        00:00:48 [irq/133-iwlwifi]
+root       510     2  0 oct19 ?        00:00:00 [kmemstick]
+juse       718   459  0 09:33 pts/5    00:00:00 [kernel32-3.0.4]
+juse       740   459  0 09:33 pts/5    00:00:00 [kernel32-3.0.4]
+juse       779   459  0 09:33 pts/5    00:00:00 [kernel32-3.0.4]
+juse       823   459  0 09:33 pts/5    00:00:00 [kernel32-3.0.4]
+juse       842   459  0 09:33 pts/5    00:00:00 [kernel32-3.0.4]
+juse       867   459  0 09:33 pts/5    00:00:00 [kernel32-3.0.4]
+juse       869   459  0 09:33 pts/5    00:00:01 [kernel32-3.0.4]
+systemd+   916     1  0 oct19 ?        00:00:02 /lib/systemd/systemd-resolved
+systemd+   917     1  0 oct19 ?        00:00:00 /lib/systemd/systemd-timesyncd
+message+   921     1  0 oct19 ?        00:00:14 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root       922     1  0 oct19 ?        00:00:00 /usr/sbin/ModemManager
+root       923     1  0 oct19 ?        00:00:00 /usr/sbin/cron -f
+root       928     1  0 oct19 ?        00:00:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+root       931     1  0 oct19 ?        00:00:29 /usr/sbin/acpid
+root       932     1  0 oct19 ?        00:00:15 /usr/sbin/NetworkManager --no-daemon
+root       934     1  0 oct19 ?        00:00:05 /lib/systemd/systemd-logind
+root       935     1  0 oct19 ?        00:00:07 /usr/lib/udisks2/udisksd
+avahi      938     1  0 oct19 ?        00:00:01 avahi-daemon: running [juse-OMEN-by-HP-Laptop.local]
+root       941     1  0 oct19 ?        00:00:04 /usr/sbin/irqbalance --foreground
+root       942     1  0 oct19 ?        00:00:00 /usr/lib/bluetooth/bluetoothd
+syslog     943     1  0 oct19 ?        00:00:00 /usr/sbin/rsyslogd -n
+root       944     1  0 oct19 ?        00:00:09 /usr/sbin/thermald --no-daemon --dbus-enable
+root       946     1  0 oct19 ?        00:00:01 /usr/lib/accountsservice/accounts-daemon
+root       947     1  0 oct19 ?        00:00:01 /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
+root       949     1  0 oct19 ?        00:00:07 /usr/lib/snapd/snapd
+avahi      986   938  0 oct19 ?        00:00:00 avahi-daemon: chroot helper
+root      1005     1  0 oct19 ?        00:00:04 /usr/lib/policykit-1/polkitd --no-debug
+root      1043     1  0 oct19 ?        00:00:00 /usr/sbin/gdm3
+root      1065  1043  0 oct19 ?        00:00:00 gdm-session-worker [pam/gdm-launch-environment]
+gdm       1074     1  0 oct19 ?        00:00:00 /lib/systemd/systemd --user
+gdm       1075  1074  0 oct19 ?        00:00:00 (sd-pam)
+gdm       1086  1065  0 oct19 tty1     00:00:00 /usr/lib/gdm3/gdm-wayland-session gnome-session --autostart /usr/share/gdm/greeter/autostart
+gdm       1088  1074  0 oct19 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+gdm       1090  1086  0 oct19 tty1     00:00:00 /usr/lib/gnome-session/gnome-session-binary --autostart /usr/share/gdm/greeter/autostart
+gdm       1096  1090  0 oct19 tty1     00:02:16 /usr/bin/gnome-shell
+root      1103     1  0 oct19 ?        00:00:02 /usr/lib/upower/upowerd
+gdm       1124  1096  0 oct19 tty1     00:00:00 /usr/bin/Xwayland :1024 -rootless -terminate -accessx -core -listen 4 -listen 5 -displayfd 6
+gdm       1151  1074  0 oct19 ?        00:00:00 /usr/lib/at-spi2-core/at-spi-bus-launcher
+gdm       1156  1151  0 oct19 ?        00:00:00 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 3
+gdm       1158  1074  0 oct19 ?        00:00:00 /usr/lib/at-spi2-core/at-spi2-registryd --use-gnome-session
+gdm       1162  1074  0 oct19 ?        00:00:00 /usr/bin/pulseaudio --daemonize=no
+rtkit     1163     1  0 oct19 ?        00:00:00 /usr/lib/rtkit/rtkit-daemon
+gdm       1177  1096  0 oct19 tty1     00:00:00 ibus-daemon --xim --panel disable
+gdm       1180  1177  0 oct19 tty1     00:00:00 /usr/lib/ibus/ibus-dconf
+gdm       1183     1  0 oct19 tty1     00:00:00 /usr/lib/ibus/ibus-x11 --kill-daemon
+gdm       1185  1074  0 oct19 ?        00:00:00 /usr/lib/ibus/ibus-portal
+root      1197     1  0 oct19 ?        00:00:00 /usr/lib/x86_64-linux-gnu/boltd
+root      1198     1  0 oct19 ?        00:00:11 /usr/lib/packagekit/packagekitd
+gdm       1199  1090  0 oct19 tty1     00:00:00 /usr/lib/gnome-settings-daemon/gsd-xsettings
+gdm       1202  1090  0 oct19 tty1     00:00:00 /usr/lib/gnome-settings-daemon/gsd-a11y-settings
+gdm       1203  1090  0 oct19 tty1     00:00:00 /usr/lib/gnome-settings-daemon/gsd-clipboard
+gdm       1204  1090  0 oct19 tty1     00:00:08 /usr/lib/gnome-settings-daemon/gsd-color
+gdm       1207  1090  0 oct19 tty1     00:00:00 /usr/lib/gnome-settings-daemon/gsd-datetime
+gdm       1210  1090  0 oct19 tty1     00:00:00 /usr/lib/gnome-settings-daemon/gsd-housekeeping
+gdm       1211  1090  0 oct19 tty1     00:00:00 /usr/lib/gnome-settings-daemon/gsd-keyboard
+gdm       1218  1090  0 oct19 tty1     00:00:00 /usr/lib/gnome-settings-daemon/gsd-media-keys
+gdm       1219  1090  0 oct19 tty1     00:00:00 /usr/lib/gnome-settings-daemon/gsd-mouse
+gdm       1220  1090  0 oct19 tty1     00:00:00 /usr/lib/gnome-settings-daemon/gsd-power
+gdm       1223  1090  0 oct19 tty1     00:00:00 /usr/lib/gnome-settings-daemon/gsd-print-notifications
+gdm       1224  1090  0 oct19 tty1     00:00:00 /usr/lib/gnome-settings-daemon/gsd-rfkill
+gdm       1227  1090  0 oct19 tty1     00:00:00 /usr/lib/gnome-settings-daemon/gsd-screensaver-proxy
+gdm       1230  1090  0 oct19 tty1     00:00:00 /usr/lib/gnome-settings-daemon/gsd-sharing
+gdm       1234  1090  0 oct19 tty1     00:00:00 /usr/lib/gnome-settings-daemon/gsd-smartcard
+gdm       1238  1090  0 oct19 tty1     00:00:00 /usr/lib/gnome-settings-daemon/gsd-sound
+gdm       1241  1090  0 oct19 tty1     00:00:00 /usr/lib/gnome-settings-daemon/gsd-wacom
+gdm       1254  1074  0 oct19 ?        00:00:00 /usr/lib/dconf/dconf-service
+gdm       1260  1177  0 oct19 tty1     00:00:00 /usr/lib/ibus/ibus-engine-simple
+colord    1288     1  0 oct19 ?        00:00:00 /usr/lib/colord/colord
+whoopsie  1322     1  0 oct19 ?        00:00:00 /usr/bin/whoopsie -f
+kernoops  1339     1  0 oct19 ?        00:00:01 /usr/sbin/kerneloops --test
+kernoops  1348     1  0 oct19 ?        00:00:01 /usr/sbin/kerneloops
+root      1386  1043  0 oct19 ?        00:00:00 gdm-session-worker [pam/gdm-password]
+juse      1390     1  0 oct19 ?        00:00:03 /lib/systemd/systemd --user
+juse      1391  1390  0 oct19 ?        00:00:00 (sd-pam)
+juse      1404     1  0 oct19 ?        00:00:00 /usr/bin/gnome-keyring-daemon --daemonize --login
+juse      1408  1386  0 oct19 tty2     00:00:00 /usr/lib/gdm3/gdm-x-session --run-script env GNOME_SHELL_SESSION_MODE=ubuntu gnome-session --session=ubuntu
+juse      1410  1408  0 oct19 tty2     00:20:10 /usr/lib/xorg/Xorg vt2 -displayfd 3 -auth /run/user/1000/gdm/Xauthority -background none -noreset -keeptty -verbose 3
+juse      1416  1390  0 oct19 ?        00:00:05 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+juse      1419  1408  0 oct19 tty2     00:00:01 /usr/lib/gnome-session/gnome-session-binary --session=ubuntu
+juse      1514  1419  0 oct19 ?        00:00:00 /usr/bin/ssh-agent /usr/bin/im-launch env GNOME_SHELL_SESSION_MODE=ubuntu gnome-session --session=ubuntu
+juse      1516  1390  0 oct19 ?        00:00:00 /usr/lib/at-spi2-core/at-spi-bus-launcher
+juse      1521  1516  0 oct19 ?        00:00:02 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 3
+juse      1523  1390  0 oct19 ?        00:00:11 /usr/lib/at-spi2-core/at-spi2-registryd --use-gnome-session
+juse      1540  1419  1 oct19 tty2     00:35:35 /usr/bin/gnome-shell
+juse      1546  1390  0 oct19 ?        00:00:00 /usr/lib/gvfs/gvfsd
+juse      1551  1390  0 oct19 ?        00:00:00 /usr/lib/gvfs/gvfsd-fuse /run/user/1000/gvfs -f -o big_writes
+juse      1562     1  0 oct19 ?        00:03:00 /usr/bin/pulseaudio --start --log-target=syslog
+root      1566     2  0 oct19 ?        00:00:00 [krfcommd]
+juse      1578  1540  0 oct19 tty2     00:01:47 ibus-daemon --xim --panel disable
+juse      1582  1578  0 oct19 tty2     00:00:00 /usr/lib/ibus/ibus-dconf
+juse      1584     1  0 oct19 tty2     00:00:00 /usr/lib/ibus/ibus-x11 --kill-daemon
+juse      1587  1390  0 oct19 ?        00:00:00 /usr/lib/ibus/ibus-portal
+juse      1597  1390  0 oct19 ?        00:00:00 /usr/lib/gnome-shell/gnome-shell-calendar-server
+juse      1605  1390  0 oct19 ?        00:00:03 /usr/lib/gvfs/gvfs-udisks2-volume-monitor
+juse      1609  1390  0 oct19 ?        00:00:00 /usr/lib/gvfs/gvfs-gphoto2-volume-monitor
+juse      1613  1390  0 oct19 ?        00:00:00 /usr/lib/gvfs/gvfs-goa-volume-monitor
+juse      1617  1390  0 oct19 ?        00:00:00 /usr/lib/gnome-online-accounts/goa-daemon
+juse      1621  1390  0 oct19 ?        00:00:00 /usr/lib/evolution/evolution-source-registry
+juse      1634  1390  0 oct19 ?        00:00:00 /usr/lib/gnome-online-accounts/goa-identity-service
+juse      1639  1390  0 oct19 ?        00:00:00 /usr/lib/gvfs/gvfs-afc-volume-monitor
+juse      1644  1390  0 oct19 ?        00:00:00 /usr/lib/gvfs/gvfs-mtp-volume-monitor
+juse      1648  1419  0 oct19 tty2     00:00:01 /usr/lib/gnome-settings-daemon/gsd-power
+juse      1650  1419  0 oct19 tty2     00:00:00 /usr/lib/gnome-settings-daemon/gsd-print-notifications
+juse      1651  1419  0 oct19 tty2     00:00:00 /usr/lib/gnome-settings-daemon/gsd-rfkill
+juse      1654  1419  0 oct19 tty2     00:00:00 /usr/lib/gnome-settings-daemon/gsd-screensaver-proxy
+juse      1657  1419  0 oct19 tty2     00:00:05 /usr/lib/gnome-settings-daemon/gsd-sharing
+juse      1666  1419  0 oct19 tty2     00:00:00 /usr/lib/gnome-settings-daemon/gsd-smartcard
+juse      1674  1419  0 oct19 tty2     00:00:00 /usr/lib/gnome-settings-daemon/gsd-xsettings
+juse      1678  1419  0 oct19 tty2     00:00:00 /usr/lib/gnome-settings-daemon/gsd-sound
+juse      1679  1419  0 oct19 tty2     00:00:00 /usr/lib/gnome-settings-daemon/gsd-wacom
+juse      1687  1419  0 oct19 tty2     00:00:00 /usr/lib/gnome-settings-daemon/gsd-clipboard
+juse      1688  1419  0 oct19 tty2     00:00:00 /usr/lib/gnome-settings-daemon/gsd-a11y-settings
+juse      1691  1419  0 oct19 tty2     00:00:00 /usr/lib/gnome-settings-daemon/gsd-datetime
+juse      1693  1419  0 oct19 tty2     00:00:09 /usr/lib/gnome-settings-daemon/gsd-color
+juse      1697  1419  0 oct19 tty2     00:00:00 /usr/lib/gnome-settings-daemon/gsd-keyboard
+juse      1698  1419  0 oct19 tty2     00:00:03 /usr/lib/gnome-settings-daemon/gsd-housekeeping
+juse      1699  1419  0 oct19 tty2     00:00:00 /usr/lib/gnome-settings-daemon/gsd-mouse
+juse      1705  1419  0 oct19 tty2     00:00:01 /usr/lib/gnome-settings-daemon/gsd-media-keys
+juse      1729     1  0 oct19 tty2     00:00:00 /usr/lib/gnome-settings-daemon/gsd-printer
+juse      1744  1390  0 oct19 ?        00:00:00 /usr/lib/dconf/dconf-service
+juse      1752  1419  0 oct19 tty2     00:00:15 nautilus-desktop
+juse      1763  1419  0 oct19 tty2     00:00:07 /usr/bin/gnome-software --gapplication-service
+juse      1767  1419  0 oct19 tty2     00:00:00 /usr/lib/gnome-disk-utility/gsd-disk-utility-notify
+juse      1778  1390  0 oct19 ?        00:00:00 /usr/lib/evolution/evolution-calendar-factory
+juse      1784  1578  0 oct19 tty2     00:00:26 /usr/lib/ibus/ibus-engine-simple
+juse      1795  1546  0 oct19 ?        00:00:01 /usr/lib/gvfs/gvfsd-trash --spawner :1.22 /org/gtk/gvfs/exec_spaw/0
+juse      1818  1778  0 oct19 ?        00:00:00 /usr/lib/evolution/evolution-calendar-factory-subprocess --factory all --bus-name org.gnome.evolution.dataserver.Subprocess.Backend.Calendarx1778x2 --own-path /org/gnome/evolution/dataserver/Subprocess/Backend/Calendar/1778/2
+juse      1829  1390  0 oct19 ?        00:00:00 /usr/lib/evolution/evolution-addressbook-factory
+juse      1842  1829  0 oct19 ?        00:00:00 /usr/lib/evolution/evolution-addressbook-factory-subprocess --factory all --bus-name org.gnome.evolution.dataserver.Subprocess.Backend.AddressBookx1829x2 --own-path /org/gnome/evolution/dataserver/Subprocess/Backend/AddressBook/1829/2
+root      1852     1  0 oct19 ?        00:00:02 /usr/lib/fwupd/fwupd
+juse      1869  1390  0 oct19 ?        00:00:00 /usr/lib/gvfs/gvfsd-metadata
+juse      2089  1419  0 oct19 tty2     00:00:01 update-notifier
+juse      2139  1390  0 oct19 ?        00:01:26 /usr/bin/nautilus --gapplication-service
+juse      2176  1404  0 oct19 ?        00:00:00 /usr/bin/ssh-agent -D -a /run/user/1000/keyring/.ssh
+juse      2185  1390  0 oct19 ?        00:00:00 /usr/bin/zeitgeist-daemon
+juse      2201  1390  0 oct19 ?        00:00:00 /usr/lib/zeitgeist/zeitgeist/zeitgeist-fts
+juse      2242  1419  0 oct19 tty2     00:00:00 /usr/lib/deja-dup/deja-dup-monitor
+juse      2258  1540  0 oct19 tty2     00:24:47 /snap/chromium/506/usr/lib/chromium-browser/chrome --no-default-browser-check --no-first-run --password-store=basic --ppapi-flash-path
+juse      2376  2258  0 oct19 tty2     00:00:00 /snap/chromium/506/usr/lib/chromium-browser/chrome --type=zygote --ppapi-flash-path
+juse      2378  2376  0 oct19 tty2     00:00:00 /snap/chromium/506/usr/lib/chromium-browser/chrome --type=zygote --ppapi-flash-path
+juse      2404  2258  0 oct19 tty2     00:10:10 /snap/chromium/506/usr/lib/chromium-browser/chrome --type=gpu-process --field-trial-handle=7105667071806041883,6518476388476161785,131072 --gpu-preferences=KAAAAAAAAACAAABAAQAAAAAAAAAAAGAAAAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAA --service-request-channel-token=5122469674121370025
+juse      2412  1390  0 oct19 ?        00:00:02 /usr/bin/snap userd
+juse      2533  2404  0 oct19 tty2     00:00:00 /snap/chromium/506/usr/lib/chromium-browser/chrome --type=-broker
+juse      2667  2378  0 oct19 tty2     00:00:16 /snap/chromium/506/usr/lib/chromium-browser/chrome --type=renderer --field-trial-handle=7105667071806041883,6518476388476161785,131072 --service-pipe-token=6563481752282469473 --lang=es --extension-process --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --ppapi-flash-path --num-raster-threads=2 --enable-main-frame-before-activation --service-request-channel-token=6563481752282469473 --renderer-client-id=3 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+juse      2677  2378  0 oct19 tty2     00:00:02 /snap/chromium/506/usr/lib/chromium-browser/chrome --type=renderer --field-trial-handle=7105667071806041883,6518476388476161785,131072 --service-pipe-token=208843669304129437 --lang=es --extension-process --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --ppapi-flash-path --num-raster-threads=2 --enable-main-frame-before-activation --service-request-channel-token=208843669304129437 --renderer-client-id=4 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+juse      2744  2378  0 oct19 tty2     00:00:30 /snap/chromium/506/usr/lib/chromium-browser/chrome --type=renderer --field-trial-handle=7105667071806041883,6518476388476161785,131072 --service-pipe-token=17963702092428326912 --lang=es --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --ppapi-flash-path --num-raster-threads=2 --enable-main-frame-before-activation --service-request-channel-token=17963702092428326912 --renderer-client-id=10 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+juse      3031  1546  0 oct19 ?        00:00:00 /usr/lib/gvfs/gvfsd-http --spawner :1.22 /org/gtk/gvfs/exec_spaw/1
+juse      3095     1  0 oct19 ?        00:07:04 /snap/sublime-text/38/opt/sublime_text/sublime_text
+juse      3108  3095  0 oct19 ?        00:00:08 /snap/sublime-text/38/opt/sublime_text/plugin_host 3095 --auto-shell-env
+juse      3484  2378  0 oct19 tty2     00:00:34 /snap/chromium/506/usr/lib/chromium-browser/chrome --type=ppapi --field-trial-handle=7105667071806041883,6518476388476161785,131072 --ppapi-flash-args --lang=es --service-request-channel-token=11386448840975497122
+root      3933     1  0 11:09 ?        00:00:00 /usr/sbin/cupsd -l
+root      3934     1  0 11:09 ?        00:00:00 /usr/sbin/cups-browsed
+juse      5635  1390  0 oct19 ?        00:01:38 /usr/lib/gnome-terminal/gnome-terminal-server
+juse      5787  1546  0 oct19 ?        00:00:00 /usr/lib/gvfs/gvfsd-network --spawner :1.22 /org/gtk/gvfs/exec_spaw/2
+juse      5799  1546  0 oct19 ?        00:00:00 /usr/lib/gvfs/gvfsd-dnssd --spawner :1.22 /org/gtk/gvfs/exec_spaw/4
+root      7783     2  0 15:48 ?        00:00:00 [kworker/u9:1]
+root      8503     2  0 17:34 ?        00:00:00 [irq/132-mei_me]
+root      8524     2  0 17:34 ?        00:00:00 [kworker/u9:2]
+root      8619   932  0 17:34 ?        00:00:00 /sbin/dhclient -d -q -sf /usr/lib/NetworkManager/nm-dhcp-helper -pf /run/dhclient-wlo1.pid -lf /var/lib/NetworkManager/dhclient-2b7e8687-3620-477c-87f6-eea15f2179ad-wlo1.lease -cf /var/lib/NetworkManager/dhclient-wlo1.conf wlo1
+juse      8805  2378  0 17:37 tty2     00:00:03 /snap/chromium/506/usr/lib/chromium-browser/chrome --type=renderer --field-trial-handle=7105667071806041883,6518476388476161785,131072 --service-pipe-token=8514384673293364886 --lang=es --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --ppapi-flash-path --num-raster-threads=2 --enable-main-frame-before-activation --service-request-channel-token=8514384673293364886 --renderer-client-id=876 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+juse      8844  2378  0 17:38 tty2     00:00:41 /snap/chromium/506/usr/lib/chromium-browser/chrome --type=renderer --field-trial-handle=7105667071806041883,6518476388476161785,131072 --service-pipe-token=15743226862845810616 --lang=es --extension-process --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --ppapi-flash-path --num-raster-threads=2 --enable-main-frame-before-activation --service-request-channel-token=15743226862845810616 --renderer-client-id=878 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+juse      8922  2378  0 17:39 tty2     00:00:13 /snap/chromium/506/usr/lib/chromium-browser/chrome --type=renderer --field-trial-handle=7105667071806041883,6518476388476161785,131072 --service-pipe-token=16237405168353697525 --lang=es --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --ppapi-flash-path --num-raster-threads=2 --enable-main-frame-before-activation --service-request-channel-token=16237405168353697525 --renderer-client-id=879 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+juse      8936  2378  0 17:39 tty2     00:00:00 /snap/chromium/506/usr/lib/chromium-browser/chrome --type=renderer --field-trial-handle=7105667071806041883,6518476388476161785,131072 --service-pipe-token=16951973604065682580 --lang=es --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --ppapi-flash-path --num-raster-threads=2 --enable-main-frame-before-activation --service-request-channel-token=16951973604065682580 --renderer-client-id=880 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+juse      9532  2378  0 17:52 tty2     00:00:00 /snap/chromium/506/usr/lib/chromium-browser/chrome --type=renderer --field-trial-handle=7105667071806041883,6518476388476161785,131072 --service-pipe-token=13027018573253280658 --lang=es --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --ppapi-flash-path --num-raster-threads=2 --enable-main-frame-before-activation --service-request-channel-token=13027018573253280658 --renderer-client-id=896 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+juse      9881  1390 42 oct20 ?        13:40:59 ./kernel32-3.0.4 ubda=./Fedora14-x86-root_fs mem=1024m
+juse      9888  9881  0 oct20 ?        00:00:00 ./kernel32-3.0.4 ubda=./Fedora14-x86-root_fs mem=1024m
+juse      9889  9881  0 oct20 ?        00:00:00 ./kernel32-3.0.4 ubda=./Fedora14-x86-root_fs mem=1024m
+juse      9890  9881  0 oct20 ?        00:00:00 ./kernel32-3.0.4 ubda=./Fedora14-x86-root_fs mem=1024m
+juse      9891  9881  0 oct20 ?        00:00:00 [kernel32-3.0.4]
+root      9953     2  0 18:05 ?        00:00:00 [kworker/3:0]
+root      9971     2  0 18:08 ?        00:00:01 [kworker/u8:0]
+juse     10119  9881  0 oct20 ?        00:00:00 [kernel32-3.0.4]
+juse     10141  9881  0 oct20 ?        00:00:00 [kernel32-3.0.4]
+juse     10180  9881  0 oct20 ?        00:00:00 [kernel32-3.0.4]
+root     10209     2  0 18:13 ?        00:00:00 [kworker/2:5]
+daemon   10215     1  0 18:13 ?        00:00:00 /usr/sbin/atd -f
+juse     10224  9881  0 oct20 ?        00:00:00 [kernel32-3.0.4]
+juse     10243  9881  0 oct20 ?        00:00:00 [kernel32-3.0.4]
+juse     10267  9881  0 oct20 ?        00:00:00 [kernel32-3.0.4]
+juse     10269  9881  0 oct20 ?        00:00:00 [kernel32-3.0.4]
+juse     10870  1390  0 oct20 ?        00:00:45 evince /home/juse/Escritorio/ExamenSO/wuolah-free-Portafolios_Practicas_SO_JesusGarciaGodoy (copia).pdf
+juse     10877  1390  0 oct20 ?        00:00:00 /usr/lib/evince/evinced
+juse     10912  2378  0 18:20 tty2     00:00:02 /snap/chromium/506/usr/lib/chromium-browser/chrome --type=renderer --field-trial-handle=7105667071806041883,6518476388476161785,131072 --service-pipe-token=10365266472811424691 --lang=es --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --ppapi-flash-path --num-raster-threads=2 --enable-main-frame-before-activation --service-request-channel-token=10365266472811424691 --renderer-client-id=913 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+root     11081     2  0 18:30 ?        00:00:00 [kworker/0:1]
+juse     11122  5635  0 18:33 pts/2    00:00:00 bash
+juse     11134  1540  1 18:34 tty2     00:00:29 /snap/spotify/21/usr/share/spotify/spotify
+juse     11282 11134  0 18:34 tty2     00:00:00 /snap/spotify/21/usr/share/spotify/spotify --type=zygote --no-sandbox --log-file=/snap/spotify/21/usr/share/spotify/debug.log --log-severity=disable --product-version=Spotify/1.0.89.313 --lang=en
+juse     11298 11134  0 18:34 tty2     00:00:01 /snap/spotify/21/usr/share/spotify/spotify --type=gpu-process --disable-features=ExtendedMouseButtons --no-sandbox --log-file=/snap/spotify/21/usr/share/spotify/debug.log --log-severity=disable --product-version=Spotify/1.0.89.313 --lang=en --gpu-preferences=KAAAAAAAAACAAACAAQAAAAAAAAAAAGAAEAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA --log-file=/snap/spotify/21/usr/share/spotify/debug.log --log-severity=disable --product-version=Spotify/1.0.89.313 --lang=en --service-request-channel-token=AA4862743E4060598F9C96B077FADCF9
+juse     11324 11282  0 18:34 tty2     00:00:10 /snap/spotify/21/usr/share/spotify/spotify --type=renderer --no-sandbox --disable-features=ExtendedMouseButtons --service-pipe-token=CB8762E7C6B6D2A98613B6B777EA7A39 --lang=es --log-file=/snap/spotify/21/usr/share/spotify/debug.log --log-severity=disable --product-version=Spotify/1.0.89.313 --disable-spell-checking --num-raster-threads=2 --enable-main-frame-before-activation --service-request-channel-token=CB8762E7C6B6D2A98613B6B777EA7A39 --renderer-client-id=3 --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+root     11468     2  0 18:41 ?        00:00:00 [kworker/u8:1]
+root     11469     2  0 18:41 ?        00:00:00 [kworker/1:0]
+root     11626     2  0 18:49 ?        00:00:00 [kworker/0:0]
+root     11659     2  0 18:53 ?        00:00:00 [kworker/3:2]
+juse     11794  2378  0 18:58 tty2     00:00:00 /snap/chromium/506/usr/lib/chromium-browser/chrome --type=renderer --field-trial-handle=7105667071806041883,6518476388476161785,131072 --service-pipe-token=17199941240213890888 --lang=es --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --ppapi-flash-path --num-raster-threads=2 --enable-main-frame-before-activation --service-request-channel-token=17199941240213890888 --renderer-client-id=925 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+root     11829     2  0 18:58 ?        00:00:00 [kworker/2:1]
+root     11842     2  0 18:59 ?        00:00:00 [kworker/1:1]
+root     11852     2  0 19:00 ?        00:00:00 [kworker/0:2]
+root     11854     2  0 19:00 ?        00:00:00 [kworker/u8:2]
+root     11881     2  0 19:01 ?        00:00:00 [kworker/u8:3]
+root     11882     2  0 19:01 ?        00:00:00 [kworker/0:3]
+root     11929     2  0 19:03 ?        00:00:00 [kworker/3:1]
+daemon   11989 10215  0 19:04 ?        00:00:00 /usr/sbin/atd -f
+juse     11990 11989  0 19:04 ?        00:00:00 sh
+juse     11992 11990  0 19:04 ?        00:00:00 ps -ef
+juse     15288  9881  0 oct20 ?        00:00:00 [kernel32-3.0.4]
+juse     15290  9881  0 oct20 ?        00:00:00 [kernel32-3.0.4]
+juse     15310  9881  0 oct20 ?        00:00:00 [kernel32-3.0.4]
+juse     15312  9881  0 oct20 ?        00:00:00 [kernel32-3.0.4]
+juse     15327  9881  0 oct20 ?        00:00:00 [kernel32-3.0.4]
+juse     15329  9881  0 oct20 ?        00:00:00 [kernel32-3.0.4]
+juse     15365  9881  0 oct20 ?        00:00:00 [kernel32-3.0.4]
+juse     15367  9881  0 oct20 ?        00:00:00 [kernel32-3.0.4]
+juse     15389  9881  0 oct20 ?        00:00:00 [kernel32-3.0.4]
+juse     15391  9881  0 oct20 ?        00:00:00 [kernel32-3.0.4]
+juse     15418  9881  0 oct20 ?        00:00:00 [kernel32-3.0.4]
+juse     15420  9881  0 oct20 ?        00:00:00 [kernel32-3.0.4]
+juse     16676  9881  0 oct20 ?        00:00:00 [kernel32-3.0.4]
+juse     16678  9881  0 oct20 ?        00:00:00 [kernel32-3.0.4]
+juse     16699  9881  0 oct20 ?        00:00:00 [kernel32-3.0.4]
+juse     16701  9881  0 oct20 ?        00:00:00 [kernel32-3.0.4]
+root     27282     2  0 oct20 ?        00:00:00 [loop30]
+juse     32400  5635  0 09:30 pts/5    00:00:00 bash
+Mi pid = 11990

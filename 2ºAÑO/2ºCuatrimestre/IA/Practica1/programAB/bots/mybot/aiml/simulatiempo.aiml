@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<!-- File: simulatiempo.aiml -->
+	<!-- Author: Raul -->
+	<!-- Last modified: January 30, 2019 -->
+
+
+
+<!-- Hace avanzar el tiempo actual tantos minutos como indica el argumento -->
+<category>
+<pattern> SIMUL <set>number</set> </pattern>
+<template>
+   <think>
+     <condition name="tiempo">
+  	<li value="unknown"> <set name="tiempo">0</set></li>
+     </condition>
+     <set var="indice">0</set>
+   <!-- Ciclo que va incrementando el tiempo de minuto en minuto -->
+   <condition var="indice">
+      <!-- Opcion de salida del ciclo: cuando indice valga el valor del tiempo indicado en SIMUL -->
+      <li> <value><star index="1"/></value></li>
+      <!-- Cuerpo del bucle -->
+      <li>
+         <set name="tiempo"><map name="successor"><get name="tiempo"/></map></set>
+         <set var="indice"><map name="successor"><get var="indice"/></map></set>
+         <loop/>
+      </li>
+   </condition>
+   </think>
+El tiempo total transcurrido es de <get name="tiempo"/> minutos
+</template>
+</category>
+
+
+<!-- Una variante de la accion SIMUL para incluir algo como SIMUL 10 minutos -->
+<category>
+<pattern> SIMUL <set>number</set> ^ </pattern>
+<template>
+      <srai>SIMUL <star index="1"/></srai>
+</template>
+</category>
+
+
+
+<!-- Detectar un uso incorrecto del comando SIMUL -->
+<category>
+<pattern> SIMUL * </pattern>
+<template>
+El parametro que se le pasa a SIMUL debe ser un numero
+</template>
+</category>
+
+
+</aiml>

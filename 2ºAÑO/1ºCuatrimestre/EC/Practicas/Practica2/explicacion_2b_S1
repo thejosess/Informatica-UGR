@@ -1,0 +1,49 @@
+Practica 2b
+-------------------------
+%d -> numero entero CON signo(negativo)  -2^numero de bits-1
+%u -> numero entero SIN signo(positivo)	 +2^numero de bits   - 1
+
+
+las etiquetas son con : y luego .algo para las directivas
+
+la pila -> pasar argumentos a funciones, todas las variables locales 
+
+0b10 es el 10 en binario
+0x10 es el 10 en hexadecimal
+
+
+push y pop es para la pila
+(es como restar para añadir cosas y sumas para quitar cosas de la pila)
+
+
+estas usando lista[i] + eax = eax -> add  (%rbx,%rdx,4), %eax
+//este acarreo se guardan en el CF 
+La idea es usar edx para el acarreo de la suma
+si CF tiene acarreo le sumo 1 a %edx 
+inc %edx 
+add $1, %edx
+jc -> saltar si CF vale 1
+jnc -> saltar si CF vale 0
+ejemplo ->
+linea 38 jc etiqueta
+jnc a una etiqueta
+
+el acarreo en el peor caso será 1 o 0
+
+haces objdump y a la izquierda de todo es la instruccion en la qu estas
+y a la derecha de la instruccin es a la que quieres ir
+restas la de la izquierda con la dereccha y te sale
+0000 1101(0xd, 13)
+1111 0011(complemento a 1) -> -0xd, -13
+en hexadecimal -> ffff .... 3
+entonces en el cetro tienes f3 que son 8 bytes
+
+si tienes un if sin else, haces el SALTO CONTRARIO 
+if(hay_acarreo)
+haces cosas
+
+pues en ensamblador es al contrario
+
+if(no_hay acarreo)
+continuas con el cuerpo del bucle
+

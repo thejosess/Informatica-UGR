@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<!-- Ojos-SI -->
+<category>
+    <pattern>
+        * color * ojos <set>compi</set>
+    </pattern>
+    <template>
+        El color de los ojos de <star index="3"/> es <map name="ojos"><star index="3"/></map>.
+    </template>
+</category>
+
+<!-- Ojos-NO -->
+<category>
+    <pattern>
+        * color * ojos *
+    </pattern>
+    <template>
+       <!--  <star index="3"/>  -->no es mi compañero.
+       <!-- predefinir nombres validos en un set?? -->
+    </template>
+</category>
+<!-- aqui el tio dijo de una manera para que no te dejara meter burradas -->
+<!-- si pones hola color caca kike te sale la de hola que tal -->
+
+<category>
+    <pattern>Los ojos de <set>compi</set> son * </pattern>
+    <template>
+        <think>
+        <set var="eye"><map name="ojos"><star/></map></set>
+        </think>
+        <condition var ="eye">
+        <li><value><star index="2"/></value> Si, </li>
+        <li> No, </li>
+        </condition> los ojos <star/> son <get var="eye"/>
+    </template>
+</category>
+
+<!-- <li><value>valor</value>......</li> -->
+
+<category>
+<pattern>Cuenta hasta <set>number</set></pattern>
+<template>
+    <think>
+        <set var="contador">1</set>
+        <set var="salida">1</set>
+    </think>
+    <condition var="contador">
+    <li><value><star/></value><get var="salida"/></li>
+    <li>
+        <think>
+        <set var="contador">
+            <map name="successor"><get var="contador"/></map>
+        </set>
+        <set var="salida"><get var="salida"/> <get var="contador"/></set>
+        <!-- aqui estas concatenando 1 2 3 4 5 y al final muestra todo seguido-->
+        </think>
+        <loop/>
+    </li>
+</condition>
+</template>
+</category>
+
+<!-- Otro tipo de contador -->
+
+<category>
+<pattern>Cuenta de otra forma hasta <set>number</set></pattern>
+<!-- es un set predefenimo en aiml, otro de plurales que es un map -->
+<template>
+    <think>
+        <set var="contador">0</set>
+    </think>
+    <condition var="contador">
+    <li><value><star/></value> FIN </li>
+    <li>
+        <set var="contador">
+            <map name="successor"><get var="contador"/></map>
+        </set>
+        <loop/>
+    </li>
+</condition>
+</template>
+</category>
+
+<!-- <category>
+<pattern>Dime tus companieros <set>number</set></pattern>
+<template>
+    <think>
+        <condition  var="contador">1</set>
+    </think>
+    <condition var="contador">
+    <li><value></star></value>FIN </li>
+
+    <think>
+    <set var="contador">
+        <map name="succesosor"><get var="contador"/></map>
+    </set>
+    </think>
+    <>
+    <loop/>
+</template> -->
+
+<!--regla 16  -->
+
+<!-- regla copiada -->
+<category>
+    <pattern>
+        Cual es la capital de <set>pais</set>
+    </pattern>
+    <template>
+        La capìtal de <star/> es <map name="capital"><star/></map>
+    </template>
+</category>
+
+<!-- reglada copiada x2 -->
+<category>
+    <pattern>
+        Cual es la capital de *
+    </pattern>
+    <template>
+        No lo se
+    </template>
+</category>
+
+<!-- regla copiada x3 -->
+
+<category>
+    <pattern>
+        la capital de * es *
+    </pattern>
+    <template>
+        <think>
+        <set var="cap"><srai>CUAL ES LA CAPITAL DE <star/></srai></set>
+        </think>
+        <condition var="cap">
+            <li value="NO LO SE">
+            <learn> <!-- si pones learnf lo recuerda para la siguiente sesion -->
+                <category>
+                <pattern>
+                    CUAL ES LA CAPITAL DE <eval><star/></eval>
+                </pattern>
+                <template>
+                    La capital de <eval><star/></eval> es <eval><star index="2"/></eval>
+                </template>
+                </category>
+            </learn>
+            Recordare que la capital de <star/> es <star index="2"/>
+            </li>
+
+            <li>
+            <think>
+            <set var="capi"><map name="capital"><star/></map></set>
+            </think>
+            <condition var="capi">
+                <li><value><star index="2"/></value> ya lo sabia chulo</li>
+                <!-- <li><value><eval><star index="2"/></eval> ya lo sabia chulo </li> -->
+                <li>No, la capital de <star/> es <get var="capi"/></li>
+            </condition>
+            </li>
+        </condition>
+    </template>
+</category>
+
+<!-- <category>
+<pattern>I HAVE A <set>color</set> *</pattern>
+<template><star/> is a nice color of <star index=”2”/>.
+<learn>
+  <category>
+  <pattern>WHAT COLOR IS MY <eval><star index=”2”/></pattern>
+  <template><eval><star/></eval></template>
+  </category>
+</learn>
+</template>
+</category> -->
+
+
+
+</aiml>
+

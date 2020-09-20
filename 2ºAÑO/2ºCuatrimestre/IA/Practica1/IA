@@ -1,0 +1,13 @@
+<category>
+<pattern>Los ojos de <set>compi</set> son * </pattern>
+<template> 
+    <think>
+    <set var="x"><map name="ojos"><star/></map></set>
+    </think>
+    <condition var="x">
+    <li><value><star index="2"/></value> Si,  </li>
+    <li>No,</li>
+    </condition>
+        Los ojos de <star/> son <get var="x"/>
+</template>
+</category>

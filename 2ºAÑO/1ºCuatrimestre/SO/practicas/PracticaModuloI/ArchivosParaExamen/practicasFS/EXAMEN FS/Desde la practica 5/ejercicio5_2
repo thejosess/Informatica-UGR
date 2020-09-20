@@ -1,0 +1,29 @@
+#!/bin/bash
+
+if [[ $# -ne 1 ]]
+	then
+		echo "Uso : ejercicio2 directorio-existente"
+		exit 1
+fi
+
+if [[ ! -d $1 ]]
+	then
+		echo "Uso : ejercicio2 directorio "
+		exit 1
+fi
+
+for archivo in  $(ls -ad $1/*)
+do
+	if [ -d $archivo ]
+		then
+		if [ -h $archivo ]
+			then echo " $archivo: enlace a dir";		
+			else
+				echo " $archivo : directorio";
+		fi
+	elif [ -h $archivo ]
+		then echo " $archivo: link";
+	elif [ -f $archivo ]
+		then echo "$archivo:  archivo normal";
+	fi
+done

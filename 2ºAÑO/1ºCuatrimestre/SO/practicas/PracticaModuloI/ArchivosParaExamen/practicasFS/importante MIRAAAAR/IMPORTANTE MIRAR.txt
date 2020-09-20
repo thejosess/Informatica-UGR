@@ -1,0 +1,5 @@
+cat archivodondequieresbuscar | grep `cat archivoquetieneloquebuscas`
+
+
+[19:12, 18/12/2017] Mike Destroyer: Alguien sabe cómo usar el grep para que busque el texto que haya dentro de un archivo en otro distinto?
+[19:13, 18/12/2017] Mike Destroyer: Es para el 7 del guión 5, se ponerlo para que busque cada shell 1 por 1 pero no para que con meterle el archivo los busque todos a la vez

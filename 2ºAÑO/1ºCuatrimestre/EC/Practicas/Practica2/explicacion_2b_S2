@@ -1,0 +1,76 @@
+Practica 2b
+-------------------------
+
+Explicación V5_3
+-------------------
+numero mas grande positivo seria
+21 millones -> 0x7ffff....fff
+
+
+(en millones)
+-1 -> 0xffff....f
+-2 -> 0xff..fe
+-3-> 0xff..fd
+-21 millones -> 0x80000...000
+
+%lu -> %ld
+//duda de esto
+
+para sumar numeros con signo es necesario extender cuando es negativo con -1
+
+
+
+if(lista[i] < 0)
+	add lista[i], %eax
+	adc $-1, %edx
+
+else
+	add lista[i], %eax
+	adc $0, %edx
+
+//r9 es 64 bits al ser 23 bista r9d es la menos signifiticativa
+
+mov(%rbx, %r8,4), %r9d
+jge else
+cmp $0,%r9d
+test %r9d, %r9d
+add %r9d, %eax
+jump final
+
+
+jge necesitas la info de los flags para saltar 
+cmp es igual que sub, cmp hace la resta pero no cambia los valores y no macha los resultados
+test no machaca tampoco el resultado y es igual que el and
+
+dos numero negatiso se suman y sale negativo no hay overflow
+si hay dos numeros negativos y se suman y sale positivo hay overflow
+
+cltd -> con dos de 32 bits para el 5.3
+cdq -> lo extiende a la parte alta de rax creo
+
+lista[i] tiene que estar en eax
+
+
+eax + r8d sin el cf
+
+edx + r9d con el cf
+
+
+mov(%rbx,%rsi,4), %eax
+cltd
+add %eax, %r8d
+adc %edx, %r9d
+
+idiv
+
+edx eax / ecx 
+rs -> eax
+resto -> edx
+
+//cambiar el printf para decir el resto vale esto y la media da esto
+si ecx vale 0 pues explota
+
+
+-134
+
+

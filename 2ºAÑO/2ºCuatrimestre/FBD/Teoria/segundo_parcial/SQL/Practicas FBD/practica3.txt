@@ -1,0 +1,131 @@
+Dato fecha -> 
+insert into ventas values ('S5', 'P4', 'J1', 250,'17/03/10');
+// si pones en la fecha con /30 en el año te dice que es 2030
+//defecto  instalacion {dd/mm/yy}
+to_date('23-10-1830','dd-mm-yyyy')
+
+//el nombre del mes o las dos primeras letras del mes
+d -> [1,7] // dia de la semana con número
+
+//Te responde con el dia
+day -> lunes, martes, ... etc
+Day -> Lunes, Martes, Miercoles, ... etc
+DAY -> LUNES, MARTES, MIERCOLES, ... ETC
+
+mm : entre 1 y 31
+mon : jun, oct, ...
+month : junio , ...
+//MISMA MECÁNICA QUE CON LOS DIAS
+
+yy : dos digito
+yyyy : 4 digitos // para fechas del 1980
+y,yyy : 2,012
+year : te pone los años en inglés
+
+
+//to_char te pinta todo lo que pongas, comillas dobles es literalmente
+select codpro, cantidad, to_char(fecha,'Day,dd "de" Month "de" yyyy') from ventas;
+/aqui al ponerle el to_date de 1920 entonces al sacarlo con select si se ve bien
+//jueves 11 de mayo de 2012
+
+select codpro, cantidad, to_char(fecha,'yyyy') from ventas;
+//solo el año
+
+select * from ventas where to_char(fecha,'yyyy') = '2018';
+// solo las de 2018
+
+select * from ventas where to_char(fecha,'yyyy') = '2018' and to_char(fecha,'mm') = '08';
+/solo las de 2018 y el mes 08
+
+select * from ventas where fecha >= sysdate - 15;
+//le puedes restar porque internamente es un entero con signo
+//esa conversión lo hace la representación interna conceptual
+// tu lo escribes como quieras la fecha y entonces estas en el nivel externo, usando
+la transformacion externa-conceptual
+
+SELECT * FROM ventas;
+insert into ventas values ('S5', 'P1', 'J1', 250,'17/03/20');
+insert into ventas values ('S5', 'P1', 'J1', 250,to_date('17/03/1920','dd-mm-yyyy'));
+rollback;
+
+select codpro, cantidad, to_char(fecha,'Day,dd "de" Month "de" yyyy') from ventas;
+
+select codpro, cantidad, to_char(fecha,'yyyy') from ventas;
+select * from ventas where to_char(fecha,'yyyy') = '2018';
+select * from ventas where to_char(fecha,'yyyy') = '2018' and to_char(fecha,'mm') = '08';
+select * from ventas where fecha >= sysdate - 15;
+
+---------------------------------------------------------------------------------------
+
+comparacion cadenas de caracteres, como buscar una cadena dentro de otra
+
+select * from proveedor where ciudad LIKE '% PEREZ %';
+select * from PIEZA where nompie LIKE 'A%';
+IGUAL A -> select * from PIEZA where LOWER(nompie) LIKE 'a%'S;
+
+select * from PIEZA where UPPER(nompie) LIKE 'A%';
+// te convierte nompie a mayúscula
+
+select * from PIEZA where LOWER(nompie) LIKE 'a%';
+---------------------------------------------------------------
+
+Cosas numéricas
+
+select codpro, cantidad/12 from ventas;
+select codpro, cantidad, cantidad/12 from ventas;
+select codpro, cantidad from ventas where cantidad *0.5 > 200;
+
+---------------------------------------------------------------
+
+Cosas del null
+
+where nota IS null
+where IS NOT null
+
+-------------------------------------------------------------------
+
+select distinct * from proveedor p, ventas v, piezas pi where v.codpro = p.codpro and v.codpie = pi.codpie;
+//prod cartesiano y despues una condicion
+
+
+ORDER BY va antes del punto y coma
+ORDER BY atributo
+//ordena con un atribuo que esta en el select de *(ahi)
+// ordena de menor a mayor, 1.... 10, a.....z
+
+ORDER BY nompie DESC // descending que es de 10...1, z...1
+
+ORDER BY nompie, cantidad desc;
+
+select distinct * from proveedor p, ventas v, pieza pi where v.codpro = p.codpro and v.codpie = pi.codpie ORDER BY nompie, cantidad desc;
+
+select distinct * from proveedor p, ventas v, pieza pi where v.codpro = p.codpro and v.codpie = pi.codpie ORDER BY v.fecha;
+
+---------------------------------------------------------
+
+tabla dual 
+trabajar cosas con ellas temporalmente
+
+
+select sysdate from DUAL;
+select 418*0.17 from dual;         
+
+select to_char(to_date('02/07/1999', 'dd,mm,yyyy'),day) from dual;
+
+select to_char(to_date('02/07/1999','dd,mm,yyyy'),'day') from dual;
+
+select to_char(to_date('11/01/1999','dd,mm,yyyy'),'day') from dual;
+
+
+--------------------------------------------------------------------
+
+EJERCICIOS:
+
+1)Listar nombre y codigo de los proveedores que hayen hecho algun pedido en el primer trimestre
+de 2019
+
+2)Encontrar los pedidos que contengan los 'tornillos' en mas de 50 unds
+//tanto en mayusculas como minusculas
+select p.nompie, v.cantidad from pieza p, ventas v where (p.codpie = v.codpie) and (v.cantidad > 50) and (p.nompie = UPPER('tornillo'));
+
+

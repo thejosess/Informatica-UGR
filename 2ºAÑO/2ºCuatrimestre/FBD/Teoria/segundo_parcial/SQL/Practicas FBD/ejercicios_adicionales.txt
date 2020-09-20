@@ -1,0 +1,80 @@
+DESCRIBE opc.Equipos;
+
+CREATE TABLE EQUIPOS(
+code CHAR(3) primary key,
+nombree varchar2(30) not null,
+localidad varchar2(30) not null,
+entrenador varchar2(30) not null,
+fecha_crea date not null);
+
+describe equipos;
+
+COMMIT;
+
+drop table equipos; //eliminar
+
+//como poner por defecto
+describe opc.equipos;
+describe equipos;
+
+delete equipos;
+describe equipos;
+drop table equipos;
+
+CREATE TABLE EQUIPOS(
+code CHAR(3) primary key,
+nombree varchar2(30) not null,
+localidad varchar2(30) not null,
+entrenador varchar2(30) not null,
+fecha_crea date );
+
+INSERT INTO equipos SELECT * FROM opc.equipos;
+
+SELECT * FROM equipos;
+
+COMMIT;
+
+describe opc.jugadores;
+
+CREATE TABLE JUGADORES(
+codj CHAR(3) primary key,
+code CHAR(3) not null,
+nombrej CHAR(30) not null);
+
+INSERT INTO JUGADORES SELECT * FROM opc.jugadores;
+
+select * from jugadores;
+
+describe opc.encuentros;
+
+CREATE TABLE ENCUENTROS(
+eq1 CHAR(3) not null REFERENCES equipos(code),
+eq2 CHAR(3) not null  REFERENCES equipos(code),
+fecha date not null,
+res1 number(3)default 0 CONSTRAINT mayor_0 check(res1 >= 0) ,
+res2 number(3)default 0 CONSTRAINT mayor_0_ check(res2 >= 0) ,
+primary key(eq1, eq2)
+);
+
+drop table encuentros;
+
+INSERT INTO encuentros SELECT * FROM opc.encuentros;
+select * from encuentros;
+
+COMMIT;
+
+describe opc.faltas;
+
+CREATE TABLE faltas(
+codj char(3) not null REFERENCES jugadores(codj),
+eq1 CHAR(3) not null  ,
+eq2 CHAR(3) not null,
+num number(1)default 0 CONSTRAINT mayor_0__ check(num between 0 and 5) ,
+primary key(codj, eq1, eq2 ),
+foreign key(eq1, eq2) references encuentros(eq1, eq2)
+);
+
+
+INSERT INTO faltas SELECT * FROM OPC.faltas;
+select * from faltas;
+

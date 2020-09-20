@@ -1,0 +1,4 @@
+#! /bin/bash
+num_archivos=`ls -lR $HOME|cut -d " " -f 1|grep -e '-[-w][-x]$'|wc -l`
+
+echo "Hay $num_archivos archivos que no tienen permiso de lectura para el resto de usuarios en todo tu arbol de direcciones"

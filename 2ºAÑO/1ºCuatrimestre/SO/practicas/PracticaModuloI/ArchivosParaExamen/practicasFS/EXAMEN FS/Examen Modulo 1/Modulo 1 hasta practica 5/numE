@@ -1,0 +1,3 @@
+#!/bin/bash
+printf "EL numero de archivos que existen en el $1 \n"
+ls -a $1

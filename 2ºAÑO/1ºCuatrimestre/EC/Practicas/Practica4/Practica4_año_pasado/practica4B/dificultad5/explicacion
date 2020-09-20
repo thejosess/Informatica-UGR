@@ -1,0 +1,23 @@
+ORIGINAL:
+
+yYpNLSDk
+1117
+
+MODIFICADO:
+AYpNLSDk
+
+#0x6030b0
+set write on
+file bombaProf5_20_mod
+
+
+set{int}0x6030ac=123
+
+
+#habia una donde esta almacenada la contraseña entera y sacaba de ahi
+#con el pin hacia parecido 
+# lo he cambiado con ghex las dos cosas buscando con ascii
+
+
+
+quit

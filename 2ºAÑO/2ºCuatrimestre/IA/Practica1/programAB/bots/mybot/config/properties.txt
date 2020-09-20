@@ -1,0 +1,6 @@
+name:Alonso
+email:alonso90@gmail.com
+gender:male
+botmaster:theBoss	
+organization:ugr
+version:0.0.4

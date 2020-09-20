@@ -1,0 +1,32 @@
+#!/bin/bash
+# Uso: make
+# Descripción: Mantiene todas las dependencias entre los módulos y la biblioteca
+# que utiliza el programa.
+# Variable que indica el compilador que se va a utilizar
+CC=g++
+# Variable que indica las opciones que se van a pasar al compilador
+CPPFLAGS= -Wall
+# Variable que indica el directorio en donde se encuentran los archivos de
+cabecera
+INCLUDE_DIR= ./headers
+SOURCE_MODULES=programa.cpp ordenacion.cpp array.cpp impresion.cpp
+OBJECT_MODULES=$(SOURCE_MODULES:.cpp=.o)
+#Variable con el nombre del ejecutable
+EXECUTABLE=programa
+# Variable que indica el directorio en donde se encuentran las bibliotecas
+LIB_DIR= ./
+all: $(EXECUTABLE)
+$(EXECUTABLE): $(OBJECT_MODULES)
+$(CC) $(CPPFLAGS) $^ -o programa
+ordenacion.o: ordenacion.cpp array.o
+$(CC) $(CPPFLAGS) -c $^
+array.o: array.cpp
+$(CC) $(CPPFLAGS) -c $^
+impresion.o: impresion.cpp
+$(CC) -I$(INCLUDE_DIR) $(CPPFLAGS)
+Clean:
+rm *.o $(EXECUTABLE)
+Portafolios Prácticas
+24-1-2012
+#Si hubiera librerías irían aquí
+-c $^

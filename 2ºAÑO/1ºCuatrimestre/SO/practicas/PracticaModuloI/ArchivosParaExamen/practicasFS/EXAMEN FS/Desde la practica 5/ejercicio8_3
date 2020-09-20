@@ -1,0 +1,60 @@
+$ g++ -g main.cpp -o ejemploprueba
+$ gdb ejemploprueba
+(gdb) break 14
+//Creo un breakpoint en linea 14
+Punto de interrupción 1 at 0x80485d3: file main.cpp, line 14.
+(gdb) run
+Starting program: /home/superjes/ejemploprueba
+Breakpoint 1, cuenta (y=0) at main.cpp:17
+17
+return tmp;
+(gdb) info locals //Muestro el valor de las variables locales
+tmp = 2
+(gdb) p/x $pc
+//Informacion del contador de programa
+$2 = 0x80485d3
+(gdb) p/x $ps
+//Informacion del contador de pila
+$3 = 0x200202
+(gdb) break 30
+//Creo un breakpoint en linea 30
+Punto de interrupción 1 at 0x80485ee: file main.cpp, line 30.
+(gdb) run
+Starting program: /home/superjes/ejemploprueba
+Breakpoint 1, multiplica (x=3, y=2) at main.cpp:31
+31
+final = final + y;
+(gdb) info locals
+final = 0
+i = 0
+(gdb) p/x $pc
+$3 = 0x80485ee
+(gdb) p/x $ps
+$4 = 0x200202
+(gdb) break 43
+//Creo un breakpoint en linea 30
+Punto de interrupción 1 at 0x8048613: file main.cpp, line 43.
+(gdb) run
+Starting program: /home/superjes/ejemploprueba
+Breakpoint 1, main () at main.cpp:44
+44
+final1 = multiplica(3, 2);
+(gdb) info locals
+final1 = 134514411
+final2 = 1174096
+i = 3903476
+(gdb) p/x $pc
+$4 = 0x8048613
+(gdb) p/x $ps
+$5 = 0x200282
+(gdb) break 47
+Punto de interrupción 2 at 0x804862b: file main.cpp, line 47.
+(gdb) continue
+Continuando.
+Breakpoint 2, main () at main.cpp:47
+47
+for (i = 0; i < 100; i ++)
+(gdb) info locals
+final1 = 6
+final2 = 1174096
+i = 3903476

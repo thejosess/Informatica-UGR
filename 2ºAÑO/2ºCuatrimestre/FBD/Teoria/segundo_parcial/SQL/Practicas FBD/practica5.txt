@@ -1,0 +1,113 @@
+LA DIVISION
+
+proveedores ligadas a todas las piezas
+s1 que se una con todas las p's
+mirar ligaduras hay que mirarlas con relaciones(rombos)
+//tabla maestra de la division
+
+//la parte no comun de las tablas dividendo y divisor
+
+proveedores - ventas - piezas
+	
+
+ventas / piezas = proveedor
+s | p     p		s
+
+select codpie from ventas 
+	where codpro='S1'
+select codpie from piezas
+//le haces la resta y si no queda nada pues tienes tu resultado
+//las has conseguido todas
+
+dividiendo ventas(piezas) le quitas el al divisor(piezas) 
+
+(resta)
+divisor - (atr comun del) dividiendo
+not exist y no cumple criterio de la division, FALSE esta bmal
+si sale TRUE esta bien, con S4 el conjunto no esta vacio??
+//duda sobre el TRUE y FALSE
+
+minus(diferencia)
+
+
+proveedores que han vendido todas las piezas
+-------------------------------------------
+
+select codpro from proveedor
+WHERE 
+NOT EXISTS
+( (select codpie from pieza)		//divisor
+MINUS
+(select codpie from ventas where ventas.codpro = proveedor.codpro) //parte comun
+)
+
+proveedor que han vendido todas las piezas blancas
+-----------------------------------------------------
+select codpro from proveedor
+WHERE 
+NOT EXISTS
+( (select codpie from pieza where pieza.color='BLANCO')
+MINUS
+(select codpie from ventas where ventas.codpro = proveedor.codpro)
+)
+
+//le dices que vendan todas las piezas o que sean blancas
+
+
+provedoores que igual que arriba pero ademas en londres
+--------------------------------------------------------
+select codpro from proveedor
+WHERE ciudad='LONDRES' and
+NOT EXISTS
+( (select codpie from pieza where pieza.color='BLANCO')
+MINUS
+(select codpie from ventas where ventas.codpro = proveedor.codpro)
+)
+
+
+
+
+// 3 entre 1 es decir MISMO/a
+
+CodPro, Codpie, Codpj / Codpie = Codpro, Codpj
+
+proveedores de Londres que han venido todas las piezas blancas al mismo proyecto
+---------------------------------------------------------------------------------
+
+select distinct codpro, codpj from ventas v1
+WHERE
+NOT EXISTS
+( (select codpie from pieza where pieza.color='BLANCO')
+MINUS
+(select codpie from ventas v2 where v1.codpro = v2.codpro and v1.codpj = v2.codpj)
+)
+
+
+//PEOR FORMA 
+select distinct v1.codpro, codpj, p.codpro from ventas v1, proveedor p
+WHERE v1.codpro = p.codpro and p.ciudad = 'LONDRES' and
+NOT EXISTS
+( (select codpie from pieza where pieza.color='BLANCO')
+MINUS
+(select codpie from ventas v2 where v1.codpro = v2.codpro and v1.codpj = v2.codpj)
+)
+
+select distinct codpro, codpj from ventas v1 WHERE codpro IN(select codpro from proveedor where ciudad='LONDRES') and
+NOT EXISTS
+( select codpie from pieza where pieza.color='BLANCO'
+MINUS
+select codpie from ventas v2 where v1.codpro = v2.codpro and v1.codpj = v2.codpj
+)
+
+v1 reunion natural p
+
+
+EJERCICIOS
+-------------------
+1)Datos completos de pieza que han sido suministradas a todos los proyectos de londres
+2)Proyectos que han sido pedido la misma pieza a todos los proveedores que han hecho alguna venta en el año 2019
+3)Igual que anterior pero añadir nombres tambien
+
+
+
+

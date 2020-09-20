@@ -1,0 +1,29 @@
+#!/bin/bash
+
+case $1 in
+	1|ene|ENE)
+		echo "enero" ;;
+	2|feb|FEB)
+		echo "febrero" ;;
+	3|mar|MAR)
+		echo "marzo" ;;
+	4|abr|ABR)
+		echo "abril" ;;
+	5|may|MAY)
+		echo "mayo" ;;
+	6|jun|JUN)
+		echo "junio" ;;
+	7|jul|JUL)
+		echo "julio" ;;
+	8|ago|AGO)
+		echo "agosto" ;;
+	9|sep|SEP)
+		echo "septiembre" ;;
+	10|oct|OCT)
+		echo "octubre" ;;
+	11|nov|NOV)
+		echo "noviembre" ;;
+	12|dic|DIC)
+		echo "diciembre" ;;
+	*) echo "Opccion incorrecta del mes" ;;
+esac

@@ -1,0 +1,16 @@
+#!/bin/bash
+es_directorio=`test -d $1 && echo true || echo false`
+es_entero=`echo $2 | grep -q "[0-9]\+" && echo true || echo false`
+#el modificador -q del grep de antes es para que no se muestre en pantalla al hacerlo
+if [ $# -eq 2 ]
+then
+		if [ $es_directorio == "true" ] && [ $es_entero == "true" ]
+		then
+				find $1 -size -$2 > archivosSizN.txt
+				echo "Fichero archivosSizN.txt creado correctamente"
+		else
+			echo "El directorio no existe o el parametro segundo no es un entero"
+		fi
+else
+	echo "Numero incorrecto de parametros"
+fi

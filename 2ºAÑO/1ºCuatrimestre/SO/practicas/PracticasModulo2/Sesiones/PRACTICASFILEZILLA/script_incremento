@@ -1,0 +1,14 @@
+#!/bin/bash
+
+incremento=0
+
+for (( c=1; c<=$1; c++ ))
+do
+	num1=$RANDOM
+	num2=$RANDOM
+	resultado=$(($num1 * $num2))
+	((incremento++))
+	sleep 2
+done
+
+	echo "el valor de la variable es $incremento"

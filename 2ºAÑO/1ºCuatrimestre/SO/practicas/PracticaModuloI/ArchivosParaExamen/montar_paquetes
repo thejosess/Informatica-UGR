@@ -1,0 +1,5 @@
+#!/bin/bash
+
+
+mkdir /tmp/paquetes
+mount none /tmp/paquetes -t hostfs -o /fenix/depar/lsi/so/paquetes

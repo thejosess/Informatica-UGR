@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+
+<category>
+    <pattern>
+        La serie <set>series</set> en que idiomas esta
+    </pattern>
+
+    <template>
+        <think>
+        <set var="aux"><map><name><star/></name>idiomas</map></set>
+        </think>
+
+        <srai>aniadey <srai>decode_fields <get var="aux"/></srai></srai>
+    </template>
+</category>
+
+<!-- regla por si no esta en catalogo -->
+<category>
+    <pattern>
+        La serie * en que idiomas esta
+    </pattern>
+        
+    <template>
+        no se encuentra en mi base de datos quieres que la aniada
+    </template>
+</category>
+
+<category>
+    <pattern>
+        Dime si la serie <set>series</set> esta en <set>idiomas</set>
+    </pattern>
+
+    <template>
+        <think>
+        <set var = "rs"><map><name><star/></name>idiomas</map></set>
+        <set var = "rs"><srai>decode_fields <get var = "rs"/></srai></set>
+        <set var = "idioma"><first><get var = "rs"/></first></set>
+
+        <condition var="idioma">
+        <li value="NIL"><set var="solucion">No, no esta en <star index="2"/> </set></li>
+        <li><value><star index="2"/></value>
+        <set var="solucion">Si, <star/> esta en <star index="2"/></set>
+        </li>
+        <li>
+            <set var="rs"><rest><get var="rs"/></rest></set>
+            <set var="idioma"><first><get var="rs"/></first></set>
+            <loop/>
+        </li>
+        </condition>
+        </think>
+        <get var="solucion"/>
+    </template>
+</category>
+
+<!-- regla por si no esta en catalogo -->
+<category>
+    <pattern>
+        Dime si la serie * esta en *
+    </pattern>
+        
+    <template>
+        no se encuentra en mi base de datos quieres que la aniada
+    </template>
+</category>
+
+
+<!-- numero idiomas -->
+<category>
+    <pattern>
+        Dime el numero de idiomas de <set>series</set>
+    </pattern>
+
+    <template>
+        <think>
+        <set var="contador">0</set>
+        <set var = "rs"><map><name><star/></name>idiomas</map></set>
+        <set var = "rs"><srai>decode_fields <get var = "rs"/></srai></set>
+        <set var = "idioma"><first><get var = "rs"/></first></set>
+
+        <condition var="idioma">
+        <li value="NIL"><set var="solucion">parada</set></li>
+        <li>
+            <set var="contador">
+                <map name="successor"><get var="contador"/></map>
+            </set>
+            <set var="rs"><rest><get var="rs"/></rest></set>
+            <set var="idioma"><first><get var="rs"/></first></set>
+            <loop/>
+        </li>
+        </condition>
+        </think>
+        <get var="contador"/>
+    </template>
+</category>
+
+<!-- regla por si no esta en catalogo -->
+<category>
+    <pattern>
+        Dime el numero de idiomas de *
+    </pattern>
+        
+    <template>
+        no se encuentra en mi base de datos quieres que la aniada
+    </template>
+</category>
+
+<!-- numero de subtitulos -->
+<category>
+    <pattern>
+        Dime el numero de subtitulos de <set>series</set>
+    </pattern>
+
+    <template>
+        <think>
+        <set var="contador">0</set>
+        <set var = "rs"><map><name><star/></name>subtitulos</map></set>
+        <set var = "rs"><srai>decode_fields <get var = "rs"/></srai></set>
+        <set var = "subtitulo"><first><get var = "rs"/></first></set>
+
+        <condition var="subtitulo">
+        <li value="NIL"><set var="solucion">parada</set></li>
+        <li>
+            <set var="contador">
+                <map name="successor"><get var="contador"/></map>
+            </set>
+            <set var="rs"><rest><get var="rs"/></rest></set>
+            <set var="subtitulo"><first><get var="rs"/></first></set>
+            <loop/>
+        </li>
+        </condition>
+        </think>
+        <get var="contador"/>
+    </template>
+</category>
+
+<!-- regla por si no esta en catalogo -->
+<category>
+    <pattern>
+        Dime el numero de subtitulos de *
+    </pattern>
+        
+    <template>
+        no se encuentra en mi base de datos quieres que la aniada
+    </template>
+</category>
+
+<!-- numero de capitulos de una temporada -->
+<category>
+    <pattern>
+        Dime el numero de capitulos de <set>series</set> de la temporada <set>numero</set>
+    </pattern>
+
+    <template>
+        <think>
+        <set var="contador">0</set>
+        <set var="lista_capitulos"><map><name><star/></name>temporada<star index="2"/></map></set>
+        <set var="lista_capitulos"><srai>decode_fields <get var = "lista_capitulos"/></srai></set>
+        <set var="cap">
+            <srai> ITERATE <get var="lista_capitulos"/> </srai>
+        </set>
+        </think>
+            <condition var="cap">
+            <li><value>$</value></li>
+            <li value="unknown"><think><set var="contador">0</set></think></li>
+            <li>
+                <think>
+                <set var="contador">
+                    <map name="successor"><get var="contador"/></map>
+                </set>
+                <set var="cap">
+                    <srai>NEXT</srai>
+                </set>
+                <set var="cap">
+                    <srai>NEXT</srai>
+                </set>
+                </think>
+                <loop/>
+            </li>
+            </condition>
+            <get var="contador"/>
+    </template>
+</category>
+
+<!-- regla por si no esta en catalogo -->
+<category>
+    <pattern>
+        Dime el numero de capitulos de * de la temporada *
+    </pattern>
+        
+    <template>
+        no se encuentra en mi base de datos quieres que la aniada
+    </template>
+</category>
+
+<!-- regla por si no esta en catalogo -->
+<category>
+    <pattern>
+        Dime el numero de capitulos de <set>series</set> de la temporada *
+    </pattern>
+        
+    <template>
+        no se encuentra en mi base de datos para anadirla escribe
+        Anade un capitulo de la nueva temporada x de <star/> , si desea anadir mas de 10 temporadas es necesario
+        modificar el map numero y anadir los numeros de las temporadas que quieras anadir.
+    </template>
+</category>
+
+<!-- numero de capitulos de todas las temporadas -->
+<category>
+    <pattern>
+        Dime el numero de capitulos de <set>series</set>
+    </pattern>
+
+    <template>
+        <think>
+        <set var="contador">1</set>
+        <set var="num">0</set>
+        <set var="map"><readkeys><star/></readkeys></set>
+        <set var="lista_keys"><srai>COUNT <get var="map"/></srai></set>
+        <set var="lista_keys">
+            <map name="successor"><get var="lista_keys"/></map>
+        </set>
+        <set var="serie"><star/></set>
+        </think>
+
+        <condition var="contador">
+            <li><value><get var="lista_keys"/></value></li>
+            <li>
+                <think>
+                <set var="lista_capitulos"><map><name><get var="serie"/></name>temporada<get var="contador"/></map></set>        
+                <set var="lista_capitulos"><srai>decode_fields <get var = "lista_capitulos"/></srai></set>
+                <set var="cap">
+                    <srai> ITERATE <get var="lista_capitulos"/> </srai>
+                </set>
+                </think>
+
+                <condition var="cap">
+                    <li value = "unknown"></li>
+                    <li><value>$</value></li>
+
+                    <li>
+                    <think>                    
+                    <set var="num">
+                        <map name="successor"><get var="num"/></map>
+                    </set>
+                    <set var="cap">
+                        <srai>NEXT</srai>
+                    </set>
+                    <set var="cap">
+                        <srai>NEXT</srai>
+                    </set>
+                    </think>
+                    <loop/>
+                    </li>
+                </condition>
+
+                <think>
+                <set var="contador">
+                    <map name="successor"><get var="contador"/></map>
+                </set>
+                </think>
+                <loop/>
+            </li>
+        </condition>
+        <get var="num"/>
+    </template>
+</category> 
+
+<!-- regla por si no esta en catalogo -->
+<category>
+    <pattern>
+        Dime el numero de capitulos de *
+    </pattern>
+        
+    <template>
+        no se encuentra en mi base de datos quieres que la aniada
+    </template>
+</category>
+
+<!-- numero de temporadas -->
+<category>
+    <pattern>
+        Dime el numero de temporadas de <set>series</set>
+    </pattern>
+
+    <template>
+        <think>
+        <set var="contador">1</set>
+        <set var="num">0</set>
+        <set var="map"><readkeys><star/></readkeys></set>
+        <set var="lista_keys"><srai>COUNT <get var="map"/></srai></set>
+        <set var="lista_keys">
+            <map name="successor"><get var="lista_keys"/></map>
+        </set>
+        <set var="serie"><star/></set>
+        </think>
+
+        <condition var="contador">
+            <li><value><get var="lista_keys"/></value></li>
+            <li>
+                <think>
+                <set var="lista_capitulos"><map><name><get var="serie"/></name>temporada<get var="contador"/></map></set>        
+                <set var="lista_capitulos"><srai>decode_fields <get var = "lista_capitulos"/></srai></set>
+                <set var="cap">
+                    <srai> ITERATE <get var="lista_capitulos"/> </srai>
+                </set>
+                </think>
+
+                <condition var="cap">
+                    <li value = "unknown"></li>
+                    <li><value>$</value></li>
+
+                    <li>
+                    <think>                    
+                    <set var="num">
+                        <map name="successor"><get var="num"/></map>
+                    </set>
+                    </think>
+                    </li>
+                </condition>
+
+                <think>
+                <set var="contador">
+                    <map name="successor"><get var="contador"/></map>
+                </set>
+                </think>
+                <loop/>
+            </li>
+        </condition>
+        <get var="num"/>
+    </template>
+</category> 
+
+<!-- regla por si no esta en catalogo -->
+<category>
+    <pattern>
+        Dime el numero de temporadas de *
+    </pattern>
+        
+    <template>
+        no se encuentra en mi base de datos quieres que la aniada
+    </template>
+</category>
+
+<!-- Decir el nombre de un capitulo concreto -->
+<category>
+    <pattern>
+        Dime el nombre del capitulo <set>numero</set> de la temporada <set>numero</set> de <set>series</set>
+    </pattern>
+
+    <template>
+        <think>
+        <set var="contador">0</set>
+        <set var="fin"><star/></set>
+        </think>
+
+        <think>
+        <set var="lista_capitulos"><map><name><star index="3"/></name>temporada<star index="2"/></map></set>
+        <set var="lista_capitulos"><srai>decode_fields <get var = "lista_capitulos"/></srai></set>
+        <set var="cap">
+            <srai> ITERATE <get var="lista_capitulos"/> </srai>
+        </set>
+        <set var="nombre"><get var="cap"/></set>
+        </think>
+
+        <condition var="contador">
+            <li><value><get var="fin"/></value></li>
+
+            <li>
+                <think>                    
+                    <set var="cap">
+                        <srai>NEXT</srai>
+                    </set>
+                    <set var="cap">
+                        <srai>NEXT</srai>
+                    </set>
+                    <set var="contador">
+                        <map name="successor"><get var="contador"/></map>
+                    </set>
+                    <set var="nombre"><get var="cap"/></set>
+                </think>
+
+                <loop/>
+            </li>
+        </condition>
+        <condition var="nombre">
+            <li><value>$</value>
+                no se encuentra en mi base de datos, para anadir un capitulo para una nueva temporada escriba
+                Anade un capitulo de la nueva temporada X de X
+                y para anadir un capitulo a una temporada ya existente como
+                Anade un capitulo de la temporada X de X
+            </li>
+            <li><get var="nombre"/> , sabiendo que el primer capitulo es el capitulo 0</li>
+        </condition>
+        
+    </template>
+</category>
+
+
+<!-- regla por si no esta en catalogo -->
+<category>
+    <pattern>
+        Dime el nombre del capitulo * de la temporada * de *
+    </pattern>
+        
+    <template>
+        no se encuentra en mi base de datos quieres que la aniada
+    </template>
+</category>
+
+<!-- regla por si no esta en catalogo -->
+<category>
+    <pattern>
+        Dime el nombre del capitulo * de la temporada * de <set>series</set>
+    </pattern>
+        
+    <template>
+        no se encuentra en mi base de datos para anadirla escribe
+        Anade un capitulo  nueva temporada <star index="2"/> de <star index="3"/> , si desea anadir mas de 10 temporadas es necesario
+        modificar el map numero y anadir los numeros de las temporadas que quieras anadir.
+    </template>
+</category>
+
+<!-- Dime la duracion de un capitulo concreto -->
+<category>
+    <pattern>
+        Dime la duracion del capitulo <set>numero</set> de la temporada <set>numero</set> de <set>series</set>
+    </pattern>
+
+    <template>
+        <think>
+        <set var="contador">0</set>
+        <set var="fin"><star/></set>
+        </think>
+
+        <think>
+        <set var="lista_capitulos"><map><name><star index="3"/></name>temporada<star index="2"/></map></set>
+        <set var="lista_capitulos"><srai>decode_fields <get var = "lista_capitulos"/></srai></set>
+        <set var="cap">
+            <srai> ITERATE <get var="lista_capitulos"/> </srai>
+        </set>
+        <set var="nombre"><get var="cap"/></set>
+        </think>
+
+        <condition var="contador">
+            <li><value><get var="fin"/></value></li>
+
+            <li>
+                <think>                    
+                    <set var="cap">
+                        <srai>NEXT</srai>
+                    </set>
+                    <set var="cap">
+                        <srai>NEXT</srai>
+                    </set>
+                    <set var="contador">
+                        <map name="successor"><get var="contador"/></map>
+                    </set>
+                    <set var="nombre"><get var="cap"/></set>
+                    <set var="duracion">
+                        <srai>NEXT</srai>
+                    </set>
+                </think>
+
+                <loop/>
+            </li>
+        </condition>
+
+        <condition var="nombre">
+            <li><value>$</value>
+                no se encuentra en mi base de datos, para anadir un capitulo para una nueva temporada escriba
+                Anade un capitulo de la nueva temporada X de X
+                y para anadir un capitulo a una temporada ya existente como
+                Anade un capitulo de la temporada X de X
+            </li>
+            <li><get var="nombre"/> con una duracion de <get var="duracion"/> minutos, sabiendo que el primer capitulo es el capitulo 0</li>
+        </condition>
+        
+    </template>
+</category>
+
+<!-- regla por si no esta en catalogo -->
+<category>
+    <pattern>
+        Dime la duracion del capitulo * de la temporada * de <set>series</set>
+    </pattern>
+        
+    <template>
+        no se encuentra en mi base de datos para anadirla escribe
+        Anade un capitulo de la nueva temporada <star index="2"/> de <star index="3"/> , si desea anadir mas de 10 temporadas es necesario
+        modificar el map numero y anadir los numeros de las temporadas que quieras anadir.
+    </template>
+</category>
+
+<!-- regla por si no esta en catalogo -->
+<category>
+    <pattern>
+        Dime la duracion del capitulo * de la temporada * de *
+    </pattern>
+        
+    <template>
+        no se encuentra en mi base de datos quieres que la aniada
+    </template>
+</category>
+
+</aiml>

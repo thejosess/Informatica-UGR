@@ -1,0 +1,13 @@
+espanol
+ingles
+frances
+aleman
+italiano
+arabe
+chino
+coreano
+japones
+indu
+ruso
+polaco
+checo

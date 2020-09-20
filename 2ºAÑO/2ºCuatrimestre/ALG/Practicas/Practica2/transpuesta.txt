@@ -1,0 +1,6 @@
+Problema de la matriz
+
+->obtener la traspuesta, tamano 2^k
+
+    casos mas sencillos, tienes que hacer divide y venceras 
+    

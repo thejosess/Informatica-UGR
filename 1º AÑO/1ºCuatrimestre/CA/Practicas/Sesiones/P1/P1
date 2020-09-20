@@ -1,0 +1,8 @@
+quitar todo de ver y dejar historia
+-control enter y ejecuta la sentencia
+-maxima, cambiar pantalla 2d, ascii
+-$al final de la operacion para que se muestre la operacion
+-para sacar decimales exactos        operacion,numer
+float(%pi) -> y asi lo reconoce como el numero PI con el porcentaje, numeros especiales siempre con el %
+-mas decimales, numerico, ajustar precision
+

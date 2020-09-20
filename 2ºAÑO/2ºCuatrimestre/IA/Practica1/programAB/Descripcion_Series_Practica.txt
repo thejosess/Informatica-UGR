@@ -1,0 +1,76 @@
+Serie: 	Narcos
+Plataforma: Netflix
+Genero: drama, crimen, biografia
+Idiomas: espanol ingles
+Subtitulos: espanol ingles
+Descripcion: Narcos es una serie de ficcion historica basada en la lucha contra el narcotrafico en Colombia durante los anos 1990
+Pagina web: www.netflix.com/es-en/title/80025172
+Temporada 1   
+	Descenso 57 
+	La espada de simon bolivar 47
+	Los hombres de siempre 47 
+	El palacio en llamas 44 
+	Habra futuro 55
+	Explosivos 50
+	Lloraras lagrimas de sangre 51
+	La gran mentira 51 
+	La catedral 51 
+	Despegue 45
+Temporada 2
+	Por fin libre 53
+	Cambalache 47 
+	Nuestro hombre en madrid 47 
+	El bueno el malo y el muerto 56
+============================================================================================
+Serie: 	La casa de papel
+Plataforma: Netflix
+Genero: drama crimen suspense
+Idiomas:frances espanol ingles
+subtitulos:espanol ingles frances ruso chino japones
+Descripcion:Ocho atracadores toman rehenes en la fabrica nacional de moneda y timbre. Desde el encierro su lider manipula a la policia para llevar a cabo un ambicioso plan.
+Pagina web: www.netflix.com/es/title/80192098
+temporada 1
+	episodio 1 80 
+	episodio 2 67 
+	episodio 3 63 
+    episodio 4 64 
+    episodio 5 69 
+    episodio 6 74 
+    episodio 7 67 
+    episodio 8 68 
+    episodio 9 72
+temporada 2
+	episodio 1 63
+============================================================================================
+Serie: 	The Expanse
+Plataforma: PrimeVideo
+Genero: Fantasia, Ciencia Ficcion
+Idiomas:aleman espanol ingles italiano
+subtitulos:espanol ingles frances ruso chino japones polaco
+Descripcion: La desaparicion de Julie Mao, nina rica convertida en activista politica, une las vidas del detective de Ceres, Joe Miller (Thomas Jane), el capitan de la nave, James Holden (Steven Strait), y el politico de la ONU, Chrisjen Avasarala (Shohreh Aghdashloo). En medio de toda la tension politica entre la Tierra, Marte y el Cinturon, resuelven la mayor conspiracion de todos los tiempos.
+Pagina web: www.primevideo.com/detail/0MW6F85MD8486AE43GONNOR5F1/ref=atv_dp_season_select_atf
+temporada 1
+	Dulcinea 45 
+	El gran vacio 42 
+	Recordad el Cant 42 
+        CBQ 42 
+        De vuelta al carnicero 42 
+        En las profundidades 42 
+        Molinos 42 
+        Rescate 41 
+        Masa critica 39
+============================================================================================
+Serie: 	Fleabag
+Plataforma: PrimeVideo
+Genero: comedia
+Idiomas: aleman espanol ingles frances portugues italiano
+subtitulos:espanol ingles frances nerlandes suomi indonesio
+Descripcion:“Fleabag” es una divertida y emotiva ventana a la mente de una mujer ironica, sexual, enfadada y llena de dolor mientras se abalanza sobre la moderna vida de Londres. La premiada autora teatral Phoebe Waller-Bridge escribe y da vida a Flebag, una mujer sin filtros que intenta recuperarse, rechazando a quien quiere ayudarla y manteniendo su bravuconeria.
+Pagina web: www.primevideo.com/detail/0OB9NDUVQKFRSYRSCHT2A784TI/ref=atv_hm_hom_c_8pZiqd_2_8
+temporada 1
+	episodio 1 26 
+	episodio 2 26 
+	episodio 3 25 
+        episodio 4 26 
+        episodio 5 23 
+        episodio 6 25 

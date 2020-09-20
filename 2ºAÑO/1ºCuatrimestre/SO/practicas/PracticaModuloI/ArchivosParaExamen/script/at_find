@@ -1,0 +1,3 @@
+#!/bin/bash
+#Nombre: script_4.5.sh
+find ~ -mtime 1 > modificados:`date +%Y-%j-%T`

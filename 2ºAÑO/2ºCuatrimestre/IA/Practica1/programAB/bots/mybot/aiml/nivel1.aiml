@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<!-- Argumento de una serie -->
+<category>
+    <pattern>
+        Cual es el argumento de <set>series</set>
+    </pattern>
+
+    <template>
+        <srai>decode <map><name><star/></name>sinopsis</map></srai>
+    </template>
+</category>
+
+<!-- Argumento de una serie -->
+<category>
+    <pattern>
+        cual es el argumento de *
+    </pattern>
+
+    <template>
+       no se encuentra en mi base de datos quieres que la aniada
+    </template>
+</category>
+
+<!-- instrucciones para aniadir una serie -->
+<category>
+    <pattern>
+        Si
+    </pattern>
+    <that>NO SE ENCUENTRA EN MI BASE DE DATOS QUIERES QUE LA ANIADA</that>
+
+    <template>
+        ahora tienes que crear un archivo en la carpeta maps con el nombre.txt
+         y reiniciar mi sistema pidiendome luego que aniada la serie, gracias.
+    </template>
+</category>
+
+<!-- creo otro archivo llamado series donde meto todas las series tanto de netflix como de prime video pero sin codificar para
+poder buscar si esta entre mis series para distintas reglas de este nivel y de otros -->
+<!-- despues de crear el map llamas a esta regla -->
+<category>
+    <pattern>
+       aniade la serie * de *
+    </pattern>
+
+    <template>
+        <think>
+        <set var="cadena"><star index="2"/></set>
+        <set name="serie"><star index="1"/></set>
+        </think>
+
+            <addtoset>
+                <name>series</name>
+                <key><get name="serie"/></key>
+            </addtoset>
+
+        <condition var="cadena">
+            <li value="netflix">
+                <addtoset>
+                    <name>seriesnetflix</name>
+                    <key><srai>CODE <get name="serie"/></srai></key>
+                </addtoset>
+            </li>
+
+            <li value="primevideo">
+                <addtoset>
+                    <name>seriesprimevideo</name>
+                    <key><srai>CODE <get name="serie"/></srai></key>
+                </addtoset>
+            </li>
+        </condition>
+
+    Serie anadida ahora dime a que genero pertenece
+    </template>
+</category>
+
+<!-- intentas aniadir la serie pero ya esta en netflix o primevideo -->
+<category>
+    <pattern>
+       an+ la serie <set>series</set> de [netflix primevideo]
+    </pattern>
+
+    <template>
+        La serie ya esta aniadida
+    </template>
+</category>
+
+<!-- despues de anadirla te pide el genero al que pertenece y llamas a otra regla para anadir mas generos-->
+<category>
+    <pattern>
+        ^ pertenece al genero de [la el] <set>genero</set>
+    </pattern>
+    <that>SERIE ANADIDA AHORA DIME A QUE GENERO PERTENECE</that>
+
+    <template>
+        <addtomap>
+            <name><get name ="serie"/></name>
+            <key>genero</key>
+            <value><srai>CODE <star index="2"/></srai></value>  
+        </addtomap>
+        <think>
+        <set name="anadir">genero</set>
+        </think>
+        quieres anadir mas
+    </template>
+</category>
+
+<!-- le dices el argumento que tiene la serie -->
+<category>
+    <pattern>
+        ^ la serie va sobre *
+    </pattern>
+    <that>GENERO ANADIDO AHORA DE QUE VA LA SERIE</that>
+
+    <template>
+        <think>
+        <set var="arg"><star index="2"/></set>
+        </think>
+        <addtomap>
+            <name><get name ="serie"/></name>
+            <key>sinopsis</key>
+            <value><srai>CODE <get var="arg"/></srai></value>
+        </addtomap>
+        sinopsis aniadida ahora dime en que idiomas estan los subtitulos
+    </template>
+</category>
+
+<!-- regla para decirle en que idioma estan los subtitulos y llamas a la otra regla para anadir mas de uno -->
+<category>
+    <pattern>
+        los subtitulos estan en <set>idiomas</set>
+    </pattern>
+    <that>SINOPSIS ANIADIDA AHORA DIME EN QUE IDIOMAS ESTAN LOS SUBTITULOS</that>
+
+    <template>
+        <think>
+        <set var="idio1"><star index="1"/></set>
+        <set name="anadir">subtitulos</set>
+        </think>
+        <addtomap>
+            <name><get name ="serie"/></name>
+            <key>subtitulos</key>
+            <value><get var="idio1"/></value>
+        </addtomap>
+        quieres anadir mas
+    </template>
+</category>
+
+<!-- regla creada para anadir mas genero, subtitulos o idiomas -->
+<category>
+    <pattern>
+        Si quiero anadir [el la] [<set>genero</set> <set>idiomas</set>] como ^
+    </pattern>
+    <that>QUIERES ANADIR MAS</that>
+
+    <template>
+        <think>
+        <set var="idio"><star index="1"/></set>
+        <set var="inicial"><map><name><get name ="serie"/></name><get name ="anadir"/></map></set>
+        </think>
+
+        <modifymap>
+            <name><get name ="serie"/></name>
+            <key><get name ="anadir"/></key>
+            <value><get var ="inicial"/>@<get var ="idio"/></value>
+        </modifymap>
+        quieres anadir mas
+    </template>
+</category>
+
+<!-- regla para decirle que no quieres anadir mas  -->
+<category>
+    <pattern>
+        No quiero anadir mas
+    </pattern>
+    <that>QUIERES ANADIR MAS</that>
+
+    <template>
+    <condition name ="anadir">
+    <get name ="anadir"/>
+        <li value="genero"> genero anadido ahora de que va la serie </li>
+        <li value="subtitulos"> dime ahora el idioma en que esta disponible la serie </li>
+        <li value="idiomas"> idiomas aniadidos dime alguna pagina web sin la terminacion ni comienzo de la misma </li>
+        <li> no me estas usando de forma correcta </li>
+        </condition> 
+    </template>
+</category>
+
+<!-- regla para anadir los idiomas que tiene la serie y vuelves a llamar a la regla para anadir mas de un idioma -->
+<category>
+    <pattern>
+        los idiomas son <set>idiomas</set> y <set>idiomas</set>
+    </pattern>
+    <that>DIME AHORA EL IDIOMA EN QUE ESTA DISPONIBLE LA SERIE</that>
+
+    <template>
+        <think>
+        <set var="idio1"><star index="1"/></set>
+        <set var="idio2"><star index="2"/></set>
+        <set name="anadir">idiomas</set>
+        </think>
+        <addtomap>
+            <name><get name ="serie"/></name>
+            <key>idiomas</key>
+            <value><get var="idio1"/>@<get var="idio2"/></value>
+        </addtomap>
+        quieres anadir mas
+    </template>
+</category>
+
+<!-- regla para anadir una pagina web a la serie que estabas anadiendo -->
+<category>
+    <pattern>
+        La pagina web es *
+    </pattern>
+    <that>IDIOMAS ANIADIDOS DIME ALGUNA PAGINA WEB SIN LA TERMINACION NI COMIENZO DE LA MISMA</that>
+
+    <template>
+        <think>
+        <set var="web"><star index="1"/></set>
+        </think>
+
+        <addtomap>
+            <name><get name ="serie"/></name>
+            <key>web</key>
+            <value>www.<srai>CODE <get var="web"/></srai>.com</value>
+        </addtomap>
+        pagina web anadida
+    </template>
+</category>
+
+<!-- Si no deseas anadir la pagina web -->
+<category>
+    <pattern>
+        ^ no ^ pagina web
+    </pattern>
+    <that>IDIOMAS ANIADIDOS DIME ALGUNA PAGINA WEB SIN LA TERMINACION NI COMIENZO DE LA MISMA</that>
+
+    <template>
+        no te preocupes
+    </template>
+</category>
+
+<!-- regla para anadir un capitulo de una nueva temporada -->
+<category>
+    <pattern>
+        Anade un capitulo de la nueva temporada <set>number</set> de <set>series</set>
+    </pattern>
+
+    <template>
+        <think>
+        <set name="serie"><star index="2"/></set>
+        <set name="temporada"><star index="1"/></set>
+        <set name="topic">captitnew</set>
+        </think>
+
+        Dime el titulo del capitulo
+    </template>
+</category>
+
+<!-- regla por si no esta en catalogo -->
+<category>
+    <pattern>
+        Anade un capitulo de la nueva temporada * de *
+    </pattern>
+        
+    <template>
+        no se encuentra en mi base de datos quieres que la aniada
+    </template>
+</category>
+        
+
+<!-- regla para decirle el nombre del capitulo de la nueva temporada -->
+<topic name="captitnew">
+<category>
+    <pattern> 
+        el titulo es * 
+    </pattern>
+
+    <template>
+        <think>
+        <set name="titulo"><star/></set>
+        <set name="topic">capduranew</set>
+        </think>
+        Dime su duracion
+    </template>
+</category>
+</topic>
+
+<!-- regla para decirle la duracon del capitulo de la nueva temporada -->
+<topic name ="capduranew">
+<category>
+    <pattern>
+        Dura <set>number</set> minutos
+    </pattern>
+
+    <template>
+        <think>
+        <set name="duracion"><star/></set>
+        <set name="topic">unknown</set>
+        </think>
+        <addtomap>
+            <name><get name ="serie"/></name>
+            <key>temporada<get name="temporada"/></key>
+            <value><get name="titulo"/>@<get name="duracion"/></value>
+        </addtomap>
+        Capitulo anadido
+    </template>
+</category>
+</topic>
+
+<!-- regla para anadir un capitulo a una temporada ya existente -->
+<category>
+    <pattern>
+        Anade un capitulo de la temporada <set>number</set> de <set>series</set>
+    </pattern>
+
+    <template>
+        <think>
+        <set name="serie"><star index="2"/></set>
+        <set name="temporada"><star index="1"/></set>
+        <set name="topic">captit</set>
+        </think>
+
+        Dime el titulo del capitulo
+    </template>
+</category>
+
+<!-- regla por si no esta en catalogo -->
+<category>
+    <pattern>
+        Anade un capitulo de la temporada * de *
+    </pattern>
+        
+    <template>
+        no se encuentra en mi base de datos quieres que la aniada
+    </template>
+</category>
+
+<!-- regla para decirle el titulo del capitulo de la temporada ya existente -->
+<topic name="captit">
+<category>
+    <pattern> 
+        el titulo es * 
+    </pattern>
+
+    <template>
+        <think>
+        <set name="titulo"><star/></set>
+        <set name="topic">capdura</set>
+        </think>
+        Dime su duracion
+    </template>
+</category>
+</topic>
+
+<!-- regla para decirle la duracion del capitulo de la temporada ya existente -->
+<topic name ="capdura">
+<category>
+    <pattern>
+        Dura <set>number</set> minutos
+    </pattern>
+
+    <template>
+        <think>
+        <set name="duracion"><star/></set>
+        <set name="topic">unknown</set>
+        <set name="res"><map><name><get name ="serie"/></name>temporada<get name="temporada"/></map></set>
+        </think>
+    
+        <modifymap>
+            <name><get name ="serie"/></name>
+            <key>temporada<get name="temporada"/></key>
+            <value><get name="res"/>@<get name="titulo"/>@<get name="duracion"/></value>
+        </modifymap>
+        Capitulo anadido
+    </template>
+</category>
+</topic>
+
+</aiml>
+

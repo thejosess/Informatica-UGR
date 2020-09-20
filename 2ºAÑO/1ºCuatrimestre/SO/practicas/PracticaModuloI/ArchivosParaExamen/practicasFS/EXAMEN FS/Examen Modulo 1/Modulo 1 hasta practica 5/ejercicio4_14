@@ -1,0 +1,17 @@
+#!/bin/bash
+if [[ $1 == "-h" ]] #Se puede usar el corchete solo 
+then
+printf "Este es el manual\n"
+else
+anio=365
+dia=`date +%j`
+restantes=$(($anio - $dia)) #tambien se puede poner donde esta el $(( , usar expr ` y `
+printf "Faltan $restantes dias hasta el fin de año\n"
+if [ $(($restantes % 5)) == 0 ]
+then
+printf "Ademas, ese numero es multiplo de 5\n"
+else
+printf "Pero ese numero no es multiplo de 5\n"
+fi
+fi
+#pene

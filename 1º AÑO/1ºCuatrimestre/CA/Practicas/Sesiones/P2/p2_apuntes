@@ -1,0 +1,24 @@
+graficos -> tramado 2d
+el dominio dejas por defecto el -5 5 y ya vas cambiando	
+
+wxplot2d(sin(x^2) ,[x,-2*%pi,2*%pi])
+#dominio entre corchetes
+#las funciones entre corchetes si son mas de una funcion
+
+ecuacion general de la circunferencia de centro a y b y radio r
+x^2 + y^2 = 1
+(x-a)^2+(y-b)^2 = r^2
+
+a es 0 y b es 0 y radio seria raiz cuadrada de 1 que es 1
+
+implicita con wxdraw2d necesita dos variables para definir la funcion
+
+con el plot3d sale una imagen fuera del gnu
+
+tramado, tramado 3d
+
+
+
+4,6,8,11 a elegir
+
+pmrivas@ugr.es

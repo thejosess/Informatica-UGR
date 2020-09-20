@@ -1,0 +1,34 @@
+rbx, rbp, r12-15 son salva-invocados
+los parametrso son lo de dayane silk dress
+* -> salvainvocantes, la funcion no tiene porque guardarlo
+
+para acceder a las variables globales de otro fichero se llama a externo
+
+int *ptr
+ptr++ -> tiene en cuenta la aritmetica de punteros y como es un int * entonces es +4
+
+con direccionamiento a memoria es necesario que sean registros de 64 bits
+
+
+ASM
+------------
+= salida
++ entrada
+
+int *f();
+//funcion que devuelve un puntero a entero
+
+(*f) -> contenido de ese puntero
+
+define o alias
+g === (*f)
+
+int g(); ------> int (*f)();
+//puntero a una funcion
+en crono 
+cuando haces resultado = func(lista, SIZE);
+ese func estas llamando a suma1, suma2, suma3, porque es un puntero a una funcion
+void crono(int (*func)(), char * msg)
+
+
+con shr solo se puede usar en la izquierda cl

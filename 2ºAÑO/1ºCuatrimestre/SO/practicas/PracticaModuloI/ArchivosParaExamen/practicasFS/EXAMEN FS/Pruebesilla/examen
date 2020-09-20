@@ -1,0 +1,43 @@
+#!/bin/bash
+
+if [ $# != "2" ]
+then
+	echo "Error: Es necesario introducir 2 argumentos"
+	exit
+fi
+
+
+if test -e $1 && test -d $2
+then
+	
+	printf "1: Introduzca 1 si quiere copiar archivo \n2: Introduzca 2 si quiere contar archivos\n"
+	
+	read opcion
+	case "$opcion" in
+		1) cat $1 | head -5 > $2/salida
+		   printf "Se han copiado las cinco primeras lineas del archivo $1 en $2/salida\n"
+		   cat $2/salida ;;
+
+
+		2) numpermi=0
+		   numtotal=0
+		for archivo in $(ls $2)
+		do
+			numtotal=$[$numtotal + 1]
+
+			if test -x $2/$archivo
+			then
+				echo "El $archivo tiene permiso de ejecución."
+				numpermi=$[$numpermi + 1]
+			fi
+		done
+		
+		printf "De un total de $numtotal archivos hay $numpermi archivos con permiso de ejecución\n" ;;
+
+		*) printf "No se ha introducido ninguna opción de las disponibles" exit ;;
+	esac
+
+else
+	echo "El primer argumento no es un archivo o el segundo no es un directorio"
+	exit
+fi

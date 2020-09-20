@@ -1,0 +1,130 @@
+-nos tratan como objetos, a los user tambien
+
+-la sentencia que crea objetos(user, indie, vista) por primera vez
+CREATE
+
+-la sentencia que altera objetos es
+ALTER
+
+-sentencia para eliminar de la BD de objetos, tabla o usuario
+DROP
+
+Tres sentencias y distintas opcciones:
+
+user -> usuario
+table -> tabla
+
+
+CREATE TABLE proveedor
+
+ALTER USER 
+
+DROP TABLE proveedores 
+
+Ejemplo:
+
+las comillas simples si distinguen las mayusculas por codigo ascii
+
+ALTER USER x7644538 IDENTIFIED by josesan9;
+
+
+
+
+CREATE TABLE proveedor(
+codpro char(3)                          primary key, 
+nompro varchar2(30)                     not null,
+status number(2)                        check( status between 1 and 10),
+ciudad varchar2(15)
+);
+
+CONSTRAINT sustituye el mensaje de error estandar por uno mas sencillo
+que escribamos nosotros si no se cumple la condicion, solo una palabra 
+y no se puede volver a repetir, ya que son objetos y no se pueden repetir
+los constraint
+
+CREATE TABLE proveedor(
+codpro char(3)      CONSTRAINT es_clave_primaria        primary key, 
+nompro varchar2(30) CONSTRAINT no_nulo                    not null,
+status number(2)    CONSTRAINT valor_entre_1_10     check( status between 1 and 10),
+ciudad varchar2(15)
+);
+
+mirarla como DESCRIBE proveedor;
+
+
+
+CREATE TABLE proveedor(
+codpro char(3)      CONSTRAINT es_clave_primaria        primary key, 
+nompro varchar2(30) CONSTRAINT no_nulo                    not null,
+status number(2)    CONSTRAINT valor_entre_1_10     check( status between 1 and 10),
+ciudad varchar2(15)
+);
+
+CREATE TABLE pieza(
+peso number(5,2) CONSTRAINT valor_entre_0_100 check(peso between 0 and 100),
+codpie char(3) CONSTRAINT tiene_ser_clave_primaria         primary key,
+nombpie varchar2(10) CONSTRAINT no_puede_nulo             not null,
+color varchar2(10), 
+ciudad varchar2(15)
+);
+
+DESCRIBE pieza;
+DESCRIBE proveedor;
+DROP table pieza;
+
+CREATE TABLE proyectos(
+codpj char(3) CONSTRAINT valor_no_null primary key,
+ciudad varchar2(15),
+nompj varchar2(10)
+);
+
+REFERENCES busca la clave primaria que le has dicho
+y luego te pone el mismo tipo de dato
+
+CE pueden ser nulas
+CP no pueden ser nulas
+
+primary key(codpro, codpie, codpj)
+NINGUNO PUEDE TOMAR EL VALOR NULO
+
+CREATE TABLE proveedor(
+codpro char(3)      CONSTRAINT es_clave_primaria        primary key, 
+nompro varchar2(30) CONSTRAINT no_nulo                    not null,
+status number(2)    CONSTRAINT valor_entre_1_10     check( status between 1 and 10),
+ciudad varchar2(15)
+);
+
+CREATE TABLE pieza(
+peso number(5,2) CONSTRAINT valor_entre_0_100 check(peso between 0 and 100),
+codpie char(3) CONSTRAINT tiene_ser_clave_primaria         primary key,
+nombpie varchar2(10) CONSTRAINT no_puede_nulo             not null,
+color varchar2(10), 
+ciudad varchar2(15)
+);
+
+DESCRIBE pieza;
+DESCRIBE proveedor;
+DROP table pieza;
+
+CREATE TABLE proyectos(
+codpj char(3) CONSTRAINT valor_no_null primary key,
+ciudad varchar2(15),
+nompj varchar2(10)
+);
+
+CREATE TABLE ventas(
+codpro     REFERENCES proveedor(CODPRO),
+codpie     REFERENCES pieza(CODPIE),
+codpj      REFERENCES proyectos(CODPJ),
+cantidad number(4),
+primary key(codpro, codpie, codpj)
+);
+
+
+FOREIGN key(codpro, codpie) REFERENCE T(a1,a2)
+Hacer referencia a externa a una tabla que esta a su vez a otras dos
+siendo primera de la primera, cuando se unen dos primarias
+y son las de puntos suspensivos
+
+COMMIT; // guardar trabajo si no es create table
+

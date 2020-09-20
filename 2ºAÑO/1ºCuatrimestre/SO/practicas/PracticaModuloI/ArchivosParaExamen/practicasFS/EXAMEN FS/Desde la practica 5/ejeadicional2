@@ -1,0 +1,22 @@
+#!/bin/bash
+if [ $# -eq 1 ]
+then
+	es_archivo=`test -f $1 && echo true || echo false`;
+	if [ $es_archivo == "true" ]
+	then
+		while read linea
+		do
+			echo $linea >> temporal
+			if [[ `echo $linea | grep '\.$'` ]]
+			then
+				echo " " >> temporal
+			fi
+			done < $1
+
+			mv temporal $1
+		else
+			echo "No es un archivo regular"
+		fi
+else
+	echo "Numero incorrecto de paramentros"
+fi

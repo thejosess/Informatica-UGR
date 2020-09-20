@@ -1,0 +1,103 @@
+insert into  //inserta datos por fila
+
+ejemplo :
+insert into proveedor VALUES('S1','JOSE FERNANDEZ',2,'MADRID');
+
+// tienes que poner un valor con sentido, va en orden en la fila
+char(3) char() num
+
+// JOSE FERNANDEZ o Jose Fernandez
+
+
+SELECT * FROM proveedor;
+
+cadenas caracteres y fechas entre comillas
+
+numero_pi codPro, nompro,status,ciudad(Proveedor) en oracle ->
+todos los valores son = *
+SELECT ciudad, codpro
+SELECT * FROM proveedor
+
+-Para filtrar proveedores y tablas
+SELECT nompro, ciudad FROM proveedor WHERE (status >=3);
+insert into proveedor VALUES('S1','JOSE FERNANDEZ',2,'MADRID');
+insert into proveedor VALUES('S2','MANUEL VIDAL',1,'LONDRES');
+insert into proveedor VALUES('S3','LUISA GOMEZ',3,'LISBOA');
+insert into proveedor VALUES('S4','PEDRO SANCHEZ',4,'PARIS');
+insert into proveedor VALUES('S5','MARIA REYES',5,'ROMA');
+
+insert into pieza VALUES(2.5,'P1','TUERCA','GRIS','MADRID');
+insert into pieza VALUES(1.25,'P2','TORNILLO','ROJO','PARIS');
+insert into pieza VALUES(3,'P3','ARANDELA','BLANCO','LONDRES');
+insert into pieza VALUES(5.5,'P4','CLAVO','GRIS','LISBOA');
+insert into pieza VALUES(10,'P5','ALCAYATA','BLANCO','ROMA');
+
+insert into proyectos VALUES('J1','LONDRES','PROYECTO 1' );
+insert into proyectos VALUES('J2','LONDRES','PROYECTO 2' );
+insert into proyectos VALUES('J3','PARIS','PROYECTO 3' );
+insert into proyectos VALUES('J4','ROMA','PROYECTO 4' );
+
+SELECT * FROM proyectos;
+SELECT nompro, ciudad FROM proveedor WHERE (status >=3);
+SELECT * FROM pieza;
+SELECT nombpie FROM pieza where (color = 'BLANCO');
+SELECT * FROM proyectos where (ciudad = 'LONDRES');
+SELECT nompro, nompj FROM proveedor, proyectos WHERE (proyectos.ciudad = proveedor.ciudad);
+SELECT nompro, nompj FROM proveedor, proyectos ;
+
+DESCRIBE opc.ventas;
+INSERT INTO ventas SELECT codpro,codpie,codpj,cantidad FROM opc.ventas;
+SELECT * FROM ventas;
+
+
+
+delete proyectos; //borra toda la tabla
+delete proyectos where clausa que cumpla y borra esa
+
+//los numeros son con puntos
+
+SELECT nompro, ciudad FROM proveedor WHERE (status >=3);
+SELECT * FROM pieza;
+
+SELECT nompro, nompj FROM proveedor, proyectos WHERE (proyectos.ciudad = proveedor.ciudad);
+
+SELECT nompro, nompj FROM proveedor, proyectos ;
+//producto cartesiano
+
+DESCRIBE opc.ventas;
+//tienes que mirar estructura por si las moscas
+
+SELECT codpro,codpie,codpj,cantidad FROM opc.ventas;
+//pones tu orden luego ya te lo ordena
+
+INSERT INTO ventas SELECT codpro,codpie,codpj,cantidad FROM opc.ventas;
+
+DELETE ventas; // si no tienes clave en otras pues te deja, si las tiene pues deberias de hacer una eliminacion en cascada
+COMMIT;
+
+rollback; //deshacer pero el commit no lo pilla
+
+Para filas
+------
+INSERT 
+UPDATE
+DELETE
+
+Para estructuras
+------
+delete
+drop
+
+DISTIN
+// del select quita los repetidos
+
+
+//ALTER TABLE Student RENAME COLUMN NAME TO FIRST_NAME;
+//MIRAR PARA RENOMBRAR columnas
+
+//ALTER TABLE Student RENAME TO Student_Details;
+//renombrar tabla
+
+//añadir fila
+ALTER TABLE table_name
+ADD column_name datatype; 

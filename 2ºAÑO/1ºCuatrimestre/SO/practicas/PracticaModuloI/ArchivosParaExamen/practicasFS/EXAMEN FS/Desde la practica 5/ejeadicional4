@@ -1,0 +1,33 @@
+#!/bin/bash
+if [ $# -eq 1 ]
+then
+es_archivo=`test -f $1 && echo true || echo false`;
+if [ $es_archivo == "true" ]
+	then
+	columnas=`tput cols`
+	while read linea
+	do
+	ancho_linea=`echo $linea|wc -c`
+	espacios=$[ $[ $columnas - $ancho_linea ] / 2 ]
+	printf "%${espacios}s %s\n" "" "$linea"
+	done < $1
+	else
+	echo "No es un archivo regular"
+	fi
+else
+	while read linea
+	do
+	echo $linea >> temporal
+	if [ $linea = "fin" ] ; then
+		break
+	fi
+	done
+	echo "----------Después de ser ordenado----------"
+	cat temporal|sort >> temporal2
+	while read linea
+	do
+	echo $linea
+	done < temporal2
+	rm temporal
+	rm temporal2
+fi

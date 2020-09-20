@@ -1,0 +1,40 @@
+#!/bin/bash
+
+vi /etc/fstab
+
+#ahi escribimos /dev/loop0 /mnt/SA_ext3 ext3 auto,ro,usrquota 0 0
+
+# en particiones todo igual que el anterior pero al final 
+
+mount -t ext3 /dev/loop0 /mnt/SA_ext3
+
+mount -o remount /mnt/SA_ext3
+
+quotacheck -nm /mnt/SA_ext3/
+
+
+#quotacheck: Error checking device name: LABEL=ROOT
+#quotacheck: Cannot get device name for LABEL=ROOT
+#quotacheck: Cannot create new quotafile /mnt/SA_ext3/aquota.user.new: Read-only file system
+#quotacheck: Cannot initialize IO on new quotafile: Read-only file system
+
+
+#LABEL=ROOT                                      /               auto    noatime         1 1
+
+
+quotaon -a
+
+#script para cada user
+#!bin/bash
+for [linea in `cat /etc/passwd` ]
+do
+	usuario = `cut -d : -f1`
+	setquota -u $usuario
+done
+
+setquota -a -t 7 7
+
+#establecer un limite bloques y -inodos
+
+setquota -u user -b user 7 10 7 10
+

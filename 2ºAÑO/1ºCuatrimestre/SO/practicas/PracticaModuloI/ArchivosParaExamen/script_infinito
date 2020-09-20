@@ -1,0 +1,13 @@
+#!/bin/bash
+
+incremento=0
+resultado=0
+
+while(true)
+do
+	num1=$RANDOM
+	num2=$RANDOM
+	resultado=$(($num1 * $num2))
+	((incremento++))
+done
+

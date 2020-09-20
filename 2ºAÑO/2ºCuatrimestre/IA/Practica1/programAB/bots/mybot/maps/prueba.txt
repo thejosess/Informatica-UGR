@@ -1,0 +1,6 @@
+genero:ciencia_ficcion@fantasia
+sinopsis:una_prueba
+subtitulos:espanol
+idiomas:espanol@frances
+web:www.netflix.com
+temporada1:superprueba@20@funciona@10

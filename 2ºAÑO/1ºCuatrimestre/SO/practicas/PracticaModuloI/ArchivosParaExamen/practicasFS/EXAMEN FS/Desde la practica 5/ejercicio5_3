@@ -1,0 +1,10 @@
+#!/bin/bash
+printf "Pulsa una tecla\n"
+read tecla
+case $tecla in
+	[o0-9\'¡]) echo "Primera fila" ;;
+	[qwertyuiop\`+]) echo "Segunda fila" ;;
+	[asdfghjklñç]) echo "Tercera fila" ;;
+	[\<zxcvbnm,.-]) echo "Cuarta fila" ;;
+	*) echo "Otra linea" ;;
+esac

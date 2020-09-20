@@ -1,0 +1,58 @@
+	.file	"msum.c"
+	.text
+	.globl	main
+	.type	main, @function
+main:
+.LFB0:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$16, %rsp
+	movq	%fs:40, %rax
+	movq	%rax, -8(%rbp)
+	xorl	%eax, %eax
+	leaq	-16(%rbp), %rax
+	movq	%rax, %rdx
+	movl	$3, %esi
+	movl	$2, %edi
+	call	sumstore@PLT
+	movq	-16(%rbp), %rax
+	movq	-8(%rbp), %rcx
+	xorq	%fs:40, %rcx
+	je	.L3
+	call	__stack_chk_fail@PLT
+.L3:
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE0:
+	.size	main, .-main
+	.globl	plus
+	.type	plus, @function
+plus:
+.LFB1:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movq	%rdi, -24(%rbp)
+	movq	%rsi, -32(%rbp)
+	movq	-24(%rbp), %rdx
+	movq	-32(%rbp), %rax
+	addq	%rdx, %rax
+	movq	%rax, -8(%rbp)
+	movq	-8(%rbp), %rax
+	popq	%rbp
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE1:
+	.size	plus, .-plus
+	.ident	"GCC: (Ubuntu 7.4.0-1ubuntu1~18.04.1) 7.4.0"
+	.section	.note.GNU-stack,"",@progbits

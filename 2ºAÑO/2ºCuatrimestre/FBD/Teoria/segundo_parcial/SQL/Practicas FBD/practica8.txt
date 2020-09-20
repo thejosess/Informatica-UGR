@@ -1,0 +1,194 @@
+arbol b indixeaacion, se tarda mas o menos en llegar igual porque es 
+balanceado
+grado 3 pues cuelgan 3 
+
+log base 3 para reducir es un conjunto indice
+
+las hojas son punteros para clave muchas claves y llega a los registros en que pagina 
+y que posicion
+
+las paginas/hojas estan ordenadas en el conjunto secuencia, en los punteros
+si entran muchos generan paginas de desbordamiento
+
+pero las paginas de los registros no estan ordenados
+
+rip ordenadamente del primero del segundo nivel, AHI VA EL FICHERO no la tabla a la
+que hace referencai
+
+IOT -> 
+
+
+Es recomendable crear un indice por la clave primaria?? NO, PORQUE ORACLE
+YA TE PROPORCIONA UNO
+
+CREATE INDEX prov_indx ON proveedor(ciudad);
+//creado un indice sobre ciudad que no es una clave primaria
+
+select index_name, index_type from user_indexes;
+
+INDICES INVERTIDOS
+--------------------
+
+indice 23.233.334
+si es en forma de arbol B te lo pondria ordenado con su clave primaria
+pero como es invertido no te lo pone cerca conceptualmente del siguiente al lado
+si no que cambia el orden de todos los digitos y los invierte del reves
+43.333.232  y lo pone en el lugar de este indice lo metes ahi
+
+para que hace eso?? -> cuando la tabla es compartido entre muchas aplicaciones
+al fichero de los alumnos de granada accede todo dios, si muchas aplicaciones
+a la vez quieren hacer un barrido ordenado de los datos de un valor
+entonces al hacerlo en orden todos empiezan por la misma y la cola seria 
+muy grande entonces para poder "paralelizarlo" le inviertes el indice y
+todos leen el mismo fichero a la vez pero desde distintos indices 
+
+CREATE INDEX fecha_inv ON ventas(fecha) REVERSE;
+
+------------------------
+Mapa de BITS
+---------------------
+se crea sobre el dominio del atributo
+ON pieza(color) y el dominio R,A,B,N
+una fila o columna para cada color |
+
+ROJO	1	0
+AZUL	0	0
+BLANCO	0	1
+NEGRO	0	1
+
+se va a la entrada ROJO y mira los que las tienen a uno 
+le has una mascara a esos valores de los bits
+
+si cambias el dominio pues tendrias que rehacerlo
+
+CREATE BITMAP INDEX color_index ON pieza(color);
+
+--------------------
+ODT
+---------------
+index organized table
+
+borras el ultimo nivel del arbol que es el arbol secuencias
+
+rip ordenadamente del primero en cambio en este
+lo mete ordenadamente FISICAMENTE la table por eso lo ordenda sql
+porque es LA TABLA no el archivo
+
+order_by regalado fisicamente con esto va super rapido
+
+INCOVENIENTES -> el problema es cuando quieres insertar tienes que volver a
+ordenar todo y ahora son FISICAMENTE TABLAS y tienes que ordenar todo eso
+si no entra tienes que hacer una pagina de desbordamiento para poder meterlo todo
+CREATE TABLE
+
+
+CREATE TABLE proveedor2(
+codpro char(3)                          primary key, 
+nompro varchar2(30)                     not null,
+status number(2)                        check( status between 1 and 10),
+ciudad varchar2(15)
+) ORGANIZATION INDEX;
+
+select * from user_tables where table_name='PROVEEDOR2';
+//IOT_type yes
+
+
+ELIMINAR INDICES CON -> DROP INDEX
+el drop table tambien borra el indice
+--------------------------
+CLUSTER
+--------------------------
+agrupamiento interarchivo o cluster
+
+regsitros juntos que no son de la misma tabla en la misma pagina
+
+frecuencia muy elevada en una reunion natural -> el cluster ahi iria muy bien
+cluster mezclado con proveedor y ventas y luego se van a recuperar con reunion natural
+mucho, muchisimo, entonces funciona. Identificar el atributo comun, que es codpro
+
+para cada atributo comun diferente genera una pagina diferente
+y en el encabezamiento de pagina del atributo al que se refiere
+
+LA PEOR CONSULTA ES
+SELECT * FROM PROVEEDOR 
+porque miras todos los proveedor de todos los bloques fisicos
+
+el de ventas no es tan malo porque el porcentaje que hay de ventas en el bloque
+fisico es alto
+
+tenemos que crear manualmente que es obligatorio   
+
+CREATE CLUSTER ventas_prov(codpro char(3));
+//tiene que apartar un char de 3 para el primer proveedor del encabezado	
+
+CREATE TABLE proveedor3(
+codpro char(3)                          primary key, 
+nompro varchar2(30)                     ,
+status number(2)                        ,
+ciudad varchar2(15)
+) CLUSTER ventas_prov(codpro);
+
+CREATE TABLE ventas2(
+codpro char(3)     REFERENCES proveedor(CODPRO),
+codpie     REFERENCES pieza(CODPIE),
+codpj      REFERENCES proyecto(CODPJ),
+cantidad number(4),
+primary key(codpro, codpie, codpj)
+) CLUSTER ventas_prov(codpro);
+
+//TIENES QUE PONER EL CHAR(3) porque te lo pide el cluster
+
+CREATE INDEX cl_inx on CLUSTER ventas_prov;
+
+
+
+CREATE INDEX prov_indx ON proveedor(ciudad);
+
+select index_name, index_type from user_indexes;
+
+CREATE INDEX fecha_inv ON ventas(fecha) REVERSE;
+
+CREATE BITMAP INDEX color_index ON pieza(color);
+
+CREATE TABLE proveedor2(
+codpro char(3)                          primary key, 
+nompro varchar2(30)                     not null,
+status number(2)                        check( status between 1 and 10),
+ciudad varchar2(15)
+) ORGANIZATION INDEX;
+
+select * from user_tables where table_name='PROVEEDOR2';
+
+CREATE CLUSTER ventas_prov(codpro char(3));
+//tiene que apartar un char de 3 para el primer proveedor del encabezado
+
+CREATE TABLE proveedor3(
+codpro char(3)                          primary key, 
+nompro varchar2(30)                     ,
+status number(2)                        ,
+ciudad varchar2(15)
+) CLUSTER ventas_prov(codpro);
+
+CREATE TABLE ventas2(
+codpro char(3)     REFERENCES proveedor(CODPRO),
+codpie     REFERENCES pieza(CODPIE),
+codpj      REFERENCES proyecto(CODPJ),
+cantidad number(4),
+primary key(codpro, codpie, codpj)
+) CLUSTER ventas_prov(codpro);
+
+CREATE INDEX cl_inx on CLUSTER ventas_prov;
+
+INSERT INTO proveedor3 select * from proveedor;
+commit;
+
+INSERT INTO ventas2 select codpro,codpie,codpj,cantidad from ventas;
+
+commit;
+
+select * from ventas2;
+select * from ventas;
+
+select * from proveedor3;
+select * from proveedor;
+

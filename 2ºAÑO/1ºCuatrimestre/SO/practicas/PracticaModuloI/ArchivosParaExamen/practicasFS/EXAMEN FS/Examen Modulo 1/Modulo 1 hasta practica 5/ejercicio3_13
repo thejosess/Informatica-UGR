@@ -1,0 +1,5 @@
+#! /bin/bash
+num_archivos=`find $HOME ! -perm -o=r |wc -l`
+
+echo "Hay $num_archivos archivos que no tienen permiso de lectura para el resto de usuarios en todo tu arbol de direcciones"
+

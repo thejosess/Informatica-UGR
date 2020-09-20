@@ -1,0 +1,62 @@
+--Modulo 1--
+Nombre de archivos {absoluto, relativo}
+cd change directory => cwd (current working directory) ~ esta es la forma relativa
+Restriccion para evitar ambigüedad -> No puedes poner el mismo nombre de archivo
+
+filename - trozo que se aloja en la entrada a direcotrio, sirve para identificar un archivo en un 			directorio
+pathname - en el espacio de nombres
+
+usos del man
+	man comando		man 4 comando (va a la pagina 4 del comando)
+
+mount - system administration --> te permite ampliar espacio de nombres
+/dev/sdb1 on /media/nombre_usuario/USB => Ahí amplía
+
+sudo umount /dev/sdb1  --> Lo pone para que no lo veas, no aparece con ls
+
+ls -l /dev/loop*		--> MUCHO CUIDADO que la líamos		HACERLO EN ROOT
+
+mknod te permite hacer archivos de bloques, de caracteres y FIFO(?)
+
+mknod /dev/loop0 b 7 0		El 7 es el mayor number y el 0 el minor number que coincide con 				el ultimo numero del nombre del loop 
+
+dd es de muy bajo nivel, copiador de RAW DATA
+
+dd if=/dev/zero of=/root/archivo_SA20 bs=2k count=10000		
+	if = input file			of = output file
+Coges ceros a nivel de bloques de 2k y 10000 veces, es decir 20MB
+Con ls -lh /root/ podemos ver si se ha hecho bien
+
+losetup -l 	para ver
+losetup -d	para terminar
+
+fdisk sirve para establecer particiones en un disco
+
+fdisk -l /dev/loop0		Te da info de la partición, pero nos falta la TABLA DE PARTICIONES
+fdisk /dev/loop0 		Te da un menú de opciones con m(como el man vaya)
+
+fdisk >> n >> e \ p		e extended \ p primary(1-4), como solo queremos una entrada 				hacemos primary para usar todo ese espacio como un "pen-drive" virtual
+
+fdisk >> n >> p >> 1	
+si usamos fdisk >> p nos sale esto:
+      Device Boot      Start         End      Blocks   Id  System
+/dev/loop0p1            2048       39999       18976   83  Linux
+
+Esto solo está en RAM, para escribirla en disco debemos usar "w"
+
+inodos -> estructuras de metadatos que soporta el archivo(?)
+	con ls -li podemos verlos, sería el 14239	
+-rw-r--r-- 1 root root 20480000 Oct  1 06:33 archivo_SA20		<-- ls -l
+14239 -rw-r--r-- 1 root root 20480000 Oct  1 06:33 archivo_SA20		<-- ls -li	
+
+man mke2fs
+mke2fs -t ext3 /dev/loop0 -L LABEL_ext3		Con -L LABEL_ext3 le ponemos la LABEL
+
+tune2fs /dev/loop0	o 	tune2fs -l /dev/loop0		info para tunear/modificar
+
+Ahora montamos la unidad virtual
+ls -la /mnt/				Para ver las unidades
+mount -t ext3 /dev/loop0 /mnt		Monta nuestro "disco" creado en /mnt
+
+Para desmontar usamos umount y el loop /dev/loop0 por ejemplo, así para desmontar el disco que hemos montado pondríamos:
+umount /dev/loop0		Si pusieramos umount /mnt/lost+found no funcionaría

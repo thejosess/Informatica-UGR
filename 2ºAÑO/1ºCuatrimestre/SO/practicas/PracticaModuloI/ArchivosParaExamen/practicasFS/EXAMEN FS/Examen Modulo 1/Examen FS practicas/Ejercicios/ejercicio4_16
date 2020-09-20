@@ -1,0 +1,18 @@
+#! /bin/bash
+
+if [ `echo $1 | grep ^$1$` ]
+then
+	echo "Es un unico caracter"
+
+	if [[ $1 =~ [A-Z] ]]
+	then
+			echo "Y es una letras mayuscula"
+	elif [[ $1 =~ [a-z] ]]
+		then
+			echo "Y es una letras minuscula"
+	else
+		echo "No es una letra, es otro caracter"
+	fi	
+else
+	echo "No es ningun caracter"
+fi

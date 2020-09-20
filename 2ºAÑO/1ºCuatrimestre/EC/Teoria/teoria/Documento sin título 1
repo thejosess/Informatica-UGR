@@ -1,0 +1,17 @@
+-> = (*r).algo
+
+acceder a j
+i + eax = eax
+i+j = eax
+4i+4j + struct + 8 = eax
+todo eso dentro del vector a
+
+struct
+
+0	4	8	48
+    i	    j        a
+
+1.0 vale f
+(unsigned) f = 1
+
+https://www.h-schmidt.net/FloatConverter/IEEE754.html

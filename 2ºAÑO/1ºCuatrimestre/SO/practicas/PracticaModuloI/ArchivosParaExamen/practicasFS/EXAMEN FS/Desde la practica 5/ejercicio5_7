@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]
+	then
+		echo "Uso: $0 nombre-de-shell"
+		exit 1
+fi
+
+echo "usuarios con el shell $1 asignado"
+grep "/bin/$1" /etc/passwd|cut -d ':' -f 1|sort

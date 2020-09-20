@@ -1,0 +1,54 @@
+dos registros para mas importante y la menos importante
+divido en dos registros de 32 y 32 bits
+
+rdx es nuestro indice entonces pongo 4 porque voy de 4B en 4B que son los numeros del vector
+
+inc cambiar por add $1,
+
+https://riptutorial.com/x86/example/6976/flags-register
+
+https://stackoverflow.com/questions/39816491/how-to-change-flags-manually-in-assembly-code-for-8086
+
+es un do while porque entra siempre una vez ,
+rcx o n estaria mal programada o fallaría
+en el caso de 0 tendría un problema porque ejecutaría muchisimas iteracciones
+aun sin tener elementos
+
+compracion antes del bucle y miras si rcx está a cero y te vas al ret
+
+info de depuracion linea de codigo con linea de depuracion
+
+gdb -tui
+layout -regs
+disassemble
+focus regs //mover entre registros	
+focus cmd  //focus entre comandos
+focus src  //mover entre instrucciones ensamblador
+print $rax // te muestra valor contenido de rax que lo tienes arriba en registros
+stepi -> instruccion a instruccion en ensamblador 
+nexti -> te saltas la funcion en ensamblador
+
+step y next seria instruccion y funcion en codigo c
+
+x/s 0x6000df -> eso es hola a todos y todo eso etc
+
+longsaludo seria absoluto y lo usas como un puntero
+
+x/1dg (int) &longsaludo -> seria convertir a int y no absoluto
+
+p/x la x seria para hexadecimal
+
+examinar a partir de una direccion con & 32 caracteres y en b 
+
+x/32cb &saludo
+
+control l se arregla la pantalla
+
+clear 9 qutas breakpoint 
+set $rdi=1 //le cambias el valor al exit
+
+p (char*) &saludo para decirle que es una direccion y te lo ponga como cadena 
+
+https://riptutorial.com/x86/example/6976/flags-register
+
+http://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/

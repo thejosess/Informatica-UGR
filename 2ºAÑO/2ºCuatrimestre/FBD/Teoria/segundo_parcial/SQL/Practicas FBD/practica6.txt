@@ -1,0 +1,142 @@
+sum(atb)
+sum(cantidad) //suma todos los valores de cantidad
+
+MIN()
+MAX()
+AVG() 
+STDDEN()
+COUNT(ATB)
+
+SELECT AVG(CANTIDAD) FROM VENTAS;
+//LA MEDIA
+
+select max(cantidad) from ventas;
+//es una tabla lo que devuevle
+
+select * from ventas where cantidad = (select max(cantidad) from ventas);
+
+
+select * from ventas where cantidad in (select max(cantidad) from ventas) or cantidad in (select min(cantidad) from ventas);
+
+
+select * from ventas where cantidad >= ALL(select cantidad from ventas);
+//este hacerlo como el de arriba
+
+select count(fecha) from ventas  where codpro='S2';
+
+select count(distinct codpie) from ventas where codpro = 'S2';
+//DISTINCT hace diferentes el count, no tiene por qué ser iguales
+
+//para cada algo dime -> CLAUSULAS DE AGRUPAMIENTO 
+
+//la suma total de las ventas que se han hecho cada año
+-> el agrupamiento es cada año -> tienes que hacer to_char(fecha, el año) y hacer eso como criterio de agrupar
+
+select codpro, to_char(fecha,'yyyy'), count( distinct codpie) from ventas group by codpro;
+//para cada valor del codpro 1 fila y las cuentas que quieras
+//la proyeccion solo la puedes hacer con el criterio de agrupamiento
+
+
+//el group by genera una tabla nueva
+que tiene tantas como valores diferentes se encuentren en el agrupamiento 
+y le pongo el identificador de grupo para saber donde hace la cuena
+
+
+select codpro, to_char(fecha,'yyyy'), count( distinct codpie) from ventas group by codpro,fecha;
+
+
+//igual que where pero aplicada a las transformadas having
+
+select codpro, to_char(fecha,'yyyy'), count( distinct codpie) from ventas group by codpro,fecha having count(distinct codpie) > 2;
+
+select codpro, to_char(fecha,'yyyy'), count( distinct codpie) from ventas group by codpro,fecha having count(*) >6 ;
+// te filtra esa informacion para que solo cuando sea mayor que  6 y solo afecta a los agregadores
+
+
+Ejercicio : proveedores que hayan vendido mas pedidio que S1
+------------------
+//calcular para cada proveedor cuantos pedidos tiene y comparas con el de S1
+
+select codpro,count(*) from ventas group by codpro having count (*) > (select count(*) from ventas where codpro='S1') ;
+
+//si quieres mostrar el nombre haces un producto cartesiano y haces el group by con los dos, nompro y codpro
+
+select v.codpro, pro.nompro, count(*) from ventas v,proveedor pro group by v.codpro,pro.nompro having count (*) > (select count(*) from ventas where codpro='S1') ;
+//MEJOR OPCCION
+
+select p.codpro,nompro, pedidos from (select codpro,count(*)pedidos from ventas group by codpro having count (*) > (select count(*) from ventas where codpro='S2'))n_ped, proveedor p where p.codpro=n_ped.codpro;
+
+
+//el maximo de todos ellos del resto de los proveedores y sus cantidades
+
+select p.codpro,nompro, pedidos from (select codpro,count(*)pedidos from ventas group by codpro having count (*) >=ALL(select count(*)pedidos from ventas group by codpro ))n_ped, proveedor p where p.codpro=n_ped.codpro;
+//HAY EJEMPLOS RESUELTOS
+
+
+Ejercicios 3.30 hasta 3.38. 
+y de los adicionales -> 3.42, 3.43 los hechos y con otro agregador 48, 49, 50, 51
+----------------
+
+
+ejercicio 3.30
+---------------
+select codpro from (select codpro, count(distinct codpie) from ventas group by codpro having count (*) > 3);
+//directamente 
+select codpro, count(distinct codpie)from ventas group by codpro having count (*) > 3;
+
+
+select codpro, count(distinct codpie) from ventas group by codpro;
+
+//version mas corta ->
+select codpro, count(*)from ventas group by codpro having count (*) > 3;
+
+
+ejercicio 3.31
+---------------------
+
+select nompie, c from pieza p, (select codpie, avg(cantidad)c from ventas group by codpie)media where p.codpie = media.codpie;
+
+
+
+-----------------------
+
+
+SELECT AVG(CANTIDAD) FROM VENTAS;
+
+select max(cantidad) from ventas;
+
+
+select * from ventas where cantidad = (select max(cantidad) from ventas);
+
+select * from ventas where cantidad >= ALL(select cantidad from ventas);
+
+select count(fecha) from ventas  where codpro='S2';
+
+select count(distinct codpie) from ventas where codpro = 'S2';
+
+select codpro, count( distinct codpie) from ventas group by codpro;
+
+select codpro, to_char(fecha,'yyyy'), count( distinct codpie) from ventas group by codpro,fecha;
+
+
+select * from ventas where cantidad in (select max(cantidad) from ventas) or cantidad in (select min(cantidad) from ventas);
+
+select codpro, to_char(fecha,'yyyy'), count( distinct codpie) from ventas group by codpro,fecha;
+
+select codpro, to_char(fecha,'yyyy'), count( distinct codpie) from ventas group by codpro,fecha having count(*) >6 ;
+
+select codpro, to_char(fecha,'yyyy'), count( distinct codpie) from ventas group by codpro,fecha having count(distinct codpie) > 2;
+
+select * from ventas;
+
+select v.codpro, pro.nompro, count(*) from ventas v,proveedor pro group by v.codpro,pro.nompro having count (*) > (select count(*) from ventas where codpro='S1') ;
+
+select p.codpro,nompro, pedidos from (select codpro,count(*)pedidos from ventas group by codpro having count (*) >=ALL(select count(*)pedidos from ventas group by codpro ))n_ped, proveedor p where p.codpro=n_ped.codpro;
+
+select codpro, count(distinct codpie)from ventas group by codpro having count (*) > 3;
+
+select codpro, count(distinct codpie) from ventas group by codpro;
+
+select avg(count(*)) from ventas;
+
+select nompie, c from pieza p, (select codpie, avg(cantidad)c from ventas group by codpie)media where p.codpie = media.codpie;

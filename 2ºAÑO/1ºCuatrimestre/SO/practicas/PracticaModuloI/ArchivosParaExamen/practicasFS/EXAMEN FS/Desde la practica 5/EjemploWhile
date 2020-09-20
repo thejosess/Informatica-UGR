@@ -1,0 +1,9 @@
+#!/bin/bash
+
+count=1
+cat /etc/passwd | while read linea ;
+do
+	echo "Linea $count: $linea"
+	count=$[ $count + 1 ]
+done
+echo "Fin de procesamiento del archivo"

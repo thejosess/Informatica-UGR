@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+
+<!-- para este nivel creo tres map, uno de carlos, otro de marta y el de ambos, donde almacenar
+el tiempo reproducido por cada serie, para saber el minuto del capitulo se pondria @, quedaria como
+capitulo@minuto_reproduccion -->
+
+<!-- <category>
+    <pattern>
+        reproduce la serie <set>series</set> * minutos
+    </pattern>
+
+    <template>
+        <srai> SIMUL <star index="2"/> </srai>
+        Reproduccion terminada, has reproducido <get name="tiempo"/> minutos
+    </template>
+</category> -->
+
+<category>
+    <pattern>
+        reproduce la serie <set>series</set> y el capitulo *
+    </pattern>
+
+    <template>
+        <think>
+        <set name="reproducir"><star index="1"/></set>
+        <set name="capitulo"><srai> CODE <star index="2"/></srai></set>
+        </think>
+
+        Digame el usuario que va a reproducir contenido
+    </template>
+</category>
+
+<!-- por si no esta en catalogo -->
+<category>
+    <pattern>
+        reproduce la serie *
+    </pattern>
+
+    <template>
+        no se encuentra en mi base de datos quieres que la aniada
+    </template>
+</category>
+
+<category>
+    <pattern>
+        [soy somos] <set>usuarios</set>
+    </pattern>
+    <that>DIGAME EL USUARIO QUE VA A REPRODUCIR CONTENIDO</that>
+
+    <template>
+        <think>
+        <set name="usuario"><star index="1"/></set>  
+        <set name="minuto"><map><name><star index="1"/></name><get name="reproducir"/></map></set>
+        <set name="minuto"><srai>decode_fields <get name = "minuto"/></srai></set>
+        <set name="minuto">
+        <srai> ITERATE <get name="minuto"/> </srai>
+        </set>
+        <set name="minuto">
+            <srai>NEXT</srai>
+        </set>
+        </think>
+
+
+        <condition name="minuto">
+            <li value="unknown">
+                reproduciendo por primera vez digame cuanto tiempo he de reproducir
+            </li>
+            <li>
+                reproduciendo por el minuto <get name="minuto"/>
+            </li>
+        </condition>
+    </template>
+</category>
+
+<category>
+    <pattern>
+        reproduce * minutos
+    </pattern>
+    <that>reproduciendo por primera vez digame cuanto tiempo he de reproducir</that>
+
+    <template>
+        <srai> SIMUL <star index="1"/> </srai>
+        <addtomap>
+            <name><get name ="usuario"/></name>
+            <key><get name="reproducir"/></key>
+            <value><get name="capitulo"/>@<get name="tiempo"/></value>  
+        </addtomap>
+    </template>
+</category>
+
+<!-- INTENTAR HACERLO SIN MINUTOS Y QUE LO ALMACENE EN UN MAP Y SE QUEDE AHI GUARDADO O ALGO y luego control z -->
+<!-- <category>
+<pattern> reproduce la serie <set>series</set> </pattern>
+<template>
+   <think>
+     <condition name="tiempo">
+  	<li value="unknown"> <set name="tiempo">0</set></li>
+     </condition>
+     <set var="indice">0</set>
+
+   <condition var="indice">
+
+      <li> <value><star index="2"/></value></li>
+
+      <li>
+         <set name="tiempo"><map name="successor"><get name="tiempo"/></map></set>
+         <set var="indice"><map name="successor"><get var="indice"/></map></set>
+         <loop/>
+      </li>
+   </condition>
+   </think>
+El tiempo total transcurrido es de <get name="tiempo"/> minutos
+</template>
+</category> -->
+
+
+
+</aiml>

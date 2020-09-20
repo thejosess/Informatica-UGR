@@ -1,0 +1,152 @@
+vistas de usuario ->
+
+CREATE VIEW ventas_por_prov AS select codpro, sum(cantidad) total
+from ventas group by codpro;
+//el alias de total es necesario porque le has cambiado el nombre entonces a la fuerza
+
+select * from ventas_por_prov ; //asi lo engañas
+
+DROP VIEW ventas_por_prov;
+
+select * from ventas_por_prov vp, proveedor p where p.codpro = vp.codpro  ;
+//reunion entre vista y tabla
+//se puede hacer cualquier tipo de operación
+
+la vista no es una tabla es una select 
+si le dices insert into ventas_por_prove values('S1',1475);
+//te da error porque es una select
+
+// CREATE VIEW prov_mal select nompro, status, ciudad from proveedor;
+insert into prov_mal values('Maria', 3, 'Paris');
+//no te da error porque tienes proveedor como referencia la tabla 
+pero no te lo inserta en prov_mal y entonces te falta la cp y te da fallo
+
+
+create view v_parciales as
+select distinct codpro, codpj from ventas;
+
+update v_parciales set cantidad=cantidad*0.5 where ... ;
+//no lo hace ya que no es solo a una fila ya que la de donde proviene 
+cambias muchisimas filas
+
+
+-La definicion de la vista no se puede usar el group by para insertar, modificar, etc
+-la definicion de la vista no se puede usar distinct porque para el update es el ultimo ejemplo
+-La definicion de la vista no puede hacer nada de conjuntos porque tiene que hacerse sobre una tabla base
+
+
+dba_obj
+dba_tables
+dba_tab_columns
+dba_constraints
+dba_views
+dba_indexes
+dba_cluster
+//accede el administrador
+//genera vistas de todas ella para que solo puedan ver lo que le haga falta a los usuarios
+//y pueda verlo el usuario 
+
+//CAMBIAS EL DBA POR USER
+
+select * from user_objects;
+
+//mirar esquema de lo de user_objects
+
+//owner te deja con el propiterario que sea
+
+select * from user_objects order by object_type;
+//tienes algunas con index por cada primaria que tengamos en la tabla 
+
+
+describe user_tables;
+
+table_name particion de la tabla 
+
+describe user_tables;
+
+select BLOCKS  from user_tables;
+select * from user_tab_columns order by table_name;
+
+nullable -> no puede ser anulado
+
+describe es una macro de la select de las tablas estas;
+
+select * from user_constraints;
+//te puede el tipo y el nombre del propietario y por eso no te deja repetir
+R -> claves externas
+P -> primary key??
+
+
+niveles dentro de la vista 
+USER
+ALL -> intermedia, se ve mas cosas, veras los permisos que se tiene
+DBA
+
+//select owner, table_name from all_tables ;
+//MIRAS LO MIO Y AQUEL QUE ME HA DEJADO QUE ACCEDA,
+TODOS LOS OBJETOS QUE TENEMOS ACCESO AUNQUE NO SEAN NUESTROS
+
+
+//PERMITIR A LOS USUARIOS HACER COSAS SOBRE ALGO NUESTRO
+
+GRANT select, insert ON proveedor TO x7147555
+
+y el otro hace 
+select * from x77644538.proveedor;
+
+with grane -> le puedes dar a otros
+
+to public, lista, usuario
+
+REVOKE insert ON proveedor FROM x7647547;
+
+
+tiene un tabla maestra con todo el catalogo
+
+OBJ_PRIVS
+
+DICTIONARY 
+
+select table_name like '%PRIVS%' from DICTIONARY ;
+
+CREATE VIEW ventas_por_prov AS select codpro, sum(cantidad) total
+from ventas group by codpro;
+
+select codpro, sum(cantidad) total
+from ventas group by codpro;
+
+commit;
+
+DROP VIEW ventas_por_prov;
+
+select * from ventas_por_prov vp, proveedor p where p.codpro = vp.codpro  ;
+
+create view v_parciales as
+select distinct codpro, codpj from ventas;
+
+select * from v_parciales;
+
+select * from user_objects order by object_type;
+describe user_tables;
+
+select BLOCKS  from user_tables;
+select * from user_tab_columns order by table_name;
+
+select * from user_constraints;
+
+select owner, table_name from all_tables ;
+
+GRANT select,insert ON proveedor TO x7147555;
+
+select * from proveedor;
+
+commit;
+
+describe DICTIONARY;
+
+select table_name LIKE 'PRIVS' from DICTIONARY ;
+
+
+//DE CATALOGO te puede preguntar siendo user a que puedes acceder siendo usur
+lo de a b etc
+

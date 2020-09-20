@@ -1,0 +1,6 @@
+#! /bin/bash
+
+anio=365
+dia=`date +%j`
+var=`expr $anio - $dia`
+echo "Faltan `expr $[$anio -$dia] / 7` semanas hasta el fin del año"

@@ -1,0 +1,2 @@
+el error está en que meto cociente y resto y solo quiero el resto y mantener la media de antes
+revisar

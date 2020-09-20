@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+    <!-- Primera regla -->
+    <category>
+        <pattern>Hola ^</pattern>
+        <template>
+            Hola,qué tal?
+        </template>
+    </category>
+
+        <!-- Primera regla -->
+    <category>
+        <pattern>^ vas ^</pattern>
+        <template>
+           Pues estoy agobiada pero ya me lo se todo
+        </template>
+    </category>
+
+    <!-- Regla especial RAY -->
+    <category>
+        <pattern>Hola $Ray</pattern>
+        <template>
+            Hola,qué tal capitan España?
+        </template>
+    </category>
+
+    <!-- Segunda regla -->
+    <category>
+        <pattern>
+            Bien *
+        </pattern>
+        <template>
+            Estoy genial!!
+        </template>
+    </category>
+
+    <!-- name global y var es local -->
+
+    <!-- Nombre regla -->
+    <category>
+        <pattern>Como te llamas ^  </pattern>
+        <template> Me llamo <bot name="name"/></template>
+    </category>
+
+    <!-- Nombre regla -->
+    <category>
+        <pattern>Mi nombre es *  </pattern>
+        <template> 
+        Encantado de conocerte <set name="nombre"><star/> , ¿tu como te llamas?</set>
+        <!-- cuando haces llamadas sobre esto vuelves a asignarselo???  -->
+        <!-- se podria hacer un think para que no se viene pero me ahorro lineas -->
+        </template>
+    </category>
+
+    <!-- Nombre regla -->
+    <category>
+        <pattern> * mi nombre  </pattern>
+        <template> 
+        tu nombre era <get name="nombre"/>
+        </template>
+    </category>
+
+
+    <!-- Nombre regla -->
+    <category>
+        <pattern> * llamabas ^  </pattern>
+        <template> 
+        <srai>COMO TE LLAMAS ^ </srai>
+        <!-- se puede hacer llamada a un trozo y luego añadirle mas cosas a esa salida -->
+        </template>
+    </category>
+
+    <!-- Nombre regla -->
+    <category>
+        <pattern> * llamaba  </pattern>
+        <template> 
+        <srai>* MI NOMBRE</srai>
+        <!-- se podria llamar a la variable -->
+        <!-- se puede hacer llamada a un trozo y luego añadirle mas cosas a esa salida -->
+        </template>
+    </category>
+
+    <!-- Ejercicio 2.1 -->
+    <category>
+        <pattern> Hablemos de algo ^ </pattern>
+        <template> dime tus  libros de fantasia favoritos</template>
+    </category>
+
+<!-- las 3 formas de recordas cosas -->
+
+    <!-- INDIE regla -->
+    <category>
+        <pattern> * indie </pattern>
+        <template> 
+           Te gusta el indie?
+        </template>
+    </category>
+
+        <!-- INDIE regla -->
+    <category>
+        <pattern> Si  </pattern>
+
+        <that> TE GUSTA EL INDIE? </that>
+
+        <template> 
+            a mi me gsuta el reggaeton.
+        </template>
+    </category>
+
+    <!-- Ejercicio 2.2 -->
+    <category>
+        <pattern> * y *   </pattern>
+        <template> El libro <star index="2"/> me parece muy sobrevalorado, aunque 
+        <star/> me parece un obra maestra de la fantasia </template>
+    </category>
+
+
+<!-- QUE TE GUARDE EN VAR GLOBAL EL DE MI NOMBRE CUANDO SE LO DIAGS CON
+UN SET Y LUEGO HACES GET PARA QUE LO RECUERDE Y UN SRAI PARA LLAMAR A OTRA
+Y HACERLO CON PRIORIDADES 
+mirar tambien la parte de diapos 69 donde se disparan segun la prioridad que tengan
+set mas prioridad que los simbolos y el dolar para casos concretos
+revisar lo del think ese para que no te salga todo-->
+
+<!-- el # >_ >set > * > ^ -->
+
+</aiml>

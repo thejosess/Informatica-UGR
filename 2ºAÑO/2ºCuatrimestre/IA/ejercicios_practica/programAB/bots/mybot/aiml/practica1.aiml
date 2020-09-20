@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<!-- Ojos-SI -->
+<category>
+    <pattern>
+        * color * ojos <set>compi</set>
+    </pattern>
+    <template>
+        El color de <star index="3"/> es de color <map name="ojos"><star index="3"/></map>.
+    </template>
+</category>
+
+<!-- Ojos-NO -->
+<category>
+    <pattern>
+        * color * ojos *
+    </pattern>
+    <template>
+        <star index="3"/> no es mi compañero.
+    </template>
+</category>
+<!-- aqui el tio dijo de una manera para que no te dejara meter burradas -->
+<!-- si pones hola color caca kike te sale la de hola que tal -->
+
+<!-- Pelo SI -->
+<category>
+    <pattern>
+        
+    </pattern>
+
+
+</category>
+
+
+</aiml>

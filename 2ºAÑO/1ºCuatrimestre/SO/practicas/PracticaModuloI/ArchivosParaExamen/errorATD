@@ -1,0 +1,3 @@
+at now + 1 minute
+at> tar cvf /backups/backup.tar . 1>> ~/salidas 2> /dev/null
+at> <ctrl-D>

@@ -1,0 +1,140 @@
+minimo2.c return no es una funcino, return vuelve a la funcion main
+
+
+exit es una funcion en minimo3.c, con exit se termina el programa 
+
+file minimo1.c
+file minimo1 -> que es un ejectuable para x86
+
+gcc -c minimo1.c -o minimo1.o -> lo que hace es linkar
+
+nm minimo1.o -> solo sale del main y la direcion 0
+nm minimo1 -> sale otra direccion 16*4 -> 64 bits //16 numeros y cada una 4 bits porque es hexadecimal
+
+objdump -d con -d solo las instrucciones desemsambladas
+
+55                   	push   %rbp
+   1:	48 89 e5             	mov    %rsp,%rbp
+   4:	b8 00 00 00 00       	mov    $0x0,%eax
+   9:	5d                   	pop    %rbp
+   a:	c3                   	retq   
+juse@juse-OME
+
+la 48 direccion 1, la 89 direccion 1 y asi sucesivamente
+
+xor cambia los flags y mete un cero
+mov $0x0, %eax es igual que xor pero ocupa 4 bits(mirar arriba) y xor solo 1 bits
+
+simbolico de <start> todo programa comienza con esa etiqueta 
+
+https://es.wikipedia.org/wiki/Executable_and_Linkable_Format
+http://web.mit.edu/gnu/doc/html/as_7.html
+
+
+msg:     .string "¡hola , mundo !\n" -> 16 bytes, la admiracion son 2 bytes, el resto son 1 bytes, /n es linux es 1 byte
+//la va a acabar la cadena en 0 como terminador
+
+tam:    .quad . - msg
+//int o log  -> 32 bits
+y quad son 64 bits-> SON TAMAÑOS AMBOS
+
+msg:    .ascii "¡hola, mundo!\n"
+tam:    .quad . - msg
+
+entonces al pasarle msg es como decirle 16 que es lo que tiene de tamaño msg, ya que el tamaño de esa cadena es 16
+
+write:  mov   $1, %rax    # write
+        mov   $1, %rdi    # stdout
+        mov   $msg, %rsi  # texto
+        mov   tam,  %rdx  # tamaño
+        syscall           # llamada a write
+        ret
+
+https://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/
+// el $1 es la salida estandar
+con el dolar es direccionamiento a memoria, 
+sin el dolar es el contenido de la direccion
+
+que pasa si no escribimos ret?? -> pasa directamente al exit, es decir tira para abajo y no vuelve a donde le habian llamado
+
+mov $1,%rax es para saber numero de funcion o de llamada quiero hacer en linux
+
+$ es como % la direccion
+tam sin nada es el contenido
+
+convencion system 5
+https://filippo.io/linux-syscall-table/ 
+//lista de llamadas al sistema y como se hace
+
+https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/x64-architecture
+
+quad directiva para guardar un tamaño -> 
+
+http://csappbook.blogspot.com/2015/08/dianes-silk-dress-costs-89.html
+
+
+al hacer as las direcciones de tam etc las deja sin poner bien solo 0
+el linkador rellana los cero de las direcciones con las de verdad
+
+ce ff ff ff callq 40000b0 <write>
+//direciona miento relativo
+
+4000e2-4000b0 que sale 32 en hexadecimal// es donde estas - a donde quieres saltar
+32 en hex -> 0011 0010 en binario
+complemento a 2 
+111 1111 .... 1100 1101 //omplemeto a 1
+111 111 111 .... 1100 1110 complemeto a dos
+f    f   f         c   e
+
+gcc -no-pie -nostdlib hola.s -o hola
+ // con -no-pie todo es absoluto y no hay que redireccionar
+
+string mete 16 bytes porque mete un 0 al final, la admiracion son 2B
+1 char -> 1B
+
+UTF-8
+unicode 
+0x20 el espacio y tabulador
+
+mov msg(%rip), %rsi #texto
+mov 
+
+lea carga la direccion efectiva y la copia, segundo argumento siempre registro
+modo de direccion de memoria
+mov accede a la direccion de memoria
+
+
+
+lea msg(%rip), %rsi
+lea 0x200daa(%rip), %rsi
+201000-256 -> 200DAA /calcular en hex de ubuntu
+
+-nostartfiles
+no quiero main y que no me meta codigo adicional, entonces para que no me vuelva a añadir el star
+pues pones lo de arriba
+
+printf(formato,
+char *formato="cadena"
+coge el contido de la direccion 2000 y luego en la direccion 2000 hay otra direccion y allí está la cadena
+pag 20
+
+var en 64 bits son 8B
+
+push decrementa contador de pila y copia le parametro
+
+pila las pequeñas ABAJO y grande arriba
+la pila crece pegando cosas al techo
+
+
+
+sumando al puntero de pila es quitando cosas
+restando al puntoer es metiendo cosas
+
+con pop quitas de la pila , sigue en la pila pero el puntero de pila pasa de eso
+que es mejor directamente add $8, %esp y así quitas los dos elemtnos de 4B que habia y la pila vuelve a su estado normal
+
+diane's silk dress cost $89
+di	si	dx  cx  r8  r9
+rdi     rsi     rdx rcx  
+
+

@@ -1,0 +1,57 @@
+La bomba asignada por el profesor ha sido la bomba 20 de dificultad 5.
+Alumno = JOSE SANTOS SALVADOR
+
+Contraseña orignal = yYpNLSDk
+Pin original = 1117
+
+Contraseña modificada = AYpNLSDk
+Pin modificado = 7777
+-------------------------------------------------------------------------------------------------------
+El procedimiento a seguir para encontrar la contraseña fue crear un archivo bombaProf5_20-gdb.gdb,
+que contenia las siguientes instrucciones automatizadas en el primer intento;
+
+layout asm
+layout regs
+br *main
+run
+
+Tras lanzar gdb bombaProf5_20 el archivo automatizaria esas acciones del gdb y estariamos en el momento de ir recorriendo el ejecutable con ni observando lo que va realizando.
+Cuando llama a fgest para obtener el string que le pide al usuario y tras ello hace un lea etiquetado con #0x6030b0 <password> y momentos despues hace un callq de strncmp, por lo tanto con hacer 
+p(char*)0x6030b0 se puede observar que es la contraseña de la bomba. La contraseña no obstante está almacenada en 0x6028a0 y es desde ahi desde donde se lee y se compara.
+
+
+Podemos ahora modificar el archivo gdb y cambiarlo de la siguiente forma para hacer mas rápido el proceso para encontrar el pin.
+
+layout asm
+layout regs
+br *4008a2
+run < <(echo -e hola\\n)
+
+Podemos ir ejecutando las siguientes instrucciones y llega un punto en el que encontramos la instruccion mov seguida de #0x6030ac <passcode> y tras realizar p*(int*)0x6030ac o p*(int*)(0x2027e1+$rip)
+ observamos que nos muestra el pin de la bomba que es 1117(tambien ocurre algo parecido a lo que pasaba con la contraseña.
+
+Tras tener contraseña y pin localizados y obtenidos, nos disponemos a modificar el ejectuble y por tanto cambiar la contraseña y el pin del ejecutable original. Utilizando el ghex buscamos con el codigo ASCII 79 59 que es lo que le corresponde a las letras yY y tras darle a buscar encontramos la contraseña completa que esta en el registro 0x6028a0 y le cambiamos el valor de 79 por 41 que es la A y por tanto la contraseña queda igual menos por la primera letra. Para modificar el pin buscamos en little endian el numero 1117 en hexadecimal que es 0x45d, lo que tendriamos que buscar es primera 5D y luego 04, modificamos el 5D 04 que nos encontramos primero y lo cambiamos por 61 1E que es 7777 y quedaría la bomba modificada.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+COMENTARIO AÑADIDO:
+
+No llegué a conseguir hacer la bomba de dificultad 6 aun así estuve un tiempo mirandola y pasa a explicar lo que conseguí o lo que pude entender.
+Vuelve a realizar como en la bomba de dificultad 5 un archivo con estas instrucciones para empezar
+
+layout asm
+layout regs
+br *main
+run
+
+Tras empezar con ni e introducir una contraseña al azar y ver que explota, se puede observar que se llama a una funcion fun1 y esta vez tras hacer run no usaremos ni si no que usaremos si cuando vayamos a entrar en la funcion. No conseguí encontrar la contraseña pero creo que cuando se mete en la funcion hay un array y que se codifica la comparacion entre la contraseña que yo pongo y la que hay, por tanto creo que se compara de letra en letra la palabra completa que es la contraseña del programa pero no estoy seguro(todo eso lo supongo ya que hay numerosos movl). La clave estaba en la instruccion
+cmp    0x20(%rsp,%rax,4),%edx.
+
+
+
+
+
+JXurTY
+
+JXrTYgKMCS
+
+"H\203\370\aw\025\017\276\024\a;T\204 u\006H\203\300\001\353\352\350\336\376\377\377\200<\a\nu\034\200|\a\001"
+\340\333\377\377\377\177"

@@ -1,0 +1,2 @@
+0,* COLOR * OJOS <SET>COMPI</SET>,*,*,El color de <star index="3"/> es de color <map name="ojos"><star index="3"/></map>.,practica1.aiml
+0,* COLOR * OJOS *,*,*,<star index="3"/> no es mi compañero.,practica1.aiml

@@ -1,0 +1,13 @@
+0,HOLA ^,*,*,Hola#Commaqué tal?,primero.aiml
+0,^ VAS ^,*,*,Pues estoy agobiada pero ya me lo se todo,primero.aiml
+0,HOLA $RAY,*,*,Hola#Commaqué tal capitan España?,primero.aiml
+0,BIEN *,*,*,Estoy genial!!,primero.aiml
+0,COMO TE LLAMAS ^,*,*,Me llamo <bot name="name"/>,primero.aiml
+0,MI NOMBRE ES *,*,*,Encantado de conocerte <set name="nombre"><star/> #Comma ¿tu como te llamas?</set>#Newline        <!-- cuando haces llamadas sobre esto vuelves a asignarselo???  -->#Newline        <!-- se podria hacer un think para que no se viene pero me ahorro lineas -->,primero.aiml
+0,* MI NOMBRE,*,*,tu nombre era <get name="nombre"/>,primero.aiml
+0,* LLAMABAS ^,*,*,<srai>COMO TE LLAMAS ^ </srai>#Newline        <!-- se puede hacer llamada a un trozo y luego añadirle mas cosas a esa salida -->,primero.aiml
+0,* LLAMABA,*,*,<srai>* MI NOMBRE</srai>#Newline        <!-- se podria llamar a la variable -->#Newline        <!-- se puede hacer llamada a un trozo y luego añadirle mas cosas a esa salida -->,primero.aiml
+0,HABLEMOS DE ALGO ^,*,*,dime tus  libros de fantasia favoritos,primero.aiml
+0,* INDIE,*,*,Te gusta el indie?,primero.aiml
+0,SI,TE GUSTA EL INDIE?,*,a mi me gsuta el reggaeton.,primero.aiml
+0,* Y *,*,*,El libro <star index="2"/> me parece muy sobrevalorado#Comma aunque #Newline        <star/> me parece un obra maestra de la fantasia,primero.aiml

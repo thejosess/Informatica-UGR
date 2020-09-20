@@ -1,0 +1,19 @@
+#!/bin/bash
+vmstat >> monitorizacion.txt
+num_procs=`cat "monitorizacion.txt"|tail -1|tr -s " " " "|cut -d " " -f2`
+num_procs_swap=`cat "monitorizacion.txt"|tail -1|tr -s " " " "|cut -d " " -f17`
+incremento_swap=`cat "monitorizacion.txt"|tail -1|tr -s " " " "|cut -d " " -f9`
+mem_libre=`cat "monitorizacion.txt"|tail -1|tr -s " " " "|cut -d " " -f5`
+echo "Hay " $num_procs " procesos en cola de ejecución"
+echo "Hay " $num_procs_swap " procesos ejecutándose en el área de intercambio"
+if [ $incremento_swap -eq 0 ]
+then
+echo "No hay incremento de procesos pasándose a la memoria de intercambio"
+else
+echo "Se ha incrementado el numero de procesos que van a la memoria de
+intercambio en " $incremento_swap
+fi
+echo "La memoria libre es de " $mem_libre "KB"
+
+
+#para ejecutar watch –n 4 ./script_supervision

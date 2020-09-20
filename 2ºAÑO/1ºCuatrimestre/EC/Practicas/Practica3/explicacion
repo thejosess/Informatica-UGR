@@ -1,0 +1,10 @@
+por mucho que desenrolles el bucle si el bus de datos no te permite leer mas de 4 datos por ciclo pues hay cuello de botella en la memoria
+
+cuando es una varibale global no inicializada se pone a cero
+
+x & m1  // te suma la cantidad de unos que han salido
+
+shr
+adc
+test
+salto

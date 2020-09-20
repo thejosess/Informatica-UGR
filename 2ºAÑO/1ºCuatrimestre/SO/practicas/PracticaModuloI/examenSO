@@ -1,0 +1,317 @@
+Ejercicio 1 :
+
+a)
+
+#tambien se podria hacer en una linea con -g si es grupo principal o -G grupo secundario
+# useradd -g gradoInformatica usu100 (el añadir el usuario en un grupo y crearlo en una linea 
+
+[root@localhost /]# groupadd gradoInformatica
+[root@localhost /]# useradd usu100
+[root@localhost /]# gpasswd -a usu100 gradoInformatica
+Adding user usu100 to group gradoInformatica
+
+los archivos modificados por la creacion de un grupo y un usuario es:
+
+- en /etc/shadow 
+[root@localhost /]# cat /etc/shadow 
+root::14789:0:99999:7:::
+bin:*:14789:0:99999:7:::
+
+(hay mas ... )
+
+usu100:!!:17827:0:99999:7:::
+
+- en /etc/group
+[root@localhost /]# cat /etc/group
+root:x:0:root
+bin:x:1:root,bin,daemon
+
+(hay mas ... )
+
+gradoInformatica:x:500:usu100
+usu100:x:501:
+
+- en /etc/passwd
+[root@localhost /]# cat /etc/passwd
+root::0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+
+(hay mas ... )
+
+usu100:x:500:501::/home/usu100:/bin/bash
+
+b)
+
+[root@localhost /]# usermod -m -d /home/directorio1 usu100
+
+
+Ejercicio 3
+
+a)
+
+[root@localhost /]# mkdir DirHome
+[root@localhost /]# ls
+
+DirHome  boot    dev  home  lost+found  mnt  proc  sbin     srv  tmp  var
+bin      cgroup  etc  lib   media       opt  root  selinux  sys  usr
+
+[root@localhost /]# mount none /DirHome -t hostfs -o /home/usuario   
+
+#se podria haber prescindido del none, unicamente con /DirHome
+
+[root@localhost /]# ls /DirHome
+Descargas   Escritorio  M??sica     P??blico
+Documentos  Im??genes   Plantillas  V??deos
+
+[root@localhost /]# mkdir DirHome/PRUEBA
+
+[root@localhost /]# ls /DirHome
+Descargas   Escritorio  M??sica  Plantillas  V??deos
+Documentos  Im??genes   PRUEBA   P??blico
+
+[root@localhost /]# umount none
+[root@localhost /]# umount none
+(esta vacio)
+
+PRUEBA se encuentra en el home de mi usuario que he montado
+
+usuario@ei143109:~$ ls
+Descargas   Escritorio	Música	    PRUEBA   Vídeos
+Documentos  Imágenes	Plantillas  Público
+
+
+b)
+
+[root@localhost /]# mknod /dev/loop10 b 7 0
+
+[root@localhost /]# dd if=/dev/zero of=/root/archivo_SA20 bs=3k count=10000
+10000+0 records in
+10000+0 records out
+30720000 bytes (31 MB) copied, 0.230215 s, 133 MB/s
+
+[root@localhost /]# fdisk -l /dev/loop10
+
+Disk /dev/loop10: 30 MB, 30720000 bytes
+255 heads, 63 sectors/track, 3 cylinders, total 60000 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x00000000
+
+Disk /dev/loop10 doesn't contain a valid partition table
+
+
+[root@localhost /]# fdisk /dev/loop10
+
+Device contains neither a valid DOS partition table, nor Sun, SGI or OSF disklabel
+Building a new DOS disklabel with disk identifier 0xf3bc1e71.
+Changes will remain in memory only, until you decide to write them.
+After that, of course, the previous content won't be recoverable.
+
+Warning: invalid flag 0x0000 of partition table 4 will be corrected by w(rite)
+
+Command (m for help): n
+Command action
+   e   extended
+   p   primary partition (1-4)
+p
+Partition number (1-4, default 1): 1
+First sector (2048-59999, default 2048): 2048
+Last sector, +sectors or +size{K,M,G} (2048-59999, default 59999): 59999
+
+Command (m for help): w
+The partition table has been altered!
+
+
+[root@localhost /]# mke2fs -t ext2 /dev/loop10
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=1024 (log=0)
+Fragment size=1024 (log=0)
+Stride=0 blocks, Stripe width=0 blocks
+7520 inodes, 30000 blocks
+1500 blocks (5.00%) reserved for the super user
+First data block=1
+Maximum filesystem blocks=30932992
+4 block groups
+8192 blocks per group, 8192 fragments per group
+1880 inodes per group
+Superblock backups stored on blocks: 
+	8193, 24577
+
+Writing inode tables: done                            
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 20 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+
+
+[root@localhost /]# tune2fs -l /dev/loop10
+
+
+
+tune2fs 1.41.12 (17-May-2010)
+Filesystem volume name:   <none>
+Last mounted on:          <not available>
+Filesystem UUID:          d39eeb73-426a-4f86-9389-e1d2d961fbfc
+Filesystem magic number:  0xEF53
+Filesystem revision #:    1 (dynamic)
+Filesystem features:      ext_attr resize_inode dir_index filetype sparse_super
+Filesystem flags:         signed_directory_hash 
+Default mount options:    (none)
+Filesystem state:         clean
+Errors behavior:          Continue
+Filesystem OS type:       Linux
+Inode count:              7520			#Número de i-nodos
+Block count:              30000			#Número de bloques
+Reserved block count:     1500
+Free blocks:              28680			#Número de bloques libres
+Free inodes:              7509
+First block:              1
+Block size:               1024			#Tamaño de bloque
+Fragment size:            1024
+Reserved GDT blocks:      117
+Blocks per group:         8192
+Fragments per group:      8192
+Inodes per group:         1880			#Número de i-nodos por grupo
+Inode blocks per group:   235
+Filesystem created:       Tue Oct 23 04:08:42 2018
+Last mount time:          n/a
+Last write time:          Tue Oct 23 04:08:42 2018
+Mount count:              0
+Maximum mount count:      20
+Last checked:             Tue Oct 23 04:08:42 2018
+Check interval:           15552000 (6 months)
+Next check after:         Sun Apr 21 04:08:42 2019
+Reserved blocks uid:      0 (user root)
+Reserved blocks gid:      0 (group root)
+First inode:              11
+Inode size:	          128				#Tamaño de i-nodo
+Default directory hash:   half_md4
+Directory Hash Seed:      5740e52f-8c21-4e12-bae0-9e8b81fa8e8c
+
+
+
+
+c)
+
+Los pasos a seguir es llamar segun el instalador de paquetes a informacion de instalacion, en mi caso tuve que hacer con rpm y lance este comando
+
+rpm -ivh fenix/depar/lsi/so/paquetes/nombre_paquete
+
+tras mostrarte la informacion de instalacion y con el error por falta de dependencias pues tienes que instalar dichas dependencias que te pide, instalando con rpm -i nombre_paquete.
+
+En practicas tuve que hacerlo con el paquete quota para poder hacer la sesion en el que trabajaba con quotas, montando fenix/depar/lsi/so/paquetes sobre mi root y despues instalarlo con 
+
+fenix/depar/lsi/so/paquetes/nombre_paquete
+
+rpm -i fenix/depar/lsi/so/paquetes/libnl-1.1-12.fc14.i686.rpm 
+rpm -i fenix/depar/lsi/so/paquetes/tcp_wrappers-7.6-59.fc14.i686.rpm
+rpm -i fenix/depar/lsi/so/paquetes/quota-3.17-13.fc14.i686.rpm 
+
+haciendo uso de -v para mostrar mas informacion en la instalacion
+
+
+Ejercicio 3
+
+a)
+
+Se puede saber la informacion de los procesos activos con la orden ps
+
+ps -eo user,pid,ppid,pri,stat
+
+pero en tiempo real lo vamos a ver con la orden top
+
+usuario@ei143109:~/Escritorio$ chmod +x script_infinito 
+usuario@ei143109:~/Escritorio$ ./script_infinito &
+[1] 3985
+
+ps -eo user,pid,ppid,pri,stat | grep 3985
+
+PRI(la prioridad)
+STAT(estado)
+
+(buscamos el proceso con grep)
+
+USER       PID  PPID PRI STAT
+santoss+  3985  3440  19 S
+
+
+con la orden TOP podemos ver en tiempo real la ejecucion del script ya que lo he puesto que sea infinito
+
+  PID USUARIO   PR  NI    VIRT    RES    SHR S  %CPU %MEM     HORA+ ORDEN       
+ 3985 santoss+  20   0    7676   3628   2468 S  12,3  0,0   0:24.90 script_inf+ 
+
+y se añadieramos prioridad con nice se veria en PR y si se la diesemos con renice se veria en NI
+el tiempo de espera se puede ver en tiempo real con TOP desde su hora de inicio hasta su finalizacion o tambien con la opccion time
+
+time ./script_infinito
+
+
+usuario@ei143109:~/Escritorio$ time ./script
+real	0m0.003s
+user	0m0.000s
+sys	0m0.000s
+
+
+b)
+
+se puede ver muy facil, creo un archivo hardlink y luego le hago ls -lai
+
+[root@localhost /]# touch prueba
+[root@localhost /]# ln prueba hardLink2
+[root@localhost /]# ls -lai
+
+14281 -rw-r--r--  2 root root     0 Oct 23 04:39 prueba
+14281 -rw-r--r--  2 root root     0 Oct 23 04:39 hardLink2
+
+Como se puede ver archivo tiene el valor 2 en la columna del campo contador de enlaces(los enlaces blandos no se verian reflejados)
+
+c)
+
+he dejado las dos opcciones del script, una en la que te muestra la salida al final del du y otra en la que te muestra el resultado unicamente en un archivo que crea
+
+#!/bin/bash
+
+du -B 2 /home
+
+echo La cantidad de bloques de 2KB de tu directorio home es de = $$
+
+echo La cantidad de bloques de 2KB de tu directorio home es de = $$ >> bloqueshome.txt
+
+d)
+
+[root@localhost /]# vi script
+
+#!/bin/bash
+
+cd ~
+cd ..
+du -B 2
+
+echo La cantidad de bloques de 2KB de tu directorio home es de = $$ >> LOG
+
+:w :q
+
+[root@localhost /]# vi LOG
+00 23 * 11 7 /script
+
+[root@localhost /]# crontab LOG
+
+he probado a realizarlo cada minuto con 
+
+[root@localhost /]# crontab -l
+* * * * * /script
+
+[root@localhost /]# cat LOG
+* * * * * /script
+La cantidad de bloques de 2KB de tu directorio home es de = 1433
+La cantidad de bloques de 2KB de tu directorio home es de = 1436
+La cantidad de bloques de 2KB de tu directorio home es de = 1439
+
+
+
+
+
+

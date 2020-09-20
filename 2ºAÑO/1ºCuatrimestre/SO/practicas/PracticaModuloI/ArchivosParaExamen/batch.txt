@@ -1,0 +1,32 @@
+2018-294-18:45:00
+2018-294-19:05:00
+Apuntes sesion loops
+at_find
+batch.txt
+errorATD
+Fedora14-x86-root_fs
+Fedora14-x86-root_fs.gz
+instalarquota
+kernel32-3.0.4
+kernel32-3.0.4.gz
+listahome-2018-294-18:36:00-11395
+Modulo1.zip
+monitorizacion.txt
+montar_paquetes
+paquetes
+paquetes.zip
+particiones
+practicasFS
+relacionpadre
+salidas
+script_4_5
+script_incremento
+script_infinito
+script_ls
+script_so
+script_supervision
+sistemadecuotas
+SO-P-Todos_GuiaPráctcas.pdf
+wuolah-free-Portafolios_Practicas_SO_JesusGarciaGodoy (copia).pdf
+wuolah-free-SO-P-Modulo1-Sesion1-Autoevaluacion.pdf
+wuolah-free-SO-P-Modulo1-Sesion2-Autoevaluacion.pdf

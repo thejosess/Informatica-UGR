@@ -1,0 +1,9 @@
+#probar en otro root o en la misma sesion son sudo que paquetes requiere y cuando te da error y luego en el normal hacerlo del tiron
+
+
+rpm -i libnl-1.1-12.fc14.i686.rpm 
+rpm -i tcp_wrappers-7.6-59.fc14.i686.rpm
+rpm -i quota-3.17-13.fc14.i686.rpm 
+
+
+#segun ella el error era no haber instalado el libwrap 

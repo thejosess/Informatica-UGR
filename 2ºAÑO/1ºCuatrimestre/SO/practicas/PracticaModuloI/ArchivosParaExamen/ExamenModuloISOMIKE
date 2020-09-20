@@ -1,0 +1,163 @@
+Miguel Ángel Benítez Alguacil
+
+Ejercicio1
+
+[root@localhost ~]# useradd p22r
+[root@localhost ~]# usermod -d /home/ejemplo p22r
+[root@localhost ~]# usermod -s /bin/csh p22r
+[root@localhost ~]# groupadd estudiantes
+[root@localhost ~]# gpasswd -a p22r estudiantes
+[root@localhost ~]# usermod -e now+1month p22r		//Cambiando now+1month por 2018-11-22 también debería servir.
+
+Contenido de los archivos:
+[root@localhost ~]# cat /etc/shadow 
+	root::14789:0:99999:7:::
+	bin:*:14789:0:99999:7:::
+	...
+	p22r:!!:17826:0:99999:7::17857:
+
+[root@localhost ~]# cat /etc/passwd
+	root::0:0:root:/root:/bin/bash
+	bin:x:1:1:bin:/bin:/sbin/nologin
+	...
+	p22r:x:500:500::/home/ejemplo:/bin/csh
+
+[root@localhost ~]# cat /etc/group
+	root:x:0:root
+	bin:x:1:root,bin,daemon
+	...
+	p22r:x:500:
+	estudiantes:x:501:p22r
+
+--------------------------------------------------------
+
+Ejercicio 2
+
+[root@localhost ~]# ls -l /dev/ 	#Como en /dev/ no hay archivos loop podemos crear con mknod el loop0
+[root@localhost ~]# mknod /dev/loop0 b 7 0
+[root@localhost ~]# dd if=/dev/zero of=/root/archivo_SA20 bs=5MB count=10	
+	#He usado esta opción de bs y count porque era la que copiaba justo 50MB, con bs=5k count=10000 como vimos en la sesión 
+	 de prácticas copia 51MB
+	[root@localhost ~]# dd if=/dev/zero of=/root/archivo_SA21 bs=5MB count=10
+		10+0 records in
+		10+0 records out
+		50000000 bytes (50 MB) copied, 25.8587 s, 1.9 MB/s
+	[root@localhost ~]# dd if=/dev/zero of=/root/archivo_SA20 bs=5k count=10000
+		10000+0 records in
+		10000+0 records out
+		51200000 bytes (51 MB) copied, 0.19507 s, 262 MB/s
+[root@localhost ~]# losetup /dev/loop0 /root/archivo_SA20
+[root@localhost ~]# fdisk /dev/loop0
+	Command (m for help): n
+	Command action
+	   e   extended
+	   p   primary partition (1-4)
+	p
+	Partition number (1-4, default 1): 
+	Using default value 1
+	First sector (2048-97655, default 2048): 
+	Using default value 2048
+	Last sector, +sectors or +size{K,M,G} (2048-97655, default 97655): 
+	Using default value 97655
+
+	Command (m for help): w
+	The partition table has been altered!
+[root@localhost ~]# mke2fs -t ext3 /dev/loop0		#Formateo del tipo ext3
+
+[root@localhost ~]# tune2fs -l /dev/loop0
+	Block count:              48828		#Número de bloques	
+	Inode count:              12240		#Número de i-nodos
+	Inodes per group:         2040		#Número de i-nodos por grupo
+	Inode size:	          128		#Tamaño de i-nodo
+	Free blocks:              42390		#Número de bloques libres
+	Block size:               1024		#Tamaño de bloque
+[root@localhost ~]# mount /dev/loop0 /mnt
+	
+[root@localhost ~]# cat /etc/mtab
+	LABEL=ROOT 	/ 				auto 		rw,noatime 		0 	0
+	proc 		/proc 				proc 		rw 			0 	0
+	sysfs 		/sys 				sysfs 		rw 			0 	0
+	devpts 		/dev/pts			devpts 		rw,gid=5,mode=620 	0 	0
+	tmpfs 		/dev/shm 			tmpfs 		rw 			0 	0
+	/tmp 		/tmp 				tmpfs 		rw,mode=1777 		0 	0
+	none 		/proc/sys/fs/binfmt_misc 	binfmt_misc 	rw 			0 	0
+	/dev/loop0 	/mnt 				ext3 		rw 			0 	0
+	<file system> 	<mount point>			<type>		<options>		<dump>	<pass>
+Explicación:
+	Debajo de las columnas he puesto lo que contiene cada una:
+- En la primera (<file system>) aparece el sistema de archivos montado, en este caso /dev/loop0.
+- En la segunda (<mount point>) aparece el directorio donde lo hemos montado, /mnt.
+- En la tercera (<type>) el tipo del sistema de archivos, como anteriormente lo hemos formateado creando un SA ext3 el tipo es ext3.
+- En la cuarta (<options>) aparecen las opciones que se utilizarán en el proceso de montaje, como tiene rw sabemos que es un SA de Lectura-Escritura.
+- En la quinta (<dump>) indica la frecuencia con la que se realizará una copia de seguridad del SA, siempre que su valor sea distinto de 0.
+- En la última (<pass>) se especifica el orden en el que se realizará las comprobaciones sobre los SAs durante el arranque del sistema.
+
+--------------------------------------------------------
+
+Ejercicio 3
+a)
+[root@localhost ~]# ps -eo user,pid,ppid,pri,stat
+
+b) Con la orden top podemos ver el uso en tiempo real que hace el sistema de Memoria y Swap (están encima de los procesos)
+[root@localhost ~]# top
+Mem:   1020580k total,   138980k used,   881600k free,     3964k buffers
+Swap:        0k total,        0k used,        0k free,   116352k cached
+
+También podemos verlo con la orden free.
+Para ver el tiempo que tarda en ejecutarse usamos la orden time y debajo de la ejecución de la orden que queramos medir nos aparecerá el tiempo.
+[root@localhost ~]# time free
+             total       used       free     shared    buffers     cached
+Mem:       1020580     138840     881740          0       3972     116364
+-/+ buffers/cache:      18504    1002076
+Swap:            0          0          0
+
+real	0m0.024s
+user	0m0.000s
+sys	0m0.000s
+En este caso ha tardado 0.024 segundos en ejecutar esta orden.
+
+c)
+[root@localhost ~]# ls -lai /dev
+total 20
+   18 drwxr-xr-x  5 root root 4096 Oct 22 06:01 .
+    2 dr-xr-xr-x 22 root root 4096 Oct 22 05:45 ..
+	...
+   32 lrwxrwxrwx  1 root root   15 Nov  3  2010 stderr -> /proc/self/fd/2
+   30 lrwxrwxrwx  1 root root   15 Nov  3  2010 stdin -> /proc/self/fd/0
+   31 lrwxrwxrwx  1 root root   15 Nov  3  2010 stdout -> /proc/self/fd/1
+  	...
+   24 crw-rw-rw-  1 root root 1, 5 Nov  3  2010 zero
+
+En el directorio /dev existen 3 archivos de tipo enlace simbólico, podemos saberlo mirando el caracter que aparece delante de los permisos, como aparece una l este caracter indica que son de tipo enlace simbólico. (l rwxrwxrwx)
+Sabemos el archivo al que enlaza porque aparece señalado con una flecha ->
+El tamaño del archivo simbólico es de 15 bloques.
+
+--------------------------------------------------------
+
+Ejercicio 4
+[root@localhost ~]# vi script.sh
+#!/bin/bash
+
+free >> /root/ejercicio4.txt
+mem_libre=`cat "/root/ejercicio4.txt"|tail -3|tr -s " " " "|cut -d " " -f4`
+mem_ocupada=`cat "/root/ejercicio4.txt"|tail -3|tr -s " " " "|cut -d " " -f3`
+swap_ocupada=`cat "/root/ejercicio4.txt"|tail -3|tr -s " " " "|cut -d " " -f3`
+swap=`cat "/root/ejercicio4.txt"|tail -3|tr -s " " " "|cut -d " " -f3`
+
+echo "La memoria ocupada es:" $mem_ocupada
+echo "La memoria libre es:" $mem_libre
+echo "La swap ocupada es:" $swap_ocupada
+echo "La swap libre es:" $swap_libre
+
+
+e)
+[root@localhost ~]# vi crontabfile
+* 23 * 10 3 /root/script.sh >> /root/datosMem.txt
+:w :q
+
+
+
+	
+
+
+

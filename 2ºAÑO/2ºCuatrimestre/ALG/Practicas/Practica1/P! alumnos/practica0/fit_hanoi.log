@@ -1,0 +1,30 @@
+
+
+*******************************************************************************
+Mon Mar 18 15:21:59 2019
+
+
+FIT:    data read from 'salida_hanoi_ray'
+        format = z
+        #datapoints = 26
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a0*2**x
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a0           
+   0 1.5954923848e+24   0.00e+00  2.49e+11    1.000000e+00
+   4 8.0686598490e+14  -5.93e-07  2.49e+07    5.102882e-03
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 8.06866e+14
+rel. change during last iteration : -5.93097e-12
+
+degrees of freedom    (FIT_NDF)                        : 25
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 5.68108e+06
+variance of residuals (reduced chisquare) = WSSR/ndf   : 3.22746e+13
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a0              = 0.00510288       +/- 4.475e-06    (0.08769%)

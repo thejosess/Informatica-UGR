@@ -1,0 +1,231 @@
+select [distinct] *
+select [distinct] <lista atributos>
+select [distinct] operacion aritmetica
+from T1 t, T2 h, (select .... T2)
+
+where <>, >=, <=,
+where LIKE
+where is [not] null
+where [not] in
+
+select ....
+UNION
+select ....;
+//la union coge las filas que se encuentra en una tabla con las filas que se encuentra en las otras 
+y las pone todas juntas en una tabla
+//las select tienen que proyectar atributos compatibles en el select cod_pro from una
+select cod_pro from otra, tiene que coincidir el tipo.
+
+
+UNION | intersect | minus
+ALL(deja los repetidos)
+
+
+-Ejercicios: Proveedores que no han vendido P4
+//miras los que han vendido p4 y le quitas al resto y lo tienes
+
+codpie <> 'P4'
+//usas el minus
+
+select codpro from proveedor
+MINUS
+select codpro from ventas where codpie='P4'
+
+
+
+select codpro from ventas
+where codpie <> 'P4' // solo sirve esto si S1 es clave primaria y no se repite
+
+
+select codpro from ventas where codpie='P1'
+intersect
+select codpro from ventas where codpie='P4';
+
+
+//piezas de color blanco 
+select codpie from pieza where color='BLANCO'
+(select codpro from ventas where codpie (N('P1','P4','P14')));
+//ESTE ESTA MAL PREGUNTAR CLASE
+
+
+select codpro from ventas
+where cantidad
+
+select codpro from ventas where cantidad > ALL
+(select cantidad from ventas where codpro='S1');
+
+
+select * from proveedor p where EXISTS
+(select * from ventas v2 where v2.codpro=p.codpro);
+//EXISTS mira si el conjunto de filas esta, si la encuentra devuelve true o false
+
+
+select * from proveedor p where EXISTS
+(select * from ventas v2 where v2.codpro=p.codpro and codpie='P3');
+
+MINUS O NOT EXISTS ES LO MISMO 
+MINUS ES MAS EXIGENTE Y EL NOT EXISTS ES MENOS EXIGENTE
+
+
+
+
+
+select codpro from proveedor
+MINUS
+select codpro from ventas where codpie='P4';
+
+select codpro from ventas where codpie='P1'
+intersect
+select codpro from ventas where codpie='P4';
+
+select codpie from pieza where color='BLANCO'
+select codpro from ventas where codpie (N('P1','P4','P14'));
+
+
+select cantidad from ventas where codpro='S1';
+
+
+select codpro from ventas where cantidad > ALL
+(select cantidad from ventas where codpro='S1');
+
+select codpro from ventas where cantidad >= ALL
+(select cantidad from ventas where codpro='S1');
+
+select codpro from ventas where cantidad >= ALL
+(select cantidad from ventas);
+
+select codpro from ventas where cantidad > ANY  //este haria mas que alguno
+(select cantidad from ventas where codpro='S1');
+
+select codpro from ventas where cantidad = ANY // igual que any 
+(select cantidad from ventas where codpro='S1');
+-> este es igual que IN que es estar en el conjunto
+
+<> ALL es como hacer NOT IN
+
+select * from proveedor p where EXISTS
+(select * from ventas v2 where v2.codpro=p.codpro);
+
+select * from proveedor p where EXISTS
+(select * from ventas v2 where v2.codpro=p.codpro and codpie='P3');
+
+
+select codpro from proveedor
+MINUS
+select codpro from ventas where codpie='P4';
+
+select codpro from ventas where codpie='P1'
+intersect
+select codpro from ventas where codpie='P4';
+
+select codpie from pieza where color='BLANCO'
+select codpro from ventas where codpie (N('P1','P4','P14'));
+
+
+select cantidad from ventas where codpro='S1';
+
+
+select codpro from ventas where cantidad > ALL
+(select cantidad from ventas where codpro='S1');
+
+select codpro from ventas where cantidad >= ALL
+(select cantidad from ventas where codpro='S1');
+
+select codpro from ventas where cantidad >= ALL
+(select cantidad from ventas);
+
+select codpro from ventas where cantidad = ANY
+(select cantidad from ventas where codpro='S1');
+
+select * from proveedor p where EXISTS
+(select * from ventas v2 where v2.codpro=p.codpro);
+
+select * from proveedor p where EXISTS
+(select * from ventas v2 where v2.codpro=p.codpro and codpie='P3');
+
+select * from proveedor p where NOT EXISTS
+(select * from ventas v2 where v2.codpro=p.codpro and codpie='P3');
+
+
+select ciudad from proveedor p where p.status > 2
+MINUS
+select ciudad from pieza pi where pi.codpie='P1';
+
+select * from ventas;
+select * from proyecto;
+
+select codpj from proyecto
+MINUS
+select codpj from ventas v where v.codpro<>'S1';
+
+select ciudad from proyecto
+UNION
+select ciudad from proveedor;
+
+select ciudad from proyecto
+UNION ALL
+select ciudad from proveedor;
+
+select * from ventas, proveedor;
+
+select * from ventas v, proveedor p where v.ciudad = p.ciudad and v.cantidad > 0;
+
+select * from ventas;
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ejercicio 3.7
+--------------
+select ciudad from proveedor p where p.status > 2
+MINUS
+select ciudad from pieza pi where pi.codpie='P1';
+
+
+Ejercicio 3.8
+-------------
+select codpj from proyectos
+MINUS
+select codpj from ventas v where p.codpro<>'S1';
+
+//buscas proyectos que solo esten con S1 y eso no es verdad
+porque se repite
+
+
+Ejercicio 3.9
+------------------
+select ciudad from proyecto
+UNION
+select ciudad from proveedor;
+
+
+Ejercicio 3.10
+-----------------
+select ciudad from proyecto
+UNION ALL
+select ciudad from proveedor;
+
+/repetir las ciudades
+
+
+Ejercicio 3.11
+--------------
+115 tuplas
+
+
+
+
+----------------------------------
+EJERCICIOS:
+
+3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 3.10, 3.11, 3.12, 3.13, 3.14, 3.17, 3.18, 3.19, 3.20, 3.21
+3.22, 3.23

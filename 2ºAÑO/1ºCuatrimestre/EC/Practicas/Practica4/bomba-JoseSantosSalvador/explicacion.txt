@@ -1,0 +1,20 @@
+contraseña:hplaryos
+pincode:2809
+
+Se puede ver cuando se hace br en main justo antes de explotar la bomba que hace una comparacion con un valor que no es password, observamos donde se calcula ese otro valor y se ve que se realiza un for, se saca que hace el for en concreto y se observa que lo que hace es darle la vuelta al valor de password.
+
+Para obtener el pin es ver simplemente que se modificar el valor que se lee del usuario con un for que va hasta 5 y que hace +=indice.
+
+Proceso seguido a la hora de solucionar la bomba
+
+layout asm
+layout regs
+#br *main	observas que hay un bucle usando password y metiendo en otra variable
+#br *main+67	sale del for y compara strcmp con otra variable que no es password
+#br *main+138
+#info regs
+#p(char*) $rsi	#tenemos la contraseña
+#set $rdi="hplaryos"	
+#br *main+273	te pide introducir el pin
+#br  *main+336	despues del bucle de sumarle a la contraseña
+run < <(echo -e hplaryos\\n2809\\n)

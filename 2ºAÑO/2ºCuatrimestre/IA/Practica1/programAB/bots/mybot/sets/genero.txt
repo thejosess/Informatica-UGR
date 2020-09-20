@@ -1,0 +1,15 @@
+fantasia
+ciencia ficcion
+historico
+documental
+suspense
+drama
+terror
+comico
+detestivesco
+aventura
+belico
+ficcion
+autobiografia
+realista
+tristeza
